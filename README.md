@@ -1,4 +1,5 @@
 # Sélection poste ENM
+
 [![Building executables](https://github.com/TristanPouliquen/selection-poste-enm/actions/workflows/test_build.yml/badge.svg?branch=main)](https://github.com/TristanPouliquen/selection-poste-enm/actions/workflows/test_build.yml)
 
 Ce projet propose un logiciel pour aider les auditeurs de justice de l'ENM dans le choix de leur premier poste.
@@ -8,12 +9,14 @@ Le programme vous a aidé ? Vous voulez nous remercier ?
 Alors n'hésitez pas à nous sponsoriser :grinning:
 
 ## Sommaire
+
 1. [Installation](#installation)
 2. [Contribuer](#contribuer)
 3. [Développement](#développement)
 4. [Dépendances](#dépendances)
 
 ## Installation
+
 Consulez la page de la dernière version: https://github.com/TristanPouliquen/selection-poste-enm/releases
 
 Téléchargez le fichier correspondant à votre système d'opération. Le projet génère les fichiers pour Windows, MacOS et Linux.
@@ -21,15 +24,18 @@ Téléchargez le fichier correspondant à votre système d'opération. Le projet
 Lancez l'exécutable pour installer le programme.
 
 ## Contribuer
+
 ### Amélioration du programme
 
 Toutes les contributions sont les bienvenues !
 
 #### Vous avez une idée pour améliorer le programme, le rendre plus fonctionnel ou plus lisible ?
+
 - [Créez une issue](/issues) pour proposer votre nouvelle idée,
 - si vous savez le faire, ou avez le temps de chercher comment, créez une nouvelle branche sur ce Github, proposez votre implémentation et [publiez vos changements](/pulls), cela ira plus vite !
 
 #### Vous voulez découvrir le développement d'une app Tauri ? de Rust ? de NextJs ?
+
 N'hésitez pas à consulter les [issues](/issues) ouvertes pour en sélectionner une qui vous paraît intéressante et commencez à coder !
 
 Vous n'aurez alors plus qu'à publier vos changements et [demander une pull request](/pulls).
@@ -39,6 +45,7 @@ Vous n'aurez alors plus qu'à publier vos changements et [demander une pull requ
 Ce programme a été écrit pour l'affectation en 2023, les données reflètent les postes présentés cette année là.
 
 Si vous voulez mettre à jour les données des postes, vous pouvez:
+
 - [ouvrir une issue](/issues) avec les données à corriger
 - si vous connaissez SQL et le terminal, créer directement une nouvelle migration SQL avec les données voulues. Pour cela, suivez les étapes suivantes :
   1. Téléchargez le projet
@@ -69,10 +76,11 @@ Le programme lancera une `WebView` en mode développement.
 ## Dépendances
 
 Le projet utilise:
+
 1. [TypeScript](https://www.typescriptlang.org/) comme surcouche Javascript,
 2. [TailwindCSS](https://tailwindcss.com/) comme librairie de style,
-2. [DaisyUI](https://daisyui.com/) comme librairie de composants,
-3. [HeroIcons](https://heroicons.com/) comme librairie d'icônes,
-4. [Rust](https://www.rust-lang.org/fr) comme langage de programmation backend,
-5. [Diesel](https://diesel.rs/) comme ORM,
-6. [SQlite](https://sqlite.org/index.html) comme SGBD.
+3. [DaisyUI](https://daisyui.com/) comme librairie de composants,
+4. [HeroIcons](https://heroicons.com/) comme librairie d'icônes,
+5. [Rust](https://www.rust-lang.org/fr) comme langage de programmation backend,
+6. [Diesel](https://diesel.rs/) comme ORM,
+7. [SQlite](https://sqlite.org/index.html) comme SGBD.

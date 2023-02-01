@@ -1,5 +1,10 @@
-name: "Linting code"
-on: [push, pull_request]
+name: Linting code
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - release
 
 jobs:
   typescript:
@@ -14,22 +19,26 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Run Eslint
-        run: yarn lint --fix
+        run: yarn lint
       - name: Run Prettier
         uses: creyD/prettier_action@v4.2
         with:
           # This part is also where you can pass other options, for example:
-          prettier_options: --write **/*.{ts,tsx,md}
+          prettier_options: --check **/*.{ts,tsx,md}
   rust:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
       - name: Run fmt
         working-directory: ./src-tauri
-        run: cargo fmt
+        run: cargo fmt --check
       - name: Run clippy
         working-directory: ./src-tauri
-        run: cargo clippy --fix
+        run: cargo clippy

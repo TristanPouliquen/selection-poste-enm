@@ -1,16 +1,16 @@
 export type AppealCourt = {
-    id: number,
-    name: string,
-    color: string
-}
+  id: number;
+  name: string;
+  color: string;
+};
 
 export type Position = {
-    id: number,
-    placed: boolean,
-    taken: boolean,
-    prevalent_domain: string,
-    ranking: number,
-    notes?: string,
-    tribunal_id: number,
-    role_id: number
-}
+  id: number;
+  placed: boolean;
+  taken: boolean;
+  prevalent_domain: string;
+  ranking: number;
+  notes?: string;
+  tribunal_id: number;
+  role_id: number;
+};
