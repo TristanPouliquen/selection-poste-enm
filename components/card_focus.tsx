@@ -49,7 +49,7 @@ const CardFocus: React.FC<IProps> = ({ position }) => {
 
     return position
         ? <label htmlFor="modal" className="modal">
-            <label htmlFor="" className="modal-box relative h-5/6 w-11/12 max-w-7xl flex flex-col">
+            <label htmlFor="" className="modal-box h-5/6 w-11/12 max-w-7xl flex flex-col">
                 <h1 className="mx-2 text-4xl font-bold flex flex-row justify-between items-baseline">
                     <div className="flex flex-row">{position.role_id} <BuildingLibraryIcon className="h-10 w-10"/> {position.tribunal_id}</div>
                     <label className="float-right cursor-pointer" htmlFor="modal"><XMarkIcon className="h-8 w-8" /></label>

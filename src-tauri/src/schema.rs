@@ -1,6 +1,14 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
+    app_state (id) {
+        id -> Integer,
+        onboarded -> Bool,
+        activeFilters -> Nullable<Text>,
+    }
+}
+
+diesel::table! {
     appeal_courts (id) {
         id -> Integer,
         name -> Text,
@@ -31,6 +39,7 @@ diesel::table! {
         prevalent_domain -> Nullable<Text>,
         ranking -> Integer,
         notes -> Nullable<Text>,
+        taken -> Bool,
         role_id -> Integer,
         tribunal_id -> Integer,
     }
@@ -64,6 +73,7 @@ diesel::table! {
 }
 
 diesel::allow_tables_to_appear_in_same_query!(
+    app_state,
     appeal_courts,
     groups,
     position_tags,

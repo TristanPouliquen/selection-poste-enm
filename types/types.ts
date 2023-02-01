@@ -7,6 +7,7 @@ export type AppealCourt = {
 export type Position = {
     id: number,
     placed: boolean,
+    taken: boolean,
     prevalent_domain: string,
     ranking: number,
     notes?: string,

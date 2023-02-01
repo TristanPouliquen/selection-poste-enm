@@ -2,7 +2,8 @@ INSERT INTO `groups`(id, name) VALUES
 (1, 'Groupe 1'),
 (2, 'Groupe 2'),
 (3, 'Groupe 3'),
-(4, 'Groupe 4');
+(4, 'Groupe 4'),
+(5, 'N/A');
 
 INSERT INTO appeal_courts(id, name) VALUES
 (1, 'Agen'),
@@ -68,8 +69,8 @@ INSERT INTO tribunals (id, name, group_id, appeal_court_id) VALUES
 (22, 'Saumur', 4, 4),
 (23, 'Ajaccio', 4, 5),
 (24, 'Bastia', 4, 5),
-(25, 'Basse-Terre', 3, 6), -- Check group
-(26, 'Pointe-à-Pitre', 3, 6), -- Check group
+(25, 'Basse-Terre', 5, 6),
+(26, 'Pointe-à-Pitre', 5, 6),
 (27, 'Belfort', 4, 7),
 (28, 'Besançon', 3, 7),
 (29, 'Lons-le-Saunier', 3, 7),
@@ -89,7 +90,7 @@ INSERT INTO tribunals (id, name, group_id, appeal_court_id) VALUES
 (43, 'Cherbourg', 4, 10),
 (44, 'Coutances', 3, 10),
 (45, 'Lisieux', 3, 10),
-(46, 'Cayenne', 3, 11), -- Check group
+(46, 'Cayenne', 5, 11),
 (47, 'Albertville', 4, 12),
 (48, 'Annecy', 3, 12),
 (49, 'Bonneville', 4, 12),
@@ -111,7 +112,7 @@ INSERT INTO tribunals (id, name, group_id, appeal_court_id) VALUES
 (65, 'Lille', 1, 15),
 (66, 'Saint-Omer', 4, 15),
 (67, 'Valenciennes', 2, 15),
-(68, 'Fort-de-France', 3, 16), -- Check group
+(68, 'Fort-de-France', 5, 16),
 (69, 'Bourgoin-Jallieu', 4, 17),
 (70, 'Gap', 4, 17),
 (71, 'Grenoble', 2, 17),
@@ -150,7 +151,7 @@ INSERT INTO tribunals (id, name, group_id, appeal_court_id) VALUES
 (104, 'Montargis', 4, 25),
 (105, 'Orléans', 2, 25),
 (106, 'Tours', 2, 25),
-(107, 'Papeete', 3, 26), -- check group
+(107, 'Papeete', 5, 26),
 (108, 'Auxerre', 4, 27),
 (109, 'Bobigny', 1, 27),
 (110, 'Créteil', 1, 27),
@@ -193,9 +194,9 @@ INSERT INTO tribunals (id, name, group_id, appeal_court_id) VALUES
 (147, 'Évreux', 2, 33),
 (148, 'Le Havre', 2, 33),
 (149, 'Rouen', 2, 33),
-(150, 'Mamoudzou', 3, 34), -- check group
-(151, 'Saint-Denis', 2, 34), -- check group
-(152, 'Saint-Pierre-et-Miquelon', 4, 35), -- check group
+(150, 'Mamoudzou', 5, 34),
+(151, 'Saint-Denis', 5, 34),
+(152, 'Saint-Pierre-et-Miquelon', 5, 35),
 (153, 'Albi', 4, 36),
 (154, 'Castres', 4, 36),
 (155, 'Foix', 4, 36),

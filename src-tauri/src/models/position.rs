@@ -12,6 +12,7 @@ pub struct Position {
     pub prevalent_domain: Option<String>,
     pub ranking: i32,
     pub notes: Option<String>,
+    pub taken: bool,
     pub tribunal_id: i32,
     pub role_id: i32,
 }
