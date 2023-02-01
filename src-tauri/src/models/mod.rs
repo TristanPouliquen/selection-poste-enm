@@ -1,13 +1,13 @@
-use std::env;
 use diesel::{Connection, SqliteConnection};
 use dotenvy::dotenv;
+use std::env;
 
-pub mod tribunal;
 pub mod appeal_court;
 pub mod group;
 pub mod position;
 pub mod role;
 pub mod tag;
+pub mod tribunal;
 
 pub fn establish_connection() -> SqliteConnection {
     dotenv().ok();

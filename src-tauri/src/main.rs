@@ -1,9 +1,9 @@
 #![cfg_attr(
-  all(not(debug_assertions), target_os = "windows"),
-  windows_subsystem = "windows"
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
 )]
-pub mod schema;
 pub mod models;
+pub mod schema;
 
 use crate::models::appeal_court::*;
 use crate::models::position::*;
@@ -37,6 +37,6 @@ fn main() {
             list_appeal_courts,
             update_appeal_court_color
         ])
-    .run(tauri::generate_context!())
-    .expect("error while running tauri application");
+        .run(tauri::generate_context!())
+        .expect("error while running tauri application");
 }

@@ -1,7 +1,7 @@
-use diesel::prelude::*;
-use serde::Serialize;
 use crate::models::establish_connection;
 use crate::schema::appeal_courts;
+use diesel::prelude::*;
+use serde::Serialize;
 
 #[derive(Identifiable, Queryable, Serialize)]
 pub struct AppealCourt {
@@ -27,7 +27,8 @@ pub fn appeal_court_update(id: i32, color: &str) -> AppealCourt {
         .set(appeal_courts::color.eq(color))
         .execute(connection)
         .unwrap_or_else(|_| panic!("Unable to find Appeal court {id}"));
-    appeal_courts::dsl::appeal_courts.find(id)
+    appeal_courts::dsl::appeal_courts
+        .find(id)
         .first(connection)
         .unwrap_or_else(|_| panic!("Unable to find Appeal court {id}"))
 }

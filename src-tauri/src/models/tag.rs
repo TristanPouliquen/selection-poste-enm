@@ -1,6 +1,6 @@
+use crate::schema::{position_tags, tags};
 use diesel::prelude::*;
 use serde::Serialize;
-use crate::schema::{tags, position_tags};
 
 #[derive(Identifiable, Queryable, Serialize)]
 pub struct Tag {
