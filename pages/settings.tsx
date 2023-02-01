@@ -14,7 +14,7 @@ export default function Home() {
     return (
         <Layout home={false}>
             <h1>Configurer les codes couleur</h1>
-            <h2>Cours d'appel</h2>
+            <h2>Cours d&apos;appel</h2>
             <ul>
                 {appealCourts.map( (appealCourt: AppealCourt) => (
                     <ColorPicker

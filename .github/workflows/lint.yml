@@ -1,0 +1,32 @@
+name: "Linting code"
+on: [push, pull_request]
+
+jobs:
+  typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: yarn
+      - name: Run Eslint
+        run: yarn lint --fix
+      - name: Run Prettier
+        uses: creyD/prettier_action@v4.2
+        with:
+          # This part is also where you can pass other options, for example:
+          prettier_options: --write **/*.{ts,tsx,md}
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+      - name: Run clippy
+        working-directory: ./src-tauri
+        run: cargo clippy --fix

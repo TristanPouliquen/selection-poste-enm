@@ -26,8 +26,8 @@ pub fn appeal_court_update(id: i32, color: &str) -> AppealCourt {
     let _ = diesel::update(&appeal_court)
         .set(appeal_courts::color.eq(color))
         .execute(connection)
-        .unwrap_or_else(|_| panic!("Unable to find Appeal court {}", id));
+        .unwrap_or_else(|_| panic!("Unable to find Appeal court {id}"));
     appeal_courts::dsl::appeal_courts.find(id)
         .first(connection)
-        .unwrap_or_else(|_| panic!("Unable to find Appeal court {}", id))
+        .unwrap_or_else(|_| panic!("Unable to find Appeal court {id}"))
 }
