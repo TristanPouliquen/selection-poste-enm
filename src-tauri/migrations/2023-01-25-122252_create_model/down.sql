@@ -5,3 +5,4 @@ DROP TABLE appeal_courts;
 DROP TABLE `groups`;
 DROP TABLE tags;
 DROP TABLE roles;
+DROP TABLE app_state;

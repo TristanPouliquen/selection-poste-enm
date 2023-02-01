@@ -57,6 +57,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
+        "maximized": true,
         "title": "Sélection poste ENM",
         "width": 800
       }

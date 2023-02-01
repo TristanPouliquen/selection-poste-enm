@@ -17,9 +17,11 @@ export default function Home() {
             <h2>Cours d'appel</h2>
             <ul>
                 {appealCourts.map( (appealCourt: AppealCourt) => (
-                    <li key={"colorpicker_appealCourt_" + appealCourt.id}>
-                        <ColorPicker {...appealCourt} updateCallback={'update_appeal_court_color'} />
-                    </li>
+                    <ColorPicker
+                        key={"colorpicker_appealCourt_" + appealCourt.id}
+                        {...appealCourt}
+                        updateCallback={'update_appeal_court_color'}
+                    />
                 ))}
             </ul>
         </Layout>
