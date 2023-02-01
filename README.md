@@ -1,5 +1,5 @@
 # Sélection poste ENM
-[![test-on-pr](https://github.com/TristanPouliquen/selection-poste-enm/actions/workflows/test_build.yml/badge.svg?branch=main&event=push)](https://github.com/TristanPouliquen/selection-poste-enm/actions/workflows/test_build.yml)
+[![Building executables](https://github.com/TristanPouliquen/selection-poste-enm/actions/workflows/test_build.yml/badge.svg?branch=main)](https://github.com/TristanPouliquen/selection-poste-enm/actions/workflows/test_build.yml)
 
 Ce projet propose un logiciel pour aider les auditeurs de justice de l'ENM dans le choix de leur premier poste.
 Il a été créé en 2023.
