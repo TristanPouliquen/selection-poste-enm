@@ -1,4 +1,4 @@
-name: 'Building executables'
+name: "Building executables"
 on:
   push:
     branches:
