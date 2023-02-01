@@ -23,9 +23,8 @@ jobs:
       - name: Run Prettier
         uses: creyD/prettier_action@v4.2
         with:
-          with:
-            dry: True
-            github_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+          dry: True
+          github_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
   rust:
     runs-on: ubuntu-latest
     steps:
