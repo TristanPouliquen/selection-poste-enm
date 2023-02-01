@@ -1,38 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sélection poste ENM
 
-## Getting Started
+Ce projet propose un logiciel pour aider les auditeurs de justice de l'ENM dans le choix de leur premier poste.
+Il a été créé en 2023.
 
-First, run the development server:
+Le programme vous a aidé ? Vous voulez nous remercier ?
+Alors n'hésitez pas à nous sponsoriser via le bouton en haut à droite !
+
+## Sommaire
+1. [Installation](#installation)
+2. [Contribuer](#contribuer)
+3. [Développement](#développement)
+4. [Dépendances](#dépendances)
+
+## Installation
+Consulez la page de la dernière version: https://github.com/TristanPouliquen/selection-poste-enm/releases
+
+Téléchargez le fichier correspondant à votre système d'opération. Le projet génère les fichiers pour Windows, MacOS et Linux.
+
+Lancez l'exécutable pour installer le programme.
+
+## Contribuer
+### Amélioration du programme
+
+Toutes les contributions sont les bienvenues !
+
+#### Vous avez une idée pour améliorer le programme, le rendre plus fonctionnel ou plus lisible ?
+- [Créez une issue](/issues) pour proposer votre nouvelle idée,
+- si vous savez le faire, ou avez le temps de chercher comment, créez une nouvelle branche sur ce Github, proposez votre implémentation et [publiez vos changements](/pulls), cela ira plus vite !
+
+#### Vous voulez découvrir le développement d'une app Tauri ? de Rust ? de NextJs ?
+N'hésitez pas à consulter les [issues](/issues) ouvertes pour en sélectionner une qui vous paraît intéressante et commencez à coder !
+
+Vous n'aurez alors plus qu'à publier vos changements et [demander une pull request](/pulls).
+
+### Mise à jour des données
+
+Ce programme a été écrit pour l'affectation en 2023, les données reflètent les postes présentés cette année là.
+
+Si vous voulez mettre à jour les données des postes, vous pouvez:
+- [ouvrir une issue](/issues) avec les données à corriger
+- si vous connaissez SQL et le terminal, créer directement une nouvelle migration SQL avec les données voulues. Pour cela, suivez les étapes suivantes :
+  1. Téléchargez le projet
+  2. Ouvrez un terminal dans le dossier `src-tauri`
+  3. Installez [Rust](https://tauri.app/fr/v1/guides/getting-started/prerequisites/) en suivant les démarches pour votre plateforme
+  4. Installez [Diesel](https://diesel.rs/guides/getting-started)
+  5. Lancez la commande `diesel migration generate <migration-name>` en renseignant un nom compréhensible pour votre migration
+  6. Modifiez les fichiers `up.sql` et `down.sql` dans `src-tauri/migrations/<timestamp>-<migration-name>`
+  7. Publiez vos changements sur une nouvelle branche de ce Github
+  8. [Créez une nouvelle pull request](/pulls) vers la branche `main` pour soumettre vos modifications
+
+## Développement
+
+Ce projet utilise [Tauri](https://tauri.app/fr/) et [NextJS](https://nextjs.org/) pour créer un exécutable cross-platform.
+
+Pour lancer le projet, une fois le projet cloné, exécutez la commande suivante depuis la racine du projet :
 
 ```bash
-npm run dev
+npm run tauri dev
 # or
-yarn dev
+yarn tauri dev
 # or
-pnpm dev
+pnpm tauri dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le programme lancera une `WebView` en mode développement.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Dépendances
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Le projet utilise:
+1. [TypeScript](https://www.typescriptlang.org/) comme surcouche Javascript,
+2. [TailwindCSS](https://tailwindcss.com/) comme librairie de style,
+2. [DaisyUI](https://daisyui.com/) comme librairie de composants,
+3. [HeroIcons](https://heroicons.com/) comme librairie d'icônes,
+4. [Rust](https://www.rust-lang.org/fr) comme langage de programmation backend,
+5. [Diesel](https://diesel.rs/) comme ORM,
+6. [SQlite](https://sqlite.org/index.html) comme SGBD.
