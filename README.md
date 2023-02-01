@@ -5,7 +5,7 @@ Ce projet propose un logiciel pour aider les auditeurs de justice de l'ENM dans 
 Il a été créé en 2023.
 
 Le programme vous a aidé ? Vous voulez nous remercier ?
-Alors n'hésitez pas à nous sponsoriser via le bouton en haut à droite !
+Alors n'hésitez pas à nous sponsoriser :grinning:
 
 ## Sommaire
 1. [Installation](#installation)
