@@ -1,7 +1,7 @@
-use diesel::prelude::*;
-use serde::Serialize;
 use crate::models::establish_connection;
 use crate::schema::positions;
+use diesel::prelude::*;
+use serde::Serialize;
 
 #[derive(Identifiable, Queryable, Serialize)]
 #[diesel(belongs_to(Tribunal))]

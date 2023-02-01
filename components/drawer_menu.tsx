@@ -28,7 +28,7 @@ const DrawerMenu: React.FC = () =>
                     <input type="radio" name="colorScheme" value="role" className="radio radio-primary"/>
                 </label>
                 <label className="label cursor-pointer">
-                    <span className="label-text">Par cour d'appel</span>
+                    <span className="label-text">Par cour d&apos;appel</span>
                     <input type="radio" name="colorScheme" value="appealCourt" className="radio radio-primary"/>
                 </label>
                 <label className="label cursor-pointer">

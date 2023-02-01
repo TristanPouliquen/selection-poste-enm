@@ -25,17 +25,18 @@ interface IFormValues {
 }
 
 const CardFocus: React.FC<IProps> = ({ position }) => {
-    const closeOnEsc = (event: KeyboardEvent) => {
-        if (event.key === "Escape") {
-            // @ts-ignore
-            document.getElementById("modal").checked = false
-        }
-    }
+
     useEffect(() => {
+        const closeOnEsc = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                // @ts-ignore
+                document.getElementById("modal").checked = false
+            }
+        }
         document.addEventListener("keydown", closeOnEsc, false)
 
         return () => document.removeEventListener("keydown", closeOnEsc, false)
-    }, [closeOnEsc])
+    })
     const [editing, setEditing] = useState<boolean>(false)
     const { handleSubmit, control} = useForm<IFormValues>()
     const editNotes = (e: MouseEvent) =>  {

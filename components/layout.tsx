@@ -9,18 +9,19 @@ type Props = {
     home: boolean
 }
 const  Layout: React.FC<PropsWithChildren & Props> = ({ children, home }) => {
-    const closeOnEsc = (e: KeyboardEvent) => {
-        if (e.key === "Escape") {
-            // @ts-ignore
-            document.getElementById("drawer").checked = false
-        }
-    }
+
     useEffect(() => {
+        const closeOnEsc = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                // @ts-ignore
+                document.getElementById("drawer").checked = false
+            }
+        }
         document.addEventListener('keydown', closeOnEsc, false)
         return () => {
             document.removeEventListener('keydown', closeOnEsc, false)
         }
-    }, [closeOnEsc])
+    })
     return <>
         <Head>
             <title>Sélection 1er poste ENM</title>

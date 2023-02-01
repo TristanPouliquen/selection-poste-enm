@@ -1,6 +1,6 @@
+use crate::schema::roles;
 use diesel::prelude::*;
 use serde::Serialize;
-use crate::schema::roles;
 
 #[derive(Identifiable, Queryable, Serialize)]
 pub struct Role {
