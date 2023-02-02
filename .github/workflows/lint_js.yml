@@ -20,11 +20,6 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v3
 
-      - name: Set up pnpm package manager
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-
       - name: Set up Node.js LTS v16
         uses: actions/setup-node@v3
         with:
