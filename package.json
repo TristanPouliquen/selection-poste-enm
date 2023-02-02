@@ -20,7 +20,7 @@
     "@uiw/react-color-block": "^1.1.1",
     "@uiw/react-md-editor": "^3.6.0",
     "autoprefixer": "^10.4.13",
-    "daisyui": "^2.49.0",
+    "daisyui": "^2.50.0",
     "next": "13.1.5",
     "next-remove-imports": "^1.0.8",
     "postcss": "^8.4.21",
