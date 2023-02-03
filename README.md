@@ -80,7 +80,7 @@ Le projet utilise:
 1. [TypeScript](https://www.typescriptlang.org/) comme surcouche Javascript,
 2. [TailwindCSS](https://tailwindcss.com/) comme librairie de style,
 3. [DaisyUI](https://daisyui.com/) comme librairie de composants,
-4. [HeroIcons](https://heroicons.com/) comme librairie d'icônes,
+4. [RadixUI Icons](https://icons.radix-ui.com/) comme librairie d'icônes,
 5. [Rust](https://www.rust-lang.org/fr) comme langage de programmation backend,
 6. [Diesel](https://diesel.rs/) comme ORM,
 7. [SQlite](https://sqlite.org/index.html) comme SGBD.

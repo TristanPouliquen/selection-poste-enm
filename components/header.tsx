@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
+import { MixerHorizontalIcon } from "@radix-ui/react-icons";
 
 interface IProps {
   home: boolean;
@@ -19,7 +19,7 @@ const Header: React.FC<IProps> = ({ home }) => (
       </div>
 
       <label htmlFor="drawer" className="drawer-button cursor-pointer">
-        <AdjustmentsHorizontalIcon className="h-6 w-6" />
+        <MixerHorizontalIcon className="h-6 w-6" />
       </label>
     </div>
   </header>
