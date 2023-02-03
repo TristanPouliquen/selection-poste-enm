@@ -2,6 +2,7 @@ import React, { PropsWithChildren, useEffect } from "react";
 import Head from "next/head";
 import Header from "@/components/header";
 import DrawerMenu from "@/components/drawer_menu";
+import { RecoilRoot } from "recoil";
 
 type Props = {
   home: boolean;
@@ -20,7 +21,7 @@ const Layout: React.FC<PropsWithChildren & Props> = ({ children, home }) => {
     };
   });
   return (
-    <>
+    <RecoilRoot>
       <Head>
         <title>Sélection 1er poste ENM</title>
         <meta
@@ -41,7 +42,7 @@ const Layout: React.FC<PropsWithChildren & Props> = ({ children, home }) => {
           <DrawerMenu />
         </div>
       </div>
-    </>
+    </RecoilRoot>
   );
 };
 

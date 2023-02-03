@@ -5,25 +5,32 @@ import { Position } from "@/types/types";
 import CardSmall from "@/components/card_small";
 import CardFocus from "@/components/card_focus";
 import OnboardingModal from "@/components/Onboarding";
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  currentPositionAtom,
+  positionsAtom,
+  usePositionsActions,
+} from "@/_state";
 
 export default function Home() {
-  const [positions, setPositions] = useState<Position[]>([]);
-  const [focus, setFocus] = useState<Position>();
+  const positions = useRecoilValue(positionsAtom);
+  const currentPosition = useRecoilValue(currentPositionAtom);
+  const positionActions = usePositionsActions();
   useEffect(() => {
-    invoke<Position[]>("list_positions")
-      .then(setPositions)
-      .catch(console.error);
-  }, []);
+    if (positions.length === 0) {
+      positionActions.getAll();
+    }
+  }, [positions, positionActions]);
   return (
     <Layout home>
       <OnboardingModal />
       {positions.map((position: Position) => (
         <label key={"position_small_" + position.id} htmlFor="modal">
-          <CardSmall position={position} setFocus={setFocus} />
+          <CardSmall position={position} />
         </label>
       ))}
       <input type="checkbox" id="modal" className="modal-toggle" />
-      <CardFocus position={focus} />
+      <CardFocus position={currentPosition} />
     </Layout>
   );
 }
