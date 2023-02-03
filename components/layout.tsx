@@ -1,7 +1,5 @@
 import React, { PropsWithChildren, useEffect } from "react";
 import Head from "next/head";
-
-
 import Header from "@/components/header";
 import DrawerMenu from "@/components/drawer_menu";
 

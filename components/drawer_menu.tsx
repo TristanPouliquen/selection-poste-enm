@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { Cog6ToothIcon } from "@heroicons/react/24/outline";
+import { GearIcon } from "@radix-ui/react-icons";
 
 const DrawerMenu: React.FC = () => (
   <div className="flex flex-col p-4 pt-10 w-80 bg-base-100">
     <Link href="/settings">
-      <Cog6ToothIcon className="h-6 w-6 mr-2 inline" />
+      <GearIcon className="h-6 w-6 mr-2 inline" />
       Paramètres
     </Link>
     <div className="divider" />
