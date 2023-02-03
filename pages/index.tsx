@@ -5,7 +5,7 @@ import { Position } from "@/types/types";
 import CardSmall from "@/components/card_small";
 import CardFocus from "@/components/card_focus";
 import OnboardingModal from "@/components/Onboarding";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import {
   currentPositionAtom,
   positionsAtom,
