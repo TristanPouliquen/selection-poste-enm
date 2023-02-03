@@ -1,10 +1,7 @@
 import React, { PropsWithChildren, useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
-import {
-  AdjustmentsHorizontalIcon,
-  Cog6ToothIcon,
-} from "@heroicons/react/24/outline";
+
+
 import Header from "@/components/header";
 import DrawerMenu from "@/components/drawer_menu";
 
