@@ -1,5 +1,4 @@
-import { invoke } from "@tauri-apps/api/tauri";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Layout from "@/components/layout";
 import { Position } from "@/types/types";
 import CardSmall from "@/components/card_small";
