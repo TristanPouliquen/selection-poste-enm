@@ -1,17 +1,16 @@
 import React, { MouseEvent, useEffect, useState } from "react";
 import "@uiw/react-md-editor/markdown-editor.css";
-import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
 import { Position } from "@/types/types";
-import {
-  BuildingLibraryIcon,
-  ClipboardDocumentCheckIcon,
-  ClipboardDocumentIcon,
-  TagIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
 import { Controller, useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
+import {
+  BackpackIcon,
+  BookmarkIcon,
+  CheckCircledIcon,
+  Cross2Icon,
+  Pencil1Icon,
+} from "@radix-ui/react-icons";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -54,11 +53,11 @@ const CardFocus: React.FC<IProps> = ({ position }) => {
       >
         <h1 className="mx-2 text-4xl font-bold flex flex-row justify-between items-baseline">
           <div className="flex flex-row">
-            {position.role_id} <BuildingLibraryIcon className="h-10 w-10" />{" "}
+            {position.role_id} <BackpackIcon className="h-10 w-10" />{" "}
             {position.tribunal_id}
           </div>
           <label className="float-right cursor-pointer" htmlFor="modal">
-            <XMarkIcon className="h-8 w-8" />
+            <Cross2Icon className="h-8 w-8" />
           </label>
         </h1>
         <div className="divider"></div>
@@ -70,7 +69,7 @@ const CardFocus: React.FC<IProps> = ({ position }) => {
                 className="btn btn-sm -btn-accent no-animation w-36 flex justify-start"
                 onClick={handleSubmit(onSubmit)}
               >
-                <ClipboardDocumentCheckIcon className="h-5 w-5 mr-1" />
+                <CheckCircledIcon className="h-5 w-5 mr-1" />
                 Enregistrer
               </div>
             ) : (
@@ -78,7 +77,7 @@ const CardFocus: React.FC<IProps> = ({ position }) => {
                 className="btn btn-sm btn-ghost no-animation w-36 flex justify-start"
                 onClick={editNotes}
               >
-                <ClipboardDocumentIcon className="h-5 w-5 mr-2" />
+                <Pencil1Icon className="h-5 w-5 mr-2" />
                 Modifier
               </div>
             )}
@@ -102,7 +101,7 @@ const CardFocus: React.FC<IProps> = ({ position }) => {
         <div className="divider"></div>
         <div>
           <h3 className="text-lg font-bold flex items-center">
-            <TagIcon className="h-4 w-4" />
+            <BookmarkIcon className="h-4 w-4" />
             Tags
           </h3>
         </div>

@@ -1,10 +1,6 @@
 import React, { MouseEvent } from "react";
 import { Position } from "@/types/types";
-import {
-  BuildingLibraryIcon,
-  EyeIcon,
-  EyeSlashIcon,
-} from "@heroicons/react/24/outline";
+import { BackpackIcon, EyeNoneIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 
 interface IProps {
   position: Position;
@@ -28,7 +24,7 @@ const CardSmall: React.FC<IProps> = ({ position, setFocus }) => {
           <div className="flex w-1/4 grow">
             <div>{position.id}</div>
             <div className="flex">
-              <BuildingLibraryIcon className="h-6 w-6" />
+              <BackpackIcon className="h-6 w-6" />
               <div className="flex-1">{position.tribunal_id}</div>
             </div>
           </div>
@@ -42,9 +38,9 @@ const CardSmall: React.FC<IProps> = ({ position, setFocus }) => {
           </div>
           <div className="ml-3" onClick={toggleTaken}>
             {position.taken ? (
-              <EyeSlashIcon className="h-4 w-4  text-base-300" />
+              <EyeNoneIcon className="h-4 w-4  text-base-300" />
             ) : (
-              <EyeIcon className="h-4 w-4" />
+              <EyeOpenIcon className="h-4 w-4" />
             )}
           </div>
         </h2>
