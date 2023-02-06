@@ -7,7 +7,7 @@ import { RecoilRoot } from "recoil";
 type Props = {
   home: boolean;
 };
-const Layout: React.FC<PropsWithChildren & Props> = ({ children, home }) => {
+const Layout = ({ children, home }: PropsWithChildren & Props) => {
   useEffect(() => {
     const closeOnEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {

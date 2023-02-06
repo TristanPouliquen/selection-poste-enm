@@ -1,25 +1,15 @@
-import { useEffect } from "react";
 import Layout from "@/components/layout";
 import { Position } from "@/types/types";
 import CardSmall from "@/components/card_small";
 import CardFocus from "@/components/card_focus";
 import OnboardingModal from "@/components/Onboarding";
 import { useRecoilValue } from "recoil";
-import {
-  currentPositionAtom,
-  positionsAtom,
-  usePositionsActions,
-} from "@/_state";
+import { currentPositionAtom, positionsAtom } from "@/_state";
 
 export default function Home() {
   const positions = useRecoilValue(positionsAtom);
   const currentPosition = useRecoilValue(currentPositionAtom);
-  const positionActions = usePositionsActions();
-  useEffect(() => {
-    if (positions.length === 0) {
-      positionActions.getAll();
-    }
-  }, [positions, positionActions]);
+
   return (
     <Layout home>
       <OnboardingModal />

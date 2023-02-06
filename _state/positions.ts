@@ -1,4 +1,4 @@
-import { atom, useRecoilState, useSetRecoilState } from "recoil";
+import { atom, useRecoilState } from "recoil";
 import { Position, Tag } from "@/types/types";
 import { invoke } from "@tauri-apps/api";
 import { tagsAtom } from "@/_state/tags";

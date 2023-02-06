@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 import { AppealCourt } from "@/types/types";
 import ColorPicker from "@/components/color_picker";
 
-export default function Home() {
+export default function Settings() {
   const [appealCourts, setAppealCourts] = useState<AppealCourt[]>([]);
   useEffect(() => {
     invoke<AppealCourt[]>("list_appeal_courts")

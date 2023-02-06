@@ -8,7 +8,7 @@ export interface IStepProps {
   exitOnboarding: () => void;
   nextStep: () => void;
 }
-const OnboardingModal: React.FC = () => {
+const OnboardingModal = () => {
   const [step, setStep] = useState<number>(1);
   const exitOnboarding = () => console.log("skip");
   const nextStep = () => setStep(step + 1);

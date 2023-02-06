@@ -7,7 +7,7 @@ import { currentPositionAtom } from "@/_state";
 interface IProps {
   position: Position;
 }
-const CardSmall: React.FC<IProps> = ({ position }) => {
+const CardSmall = ({ position }: IProps) => {
   const setCurrentPosition = useSetRecoilState(currentPositionAtom);
   const toggleTaken = (e: MouseEvent) => {
     e.preventDefault();

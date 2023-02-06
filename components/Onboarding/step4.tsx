@@ -1,7 +1,7 @@
 import React from "react";
 import { IStepProps } from "@/components/Onboarding/index";
 
-const Step4: React.FC<IStepProps> = ({ exitOnboarding }) => (
+const Step4 = ({ exitOnboarding }: IStepProps) => (
   <>
     <div className="grow ml-4">
       <h1 className="text-4xl font-bold mb-3">Récap</h1>
