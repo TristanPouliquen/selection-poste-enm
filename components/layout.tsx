@@ -2,11 +2,12 @@ import React, { PropsWithChildren, useEffect } from "react";
 import Head from "next/head";
 import Header from "@/components/header";
 import DrawerMenu from "@/components/drawer_menu";
+import { RecoilRoot } from "recoil";
 
 type Props = {
   home: boolean;
 };
-const Layout = ({ children, home }: PropsWithChildren & Props) => {
+const Layout: React.FC<PropsWithChildren & Props> = ({ children, home }) => {
   useEffect(() => {
     const closeOnEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -20,7 +21,7 @@ const Layout = ({ children, home }: PropsWithChildren & Props) => {
     };
   });
   return (
-    <>
+    <RecoilRoot>
       <Head>
         <title>Sélection 1er poste ENM</title>
         <meta
@@ -41,7 +42,7 @@ const Layout = ({ children, home }: PropsWithChildren & Props) => {
           <DrawerMenu />
         </div>
       </div>
-    </>
+    </RecoilRoot>
   );
 };
 

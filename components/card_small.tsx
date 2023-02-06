@@ -2,13 +2,12 @@ import React, { MouseEvent } from "react";
 import { Position } from "@/types/types";
 import { BackpackIcon, EyeNoneIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import { useSetRecoilState } from "recoil";
-import { currentPositionAtom } from "@/state";
+import { currentPositionAtom } from "@/_state";
 
 interface IProps {
   position: Position;
-  handler: (position: Position) => void;
 }
-const CardSmall = ({ position, handler }: IProps) => {
+const CardSmall: React.FC<IProps> = ({ position }) => {
   const setCurrentPosition = useSetRecoilState(currentPositionAtom);
   const toggleTaken = (e: MouseEvent) => {
     e.preventDefault();
@@ -19,7 +18,7 @@ const CardSmall = ({ position, handler }: IProps) => {
       className={`card card-compact w-auto ${
         position.taken ? "bg-base-200" : "bg-base-100"
       } shadow-xl my-5 cursor-pointer`}
-      onClick={() => handler(position)}
+      onClick={() => setCurrentPosition(position)}
     >
       <div className="card-body">
         <h2 className="card-title flex items-center">

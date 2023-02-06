@@ -2,7 +2,7 @@ import React from "react";
 import { IStepProps } from "@/components/Onboarding/index";
 import StepActions from "@/components/Onboarding/step_actions";
 
-const Step1 = (props: IStepProps) => (
+const Step1: React.FC<IStepProps> = (props) => (
   <>
     <div className="grow hero">
       <div className="hero-content text-center max-w-full">

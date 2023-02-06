@@ -22,7 +22,7 @@ interface IFormValues {
   notes?: string;
 }
 
-const CardFocus = ({ position }: IProps) => {
+const CardFocus: React.FC<IProps> = ({ position }) => {
   useEffect(() => {
     const closeOnEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {

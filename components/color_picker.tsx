@@ -9,7 +9,7 @@ interface IProps {
   id: number;
   updateCallback: string;
 }
-const ColorPicker = ({ id, name, color, updateCallback }: IProps) => {
+const ColorPicker: React.FC<IProps> = ({ id, name, color, updateCallback }) => {
   const [displayColorPicker, setDisplayColorPicker] = useState<boolean>(false);
   const updateColor = (color: ColorResult) => {
     console.log(color);
