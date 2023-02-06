@@ -1,7 +1,7 @@
 import React from "react";
 import { IStepProps } from "@/components/Onboarding/index";
 
-const StepActions: React.FC<IStepProps> = ({ exitOnboarding, nextStep }) => (
+const StepActions = ({ exitOnboarding, nextStep }: IStepProps) => (
   <div className="modal-action justify-between items-baseline">
     <a className="link link-secondary" onClick={exitOnboarding}>
       Quitter l&apos;onboarding
