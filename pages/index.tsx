@@ -4,14 +4,16 @@ import CardSmall from "@/components/card_small";
 import CardFocus from "@/components/card_focus";
 import OnboardingModal from "@/components/Onboarding";
 import { useState } from "react";
+import { usePositionsActions } from "@/_state";
 // import { useRecoilValue } from "recoil";
 // import { currentPositionAtom, positionsAtom } from "@/_state";
 
 export default function Home() {
   //const positions = useRecoilValue(positionsAtom);
   //const currentPosition = useRecoilValue(currentPositionAtom);
-  const [positions] = useState<Position[]>([]);
+  const [positions, setPositions] = useState<Position[]>([]);
   const [currentPosition] = useState<Position>();
+  const usePositionActions = usePositionsActions();
   return (
     <Layout home>
       <OnboardingModal />
