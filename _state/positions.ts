@@ -1,21 +1,22 @@
-import { atom, useRecoilState } from "recoil";
 import { Position, Tag } from "@/types/types";
 import { invoke } from "@tauri-apps/api";
-import { tagsAtom } from "@/_state/tags";
+import { useState } from "react";
 
-const positionsAtom = atom<Position[]>({
-  key: "positionsAtom",
-  default: [],
-});
-
-const currentPositionAtom = atom<Position | undefined>({
-  key: "currentPositionAtom",
-  default: undefined,
-});
+// const positionsAtom = atom<Position[]>({
+//   key: "positionsAtom",
+//   default: [],
+// });
+//
+// const currentPositionAtom = atom<Position | undefined>({
+//   key: "currentPositionAtom",
+//   default: undefined,
+// });
 
 const usePositionsActions = () => {
-  const [positions, setPositions] = useRecoilState(positionsAtom);
-  const [tags, setTags] = useRecoilState(tagsAtom);
+  //const [positions, setPositions] = useRecoilState(positionsAtom);
+  //const [tags, setTags] = useRecoilState(tagsAtom);
+  const [positions, setPositions] = useState<Position[]>([]);
+  const [tags, setTags] = useState<Tag[]>([]);
   const getAll = async () => {
     setPositions(await invoke<Position[]>("get_positions"));
   };
@@ -63,4 +64,4 @@ const usePositionsActions = () => {
   return { getAll, update, getTags, addTag, removeTag };
 };
 
-export { positionsAtom, currentPositionAtom, usePositionsActions };
+export { usePositionsActions };

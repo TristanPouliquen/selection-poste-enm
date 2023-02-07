@@ -1,14 +1,14 @@
-import React, { MouseEvent } from "react";
+import React, { MouseEvent, useState } from "react";
 import { Position } from "@/types/types";
 import { BackpackIcon, EyeNoneIcon, EyeOpenIcon } from "@radix-ui/react-icons";
-import { useSetRecoilState } from "recoil";
-import { currentPositionAtom } from "@/_state";
+//import { useSetRecoilState } from "recoil";
+//import { currentPositionAtom } from "@/_state";
 
 interface IProps {
   position: Position;
 }
 const CardSmall = ({ position }: IProps) => {
-  const setCurrentPosition = useSetRecoilState(currentPositionAtom);
+  const [currentPosition, setCurrentPosition] = useState<Position>();
   const toggleTaken = (e: MouseEvent) => {
     e.preventDefault();
     console.log("toto");
