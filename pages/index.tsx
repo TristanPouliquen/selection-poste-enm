@@ -1,29 +1,40 @@
-import { invoke } from "@tauri-apps/api/tauri";
-import { useEffect, useState } from "react";
 import Layout from "@/components/layout";
 import { Position } from "@/types/types";
 import CardSmall from "@/components/card_small";
 import CardFocus from "@/components/card_focus";
-import OnboardingModal from "@/components/Onboarding";
+import {
+  currentPositionIdAtom,
+  positionsSelector,
+  positionSelector,
+  useInitializeState,
+} from "@/_state";
+import { useRecoilValue } from "recoil";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [positions, setPositions] = useState<Position[]>([]);
-  const [focus, setFocus] = useState<Position>();
+  const positions = useRecoilValue(positionsSelector);
+  const currentPositionId = useRecoilValue(currentPositionIdAtom);
+  const currentPosition = useRecoilValue(positionSelector(currentPositionId));
+  const { isInitialized, initializeState } = useInitializeState();
   useEffect(() => {
-    invoke<Position[]>("list_positions")
-      .then(setPositions)
-      .catch(console.error);
-  }, []);
+    if (!isInitialized) {
+      initializeState();
+    }
+  }, [isInitialized, initializeState]);
   return (
     <Layout home>
-      <OnboardingModal />
-      {positions.map((position: Position) => (
-        <label key={"position_small_" + position.id} htmlFor="modal">
-          <CardSmall position={position} setFocus={setFocus} />
-        </label>
-      ))}
+      {
+        //<OnboardingModal />
+      }
+      {positions.map((position?: Position) =>
+        position !== undefined ? (
+          <label key={"position_small_" + position.id} htmlFor="modal">
+            <CardSmall position={position} />
+          </label>
+        ) : null
+      )}
       <input type="checkbox" id="modal" className="modal-toggle" />
-      <CardFocus position={focus} />
+      <CardFocus position={currentPosition} />
     </Layout>
   );
 }

@@ -5,7 +5,7 @@ import { MixerHorizontalIcon } from "@radix-ui/react-icons";
 interface IProps {
   home: boolean;
 }
-const Header: React.FC<IProps> = ({ home }) => (
+const Header = ({ home }: IProps) => (
   <header>
     <div className="navbar bg-base-100 px-6">
       <div className="flex-1">

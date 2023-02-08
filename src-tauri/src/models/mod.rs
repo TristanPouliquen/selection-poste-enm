@@ -2,6 +2,7 @@ use diesel::{Connection, SqliteConnection};
 use dotenvy::dotenv;
 use std::env;
 
+pub mod app_state;
 pub mod appeal_court;
 pub mod group;
 pub mod position;

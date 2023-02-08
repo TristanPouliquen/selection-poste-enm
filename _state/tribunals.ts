@@ -1,0 +1,45 @@
+import { atom, selectorFamily, useRecoilState } from "recoil";
+import { Tribunal } from "@/types/types";
+import { invoke } from "@tauri-apps/api/tauri";
+import { appealCourtSelector } from "@/_state/appealCourts";
+import { groupsAtom, groupSelector } from "@/_state/groups";
+
+const tribunalsAtom = atom<Tribunal[]>({
+  key: "tribunalsAtom",
+  default: [],
+});
+
+const tribunalSelector = selectorFamily({
+  key: "tribunalsSelector",
+  get:
+    (id) =>
+    ({ get }) => {
+      const tribunal = get(tribunalsAtom).find(
+        (tribunal) => tribunal.id === id
+      );
+      if (tribunal === undefined) {
+        return undefined;
+      }
+      const appealCourt = get(appealCourtSelector(tribunal.appealCourtId));
+      const group = get(groupSelector(tribunal.groupId));
+      console.log("group", get(groupsAtom), tribunal, group);
+      return { ...tribunal, appealCourt, group };
+    },
+});
+
+const useTribunalsAction = () => {
+  const [tribunals, setTribunals] = useRecoilState(tribunalsAtom);
+  const getAll = async () => {
+    setTribunals(await invoke<Tribunal[]>("get_tribunals"));
+  };
+  const update = async (tribunal: Tribunal) => {
+    const updatedTribunal = await invoke<Tribunal>("update_tribunal", tribunal);
+    setTribunals(
+      tribunals.map((t) => (t.id === updatedTribunal.id ? updatedTribunal : t))
+    );
+  };
+
+  return { getAll, update };
+};
+
+export { tribunalsAtom, tribunalSelector, useTribunalsAction };

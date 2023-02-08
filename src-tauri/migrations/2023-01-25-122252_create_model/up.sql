@@ -58,5 +58,5 @@ CREATE TABLE position_tags (
 CREATE TABLE app_state (
     id INT PRIMARY KEY NOT NULL,
     onboarded TINYINT(1) DEFAULT '0' NOT NULL,
-    activeFilters TEXT DEFAULT NULL
+    active_filters TEXT DEFAULT NULL
 );

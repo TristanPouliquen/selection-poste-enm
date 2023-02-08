@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { GearIcon } from "@radix-ui/react-icons";
 
-const DrawerMenu: React.FC = () => (
+const DrawerMenu = () => (
   <div className="flex flex-col p-4 pt-10 w-80 bg-base-100">
     <Link href="/settings">
       <GearIcon className="h-6 w-6 mr-2 inline" />
