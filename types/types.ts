@@ -1,7 +1,7 @@
 export type AppState = {
   id: number;
   onboarded: boolean;
-  active_filters?: string;
+  activeFilters?: string;
 };
 
 export type AppealCourt = {
@@ -16,7 +16,9 @@ export type Tribunal = {
   color: string;
   timeTo: number;
   appealCourtId: number;
+  appealCourt?: AppealCourt;
   groupId: number;
+  group?: Group;
 };
 
 export type Group = {
@@ -41,10 +43,12 @@ export type Position = {
   id: number;
   placed: boolean;
   taken: boolean;
-  prevalent_domain: string;
+  prevalentDomain: string;
   ranking: number;
   notes?: string;
-  tribunal_id: number;
-  role_id: number;
+  tribunalId: number;
+  tribunal?: Tribunal;
+  roleId: number;
+  role?: Role;
   tags?: Tag[];
 };

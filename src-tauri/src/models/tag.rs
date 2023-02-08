@@ -1,12 +1,21 @@
 use crate::schema::{position_tags, tags};
 use diesel::prelude::*;
 use serde::Serialize;
+use crate::models::establish_connection;
 
 #[derive(Identifiable, Queryable, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Tag {
     pub id: i32,
     pub name: String,
     pub color: String,
+}
+
+pub fn tag_list() -> Vec<Tag> {
+    tags::dsl::tags
+        .select(tags::all_columns)
+        .load::<Tag>(&mut establish_connection())
+        .expect("Failed loading Tags")
 }
 
 #[derive(Insertable)]
@@ -19,6 +28,7 @@ pub struct NewTag<'a> {
 #[derive(Queryable, Serialize)]
 #[diesel(belongs_to(Position))]
 #[diesel(belongs_to(Tag))]
+#[serde(rename_all = "camelCase")]
 pub struct PositionTag {
     pub id: i32,
     pub position_id: i32,

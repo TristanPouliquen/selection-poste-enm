@@ -4,7 +4,7 @@ diesel::table! {
     app_state (id) {
         id -> Integer,
         onboarded -> Bool,
-        activeFilters -> Nullable<Text>,
+        active_filters -> Nullable<Text>,
     }
 }
 

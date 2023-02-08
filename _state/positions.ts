@@ -1,22 +1,54 @@
 import { Position, Tag } from "@/types/types";
-import { invoke } from "@tauri-apps/api";
-import { useState } from "react";
+import { invoke } from "@tauri-apps/api/tauri";
+import { atom, selector, selectorFamily, useRecoilState } from "recoil";
+import { tagsAtom } from "@/_state/tags";
+import { tribunalSelector } from "@/_state/tribunals";
+import { roleSelector } from "@/_state/roles";
 
-// const positionsAtom = atom<Position[]>({
-//   key: "positionsAtom",
-//   default: [],
-// });
-//
-// const currentPositionAtom = atom<Position | undefined>({
-//   key: "currentPositionAtom",
-//   default: undefined,
-// });
+const positionsAtom = atom<Position[]>({
+  key: "positionsAtom",
+  default: [],
+});
+
+const currentPositionIdAtom = atom<number | undefined>({
+  key: "currentPositionIdAtom",
+  default: undefined,
+});
+
+const positionsSelector = selector({
+  key: "positionsSelector",
+  get: ({ get }) => {
+    const positions = get(positionsAtom);
+    return positions.map((position: Position) =>
+      get(positionSelector(position.id))
+    );
+  },
+});
+
+const positionSelector = selectorFamily({
+  key: "positionSelector",
+  get:
+    (id) =>
+    ({ get }) => {
+      if (id === undefined) {
+        return undefined;
+      }
+      const position = get(positionsAtom).find(
+        (position) => position.id === id
+      );
+      if (position === undefined) {
+        return undefined;
+      }
+      const tribunal = get(tribunalSelector(position.tribunalId));
+      const role = get(roleSelector(position.roleId));
+
+      return { ...position, tribunal, role };
+    },
+});
 
 const usePositionsActions = () => {
-  //const [positions, setPositions] = useRecoilState(positionsAtom);
-  //const [tags, setTags] = useRecoilState(tagsAtom);
-  const [positions, setPositions] = useState<Position[]>([]);
-  const [tags, setTags] = useState<Tag[]>([]);
+  const [positions, setPositions] = useRecoilState(positionsAtom);
+  const [tags, setTags] = useRecoilState(tagsAtom);
   const getAll = async () => {
     setPositions(await invoke<Position[]>("get_positions"));
   };
@@ -25,9 +57,7 @@ const usePositionsActions = () => {
       position,
     });
     setPositions(
-      positions.map((position) =>
-        position.id === updatedPosition.id ? updatedPosition : position
-      )
+      positions.map((p) => (p.id === updatedPosition.id ? updatedPosition : p))
     );
   };
   const getTags = async (position: Position) => {
@@ -64,4 +94,9 @@ const usePositionsActions = () => {
   return { getAll, update, getTags, addTag, removeTag };
 };
 
-export { usePositionsActions };
+export {
+  positionsSelector,
+  currentPositionIdAtom,
+  positionSelector,
+  usePositionsActions,
+};

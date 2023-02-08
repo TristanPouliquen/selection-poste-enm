@@ -1,4 +1,6 @@
 import React, { MouseEvent, useEffect, useState } from "react";
+import { formatDuration } from "date-fns";
+import { fr } from "date-fns/locale";
 import "@uiw/react-md-editor/markdown-editor.css";
 import dynamic from "next/dynamic";
 import { Position } from "@/types/types";
@@ -11,6 +13,7 @@ import {
   Cross2Icon,
   Pencil1Icon,
 } from "@radix-ui/react-icons";
+import { usePositionsActions } from "@/_state";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -40,9 +43,11 @@ const CardFocus = ({ position }: IProps) => {
     e.preventDefault();
     setEditing(true);
   };
+  const { update } = usePositionsActions();
   const onSubmit = (values: IFormValues) => {
-    setEditing(false);
-    console.log(values);
+    if (position !== undefined) {
+      update({ ...position, ...values }).then(() => setEditing(false));
+    }
   };
 
   return position ? (
@@ -53,8 +58,9 @@ const CardFocus = ({ position }: IProps) => {
       >
         <h1 className="mx-2 text-4xl font-bold flex flex-row justify-between items-baseline">
           <div className="flex flex-row">
-            {position.role_id} <BackpackIcon className="h-10 w-10" />{" "}
-            {position.tribunal_id}
+            {position.role?.name}{" "}
+            <BackpackIcon className="ml-4 mr-2 h-10 w-10" />{" "}
+            {position.tribunal?.name}
           </div>
           <label className="float-right cursor-pointer" htmlFor="modal">
             <Cross2Icon className="h-8 w-8" />
@@ -98,6 +104,21 @@ const CardFocus = ({ position }: IProps) => {
             </div>
           )}
         </div>
+        <div className="divider"></div>
+        <h3 className="text-lg font-bold text-base-300">
+          {position.tribunal?.name}
+        </h3>
+        <p>Cour d&apos;appel: {position.tribunal?.appealCourt?.name}</p>
+        <p>Groupe: {position.tribunal?.group?.name}</p>
+        <p>
+          Temps de trajet:{" "}
+          {position.tribunal?.timeTo
+            ? formatDuration(
+                { minutes: position.tribunal.timeTo },
+                { locale: fr }
+              )
+            : "Non renseigné"}
+        </p>
         <div className="divider"></div>
         <div>
           <h3 className="text-lg font-bold flex items-center">

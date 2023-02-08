@@ -4,6 +4,7 @@ use diesel::prelude::*;
 use serde::{Serialize, Deserialize};
 
 #[derive(Identifiable, Queryable, Serialize, Deserialize, AsChangeset)]
+#[serde(rename_all = "camelCase")]
 pub struct AppealCourt {
     pub id: i32,
     pub name: String,

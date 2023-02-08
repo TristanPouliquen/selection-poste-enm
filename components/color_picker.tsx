@@ -1,22 +1,18 @@
 import React, { useState } from "react";
-import { invoke } from "@tauri-apps/api/tauri";
 import Block from "@uiw/react-color-block";
 import { ColorResult } from "@uiw/color-convert";
 
 interface IProps {
   name: string;
   color: string;
-  id: number;
-  updateCallback: string;
+  onColorChanged: (color: ColorResult) => void;
 }
-const ColorPicker = ({ id, name, color, updateCallback }: IProps) => {
+const ColorPicker = ({ name, color, onColorChanged }: IProps) => {
   const [displayColorPicker, setDisplayColorPicker] = useState<boolean>(false);
-  const updateColor = (color: ColorResult) => {
+  const onChange = (color: ColorResult) => {
     console.log(color);
     setDisplayColorPicker(false);
-    invoke(updateCallback, { id, color: color.hex })
-      .then(console.log)
-      .catch(console.error);
+    onColorChanged(color);
   };
   return (
     <div className="flex items-baseline mt-2">
@@ -30,9 +26,9 @@ const ColorPicker = ({ id, name, color, updateCallback }: IProps) => {
         />
         {displayColorPicker ? (
           <Block
-            className="absolute z-2 float drop-shadow-md translate-y-2"
+            className="absolute z-2 top-2 drop-shadow-md"
             color={color}
-            onChange={updateColor}
+            onChange={onChange}
           />
         ) : null}
       </div>

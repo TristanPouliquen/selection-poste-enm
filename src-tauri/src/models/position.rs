@@ -6,6 +6,7 @@ use serde::{Serialize, Deserialize};
 #[derive(Identifiable, Queryable, Serialize, Deserialize, AsChangeset)]
 #[diesel(belongs_to(Tribunal))]
 #[diesel(belongs_to(Role))]
+#[serde(rename_all = "camelCase")]
 pub struct Position {
     pub id: i32,
     pub placed: bool,

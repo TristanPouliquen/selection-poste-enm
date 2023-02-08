@@ -4,6 +4,7 @@ use diesel::prelude::*;
 use serde::Serialize;
 
 #[derive(Identifiable, Queryable, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Role {
     pub id: i32,
     pub name: String,

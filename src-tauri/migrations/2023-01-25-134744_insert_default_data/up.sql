@@ -1,3 +1,6 @@
+INSERT INTO `app_state` VALUES
+(1, 0, NULL);
+
 INSERT INTO `groups`(id, name) VALUES
 (1, 'Groupe 1'),
 (2, 'Groupe 2'),

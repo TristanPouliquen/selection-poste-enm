@@ -8,6 +8,7 @@ pub mod position;
 pub mod role;
 pub mod tag;
 pub mod tribunal;
+pub mod app_state;
 
 pub fn establish_connection() -> SqliteConnection {
     dotenv().ok();
