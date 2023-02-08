@@ -14,10 +14,14 @@ use crate::models::tag::*;
 use crate::models::tribunal::*;
 
 #[tauri::command]
-fn get_app_state() -> AppState { app_state_get()}
+fn get_app_state() -> AppState {
+    app_state_get()
+}
 
 #[tauri::command]
-fn update_app_state(app_state: AppState) -> AppState { app_state_update(app_state)}
+fn update_app_state(app_state: AppState) -> AppState {
+    app_state_update(app_state)
+}
 
 #[tauri::command]
 fn get_appeal_courts() -> Vec<AppealCourt> {
@@ -30,7 +34,9 @@ fn update_appeal_court(appeal_court: AppealCourt) -> AppealCourt {
 }
 
 #[tauri::command]
-fn get_groups() -> Vec<Group> { group_list()}
+fn get_groups() -> Vec<Group> {
+    group_list()
+}
 
 #[tauri::command]
 fn get_positions() -> Vec<Position> {
@@ -38,13 +44,19 @@ fn get_positions() -> Vec<Position> {
 }
 
 #[tauri::command]
-fn update_position(position: Position) -> Position { position_update(position)}
+fn update_position(position: Position) -> Position {
+    position_update(position)
+}
 
 #[tauri::command]
-fn get_roles() -> Vec<Role> { role_list()}
+fn get_roles() -> Vec<Role> {
+    role_list()
+}
 
 #[tauri::command]
-fn get_tags() -> Vec<Tag> { tag_list()}
+fn get_tags() -> Vec<Tag> {
+    tag_list()
+}
 
 #[tauri::command]
 fn get_tribunals() -> Vec<Tribunal> {
@@ -52,7 +64,9 @@ fn get_tribunals() -> Vec<Tribunal> {
 }
 
 #[tauri::command]
-fn update_tribunal(tribunal: Tribunal) -> Tribunal {tribunal_update(tribunal)}
+fn update_tribunal(tribunal: Tribunal) -> Tribunal {
+    tribunal_update(tribunal)
+}
 
 fn main() {
     tauri::Builder::default()

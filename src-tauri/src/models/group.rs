@@ -1,7 +1,7 @@
+use crate::models::establish_connection;
 use crate::schema::groups;
 use diesel::prelude::*;
 use serde::Serialize;
-use crate::models::establish_connection;
 
 #[derive(Identifiable, Queryable, Serialize)]
 #[serde(rename_all = "camelCase")]

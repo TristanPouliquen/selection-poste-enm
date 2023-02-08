@@ -1,7 +1,7 @@
-use diesel::prelude::*;
-use serde::{Deserialize, Serialize};
 use crate::models::establish_connection;
 use crate::schema::app_state;
+use diesel::prelude::*;
+use serde::{Deserialize, Serialize};
 
 #[derive(Queryable, Serialize, Deserialize, AsChangeset)]
 #[diesel(table_name = app_state)]
@@ -9,11 +9,13 @@ use crate::schema::app_state;
 pub struct AppState {
     pub id: i32,
     pub onboarded: bool,
-    pub active_filters: Option<String>
+    pub active_filters: Option<String>,
 }
 
 pub fn app_state_get() -> AppState {
-    app_state::dsl::app_state.first(&mut establish_connection()).expect("Failed loading app state")
+    app_state::dsl::app_state
+        .first(&mut establish_connection())
+        .expect("Failed loading app state")
 }
 
 pub fn app_state_update(app_state: AppState) -> AppState {

@@ -1,7 +1,7 @@
 use crate::models::establish_connection;
 use crate::schema::appeal_courts;
 use diesel::prelude::*;
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Identifiable, Queryable, Serialize, Deserialize, AsChangeset)]
 #[serde(rename_all = "camelCase")]

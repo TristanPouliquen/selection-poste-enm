@@ -1,7 +1,7 @@
 use crate::models::establish_connection;
 use crate::schema::positions;
 use diesel::prelude::*;
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Identifiable, Queryable, Serialize, Deserialize, AsChangeset)]
 #[diesel(belongs_to(Tribunal))]
@@ -31,7 +31,7 @@ pub fn position_update(position: Position) -> Position {
             positions::ranking.eq(position.ranking),
             positions::notes.eq(position.notes),
             positions::prevalent_domain.eq(position.prevalent_domain),
-            positions::taken.eq(position.taken)
+            positions::taken.eq(position.taken),
         ))
         .get_result(&mut establish_connection())
         .unwrap()
