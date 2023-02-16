@@ -19,12 +19,11 @@ const positionsSelector = selector({
   key: "positionsSelector",
   get: ({ get }) => {
     const positions = get(positionsAtom);
-    return [...positions]
-      .sort((a, b) => a.ranking - b.ranking)
-      .map(
-        (position: Position) => get(positionSelector(position.id)) ?? position
-      );
+    return [...positions].map(
+      (position: Position) => get(positionSelector(position.id)) ?? position
+    );
   },
+  set: ({ set }, newValue) => set(positionsAtom, newValue),
 });
 
 const positionSelector = selectorFamily({

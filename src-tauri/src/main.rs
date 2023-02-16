@@ -49,7 +49,9 @@ fn update_position(position: Position) -> Position {
 }
 
 #[tauri::command]
-fn update_position_ranking(position: Position) -> Vec<Position> { position_update_ranking(position)}
+fn update_position_ranking(position: Position) -> Vec<Position> {
+    position_update_ranking(position)
+}
 
 #[tauri::command]
 fn get_roles() -> Vec<Role> {

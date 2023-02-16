@@ -1,6 +1,6 @@
-use diesel::dsl::count;
 use crate::models::establish_connection;
 use crate::schema::positions;
+use diesel::dsl::count;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 
@@ -22,6 +22,7 @@ pub struct Position {
 pub fn position_list() -> Vec<Position> {
     positions::dsl::positions
         .select(positions::all_columns)
+        .order((positions::ranking.asc(), positions::id.asc()))
         .load::<Position>(&mut establish_connection())
         .expect("Loading positions failed")
 }
@@ -41,7 +42,8 @@ pub fn position_update_ranking(mut position: Position) -> Vec<Position> {
     if position.ranking < 1 {
         position.ranking = 1;
     }
-    let total_positions = positions::dsl::positions.select(count(positions::id))
+    let total_positions = positions::dsl::positions
+        .select(count(positions::id))
         .first(&mut establish_connection())
         .map(|x: i64| x as i32)
         .unwrap_or_else(|_| panic!("Unable to count Positions"));
@@ -50,11 +52,12 @@ pub fn position_update_ranking(mut position: Position) -> Vec<Position> {
     }
     if position.ranking == 1 {
         diesel::update(positions::table)
-            .set(positions::ranking.eq(positions::ranking +1))
+            .set(positions::ranking.eq(positions::ranking + 1))
             .execute(&mut establish_connection())
             .expect("Failed updating ranking");
     } else {
-        let previous_position: Position = positions::table.find(position.id)
+        let previous_position: Position = positions::table
+            .find(position.id)
             .get_result::<Position>(&mut establish_connection())
             .unwrap_or_else(|_| panic!("Unable to find Position {0}", position.id));
         diesel::update(positions::table.filter(positions::ranking.gt(position.ranking)))
