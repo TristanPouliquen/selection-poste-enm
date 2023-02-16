@@ -1,10 +1,7 @@
 import Layout from "@/components/layout";
-import { Position } from "@/types/types";
-import CardSmall from "@/components/card_small";
 import CardFocus from "@/components/card_focus";
 import {
   currentPositionIdAtom,
-  positionsSelector,
   positionSelector,
   useInitializeState,
   appStateAtom,
@@ -12,10 +9,10 @@ import {
 import { useRecoilValue } from "recoil";
 import React, { useEffect } from "react";
 import OnboardingModal from "@/components/Onboarding";
+import PositionsList from "@/components/positions_list";
 
 export default function Home() {
   const appState = useRecoilValue(appStateAtom);
-  const positions = useRecoilValue(positionsSelector);
   const currentPositionId = useRecoilValue(currentPositionIdAtom);
   const currentPosition = useRecoilValue(positionSelector(currentPositionId));
   const { isInitialized, initializeState } = useInitializeState();
@@ -27,13 +24,7 @@ export default function Home() {
   return (
     <Layout home>
       {appState && !appState.onboarded ? <OnboardingModal /> : null}
-      {positions.map((position?: Position) =>
-        position !== undefined ? (
-          <label key={"position_small_" + position.id} htmlFor="modal">
-            <CardSmall position={position} />
-          </label>
-        ) : null
-      )}
+      <PositionsList />
       <input type="checkbox" id="modal" className="modal-toggle" />
       <CardFocus position={currentPosition} />
     </Layout>

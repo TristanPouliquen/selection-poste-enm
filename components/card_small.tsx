@@ -15,7 +15,8 @@ const CardSmall = ({ position }: IProps) => {
     update({ ...position, taken: !position.taken });
   };
   return (
-    <div
+    <label
+      htmlFor="modal"
       className={`card card-compact w-auto ${
         position.taken ? "bg-base-200" : "bg-base-100"
       } shadow-xl my-5 cursor-pointer`}
@@ -48,7 +49,7 @@ const CardSmall = ({ position }: IProps) => {
           </div>
         </h2>
       </div>
-    </div>
+    </label>
   );
 };
 export default CardSmall;
