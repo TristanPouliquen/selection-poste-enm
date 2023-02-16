@@ -26,7 +26,7 @@ export default function Home() {
       {appState && !appState.onboarded ? <OnboardingModal /> : null}
       <PositionsList />
       <input type="checkbox" id="modal" className="modal-toggle" />
-      <CardFocus position={currentPosition} />
+      {currentPosition ? <CardFocus position={currentPosition} /> : null}
     </Layout>
   );
 }

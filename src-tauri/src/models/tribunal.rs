@@ -10,8 +10,9 @@ use serde::{Deserialize, Serialize};
 pub struct Tribunal {
     pub id: i32,
     pub name: String,
-    pub color: String,
+    pub notes: Option<String>,
     pub time_to: Option<i32>,
+    pub color: String,
     pub group_id: i32,
     pub appeal_court_id: i32,
 }

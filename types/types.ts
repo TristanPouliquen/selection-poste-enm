@@ -13,8 +13,9 @@ export type AppealCourt = {
 export type Tribunal = {
   id: number;
   name: string;
-  color: string;
+  notes?: string;
   timeTo: number;
+  color: string;
   appealCourtId: number;
   appealCourt?: AppealCourt;
   groupId: number;

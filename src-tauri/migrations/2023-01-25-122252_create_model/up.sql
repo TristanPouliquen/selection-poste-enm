@@ -25,8 +25,9 @@ CREATE TABLE roles (
 CREATE TABLE tribunals (
     id INT PRIMARY KEY NOT NULL,
     name VARCHAR(100) NOT NULL,
-    color VARCHAR(7) NOT NULL DEFAULT '#cacaca',
+    notes TEXT DEFAULT NULL,
     time_to INT DEFAULT NULL,
+    color VARCHAR(7) NOT NULL DEFAULT '#cacaca',
     group_id INT NOT NULL,
     appeal_court_id INT NOT NULL,
     CONSTRAINT tribunal_group FOREIGN KEY (group_id) REFERENCES `group` (id),
