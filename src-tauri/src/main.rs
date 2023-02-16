@@ -49,6 +49,9 @@ fn update_position(position: Position) -> Position {
 }
 
 #[tauri::command]
+fn update_position_ranking(position: Position) -> Vec<Position> { position_update_ranking(position)}
+
+#[tauri::command]
 fn get_roles() -> Vec<Role> {
     role_list()
 }
@@ -78,6 +81,7 @@ fn main() {
             get_groups,
             get_positions,
             update_position,
+            update_position_ranking,
             get_roles,
             get_tags,
             get_tribunals,

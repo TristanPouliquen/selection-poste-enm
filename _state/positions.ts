@@ -51,9 +51,9 @@ const positionSelector = selectorFamily({
 const usePositionsActions = () => {
   const [positions, setPositions] = useRecoilState(positionsAtom);
   const [tags, setTags] = useRecoilState(tagsAtom);
-  const getAll = async () => {
+  const getAll = async () =>
     setPositions(await invoke<Position[]>("get_positions"));
-  };
+
   const update = async (position: Position) => {
     const updatedPosition = await invoke<Position>("update_position", {
       position,
@@ -62,6 +62,9 @@ const usePositionsActions = () => {
       positions.map((p) => (p.id === updatedPosition.id ? updatedPosition : p))
     );
   };
+
+  const updateRanking = async (position: Position) =>
+    setPositions(await invoke("update_position_ranking", { position }));
   const getTags = async (position: Position) => {
     const tags = await invoke<Tag[]>("get_position_tagss", { position });
     setPositions(
@@ -93,7 +96,7 @@ const usePositionsActions = () => {
     }
   };
 
-  return { getAll, update, getTags, addTag, removeTag };
+  return { getAll, update, updateRanking, getTags, addTag, removeTag };
 };
 
 export {

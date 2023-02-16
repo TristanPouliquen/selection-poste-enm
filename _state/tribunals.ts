@@ -2,7 +2,7 @@ import { atom, selectorFamily, useRecoilState } from "recoil";
 import { Tribunal } from "@/types/types";
 import { invoke } from "@tauri-apps/api/tauri";
 import { appealCourtSelector } from "@/_state/appealCourts";
-import { groupsAtom, groupSelector } from "@/_state/groups";
+import { groupSelector } from "@/_state/groups";
 
 const tribunalsAtom = atom<Tribunal[]>({
   key: "tribunalsAtom",
@@ -22,7 +22,6 @@ const tribunalSelector = selectorFamily({
       }
       const appealCourt = get(appealCourtSelector(tribunal.appealCourtId));
       const group = get(groupSelector(tribunal.groupId));
-      console.log("group", get(groupsAtom), tribunal, group);
       return { ...tribunal, appealCourt, group };
     },
 });

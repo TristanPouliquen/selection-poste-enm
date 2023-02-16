@@ -10,7 +10,6 @@ interface IProps {
 const ColorPicker = ({ name, color, onColorChanged }: IProps) => {
   const [displayColorPicker, setDisplayColorPicker] = useState<boolean>(false);
   const onChange = (color: ColorResult) => {
-    console.log(color);
     setDisplayColorPicker(false);
     onColorChanged(color);
   };

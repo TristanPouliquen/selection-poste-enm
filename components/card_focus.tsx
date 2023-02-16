@@ -14,6 +14,7 @@ import {
   Pencil1Icon,
 } from "@radix-ui/react-icons";
 import { usePositionsActions } from "@/_state";
+import RankInputGroup from "@/components/rank_inputgroup";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -43,7 +44,7 @@ const CardFocus = ({ position }: IProps) => {
     e.preventDefault();
     setEditing(true);
   };
-  const { update } = usePositionsActions();
+  const { update, updateRanking } = usePositionsActions();
   const onSubmit = (values: IFormValues) => {
     if (position !== undefined) {
       update({ ...position, ...values }).then(() => setEditing(false));
@@ -56,12 +57,13 @@ const CardFocus = ({ position }: IProps) => {
         htmlFor=""
         className="modal-box h-5/6 w-11/12 max-w-7xl flex flex-col"
       >
-        <h1 className="mx-2 text-4xl font-bold flex flex-row justify-between items-baseline">
-          <div className="flex flex-row">
+        <h1 className="mx-2 text-4xl font-bold flex flex-row items-baseline">
+          <div className="flex flex-row grow">
             {position.role?.name}{" "}
             <BackpackIcon className="ml-4 mr-2 h-10 w-10" />{" "}
             {position.tribunal?.name}
           </div>
+          <RankInputGroup position={position} updatePosition={updateRanking} />
           <label className="float-right cursor-pointer" htmlFor="modal">
             <Cross2Icon className="h-8 w-8" />
           </label>

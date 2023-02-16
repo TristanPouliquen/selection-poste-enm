@@ -1,3 +1,4 @@
+use diesel::dsl::count;
 use crate::models::establish_connection;
 use crate::schema::positions;
 use diesel::prelude::*;
@@ -28,11 +29,46 @@ pub fn position_list() -> Vec<Position> {
 pub fn position_update(position: Position) -> Position {
     diesel::update(positions::table.find(position.id))
         .set((
-            positions::ranking.eq(position.ranking),
             positions::notes.eq(position.notes),
             positions::prevalent_domain.eq(position.prevalent_domain),
             positions::taken.eq(position.taken),
         ))
         .get_result(&mut establish_connection())
         .unwrap()
+}
+
+pub fn position_update_ranking(mut position: Position) -> Vec<Position> {
+    if position.ranking < 1 {
+        position.ranking = 1;
+    }
+    let total_positions = positions::dsl::positions.select(count(positions::id))
+        .first(&mut establish_connection())
+        .map(|x: i64| x as i32)
+        .unwrap_or_else(|_| panic!("Unable to count Positions"));
+    if position.ranking > total_positions {
+        position.ranking = total_positions;
+    }
+    if position.ranking == 1 {
+        diesel::update(positions::table)
+            .set(positions::ranking.eq(positions::ranking +1))
+            .execute(&mut establish_connection())
+            .expect("Failed updating ranking");
+    } else {
+        let previous_position: Position = positions::table.find(position.id)
+            .get_result::<Position>(&mut establish_connection())
+            .unwrap_or_else(|_| panic!("Unable to find Position {0}", position.id));
+        diesel::update(positions::table.filter(positions::ranking.gt(position.ranking)))
+            .set(positions::ranking.eq(positions::ranking + 1))
+            .execute(&mut establish_connection())
+            .expect("Failed updating ranking");
+        diesel::update(positions::table.filter(positions::ranking.gt(previous_position.ranking)))
+            .set(positions::ranking.eq(positions::ranking - 1))
+            .execute(&mut establish_connection())
+            .expect("Failed updating ranking");
+    }
+    diesel::update(positions::table.find(position.id))
+        .set(positions::ranking.eq(position.ranking))
+        .execute(&mut establish_connection())
+        .expect("Failed updating ranking");
+    position_list()
 }
