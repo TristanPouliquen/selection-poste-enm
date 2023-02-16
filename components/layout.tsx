@@ -32,9 +32,9 @@ const Layout = ({ children, home }: PropsWithChildren & Props) => {
       </Head>
       <div className="flex-none drawer drawer-end">
         <input type="checkbox" id="drawer" className="drawer-toggle" />
-        <div className="drawer-content">
+        <div className="drawer-content divide-y flex flex-col">
           <Header home={home} />
-          <main className="px-5">{children}</main>
+          <main className="px-5 grow flex">{children}</main>
         </div>
         <div className="drawer-side">
           <label htmlFor="drawer" className="drawer-overlay"></label>

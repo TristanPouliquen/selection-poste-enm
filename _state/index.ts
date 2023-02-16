@@ -39,7 +39,6 @@ const useInitializeState = () => {
     ])
       .then(() => setLoading(false))
       .catch((e) => {
-        console.error(e);
         setLoading(false);
       });
   };
