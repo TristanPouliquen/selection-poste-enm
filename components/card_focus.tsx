@@ -57,7 +57,7 @@ const CardFocus = ({ position }: IProps) => {
         htmlFor=""
         className="modal-box h-5/6 w-11/12 max-w-7xl flex flex-col"
       >
-        <h1 className="mx-2 text-4xl font-bold flex flex-row items-baseline">
+        <h1 className="mx-2 text-4xl font-bold flex flex-row items-center">
           <div className="flex flex-row grow">
             {position.role?.name}{" "}
             <BackpackIcon className="ml-4 mr-2 h-10 w-10" />{" "}

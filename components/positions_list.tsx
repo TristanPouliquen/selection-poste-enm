@@ -2,9 +2,9 @@ import React from "react";
 import { DragDropContext, Draggable, DropResult } from "react-beautiful-dnd";
 import { useRecoilState } from "recoil";
 import { Position } from "@/types/types";
-import CardSmall from "@/components/card_small";
 import { positionsSelector, usePositionsActions } from "@/_state";
 import { StrictModeDroppable } from "@/components/StrictModeDroppable";
+import CardSmall from "@/components/card_small";
 
 const PositionsList = () => {
   const [positions, setPositions] = useRecoilState(positionsSelector);
@@ -40,14 +40,13 @@ const PositionsList = () => {
                 index={index}
               >
                 {(provided) => (
-                  <label
-                    htmlFor="modal"
+                  <div
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                   >
                     <CardSmall position={position} />
-                  </label>
+                  </div>
                 )}
               </Draggable>
             ))}

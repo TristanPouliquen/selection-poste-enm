@@ -9,7 +9,7 @@ import {
 import { useRecoilValue } from "recoil";
 import React, { useEffect } from "react";
 import OnboardingModal from "@/components/Onboarding";
-import PositionsList from "@/components/PositionsList";
+import PositionsList from "@/components/positions_list";
 
 export default function Home() {
   const appState = useRecoilValue(appStateAtom);
