@@ -1,4 +1,3 @@
-use diesel::dsl::count;
 use crate::models::establish_connection;
 use crate::schema::positions;
 use diesel::dsl::count;
