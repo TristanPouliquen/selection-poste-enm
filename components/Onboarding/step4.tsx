@@ -1,7 +1,7 @@
 import React from "react";
 import { IStepProps } from "@/components/Onboarding/index";
 
-const Step4 = ({ exitOnboarding }: IStepProps) => (
+const Step4 = ({ exitOnboarding, confirmRanking }: IStepProps) => (
   <>
     <div className="grow ml-4">
       <h1 className="text-4xl font-bold mb-3">Récap</h1>
@@ -16,7 +16,9 @@ const Step4 = ({ exitOnboarding }: IStepProps) => (
       <a className="link link-secondary" onClick={exitOnboarding}>
         Quitter l&apos;onboarding
       </a>
-      <button className="btn btn-primary loading">Confirmer</button>
+      <button className="btn btn-primary" onClick={confirmRanking}>
+        Confirmer
+      </button>
     </div>
   </>
 );

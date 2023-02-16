@@ -7,11 +7,14 @@ import {
   positionsSelector,
   positionSelector,
   useInitializeState,
+  appStateAtom,
 } from "@/_state";
 import { useRecoilValue } from "recoil";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import OnboardingModal from "@/components/Onboarding";
 
 export default function Home() {
+  const appState = useRecoilValue(appStateAtom);
   const positions = useRecoilValue(positionsSelector);
   const currentPositionId = useRecoilValue(currentPositionIdAtom);
   const currentPosition = useRecoilValue(positionSelector(currentPositionId));
@@ -23,9 +26,7 @@ export default function Home() {
   }, [isInitialized, initializeState]);
   return (
     <Layout home>
-      {
-        //<OnboardingModal />
-      }
+      {appState && !appState.onboarded ? <OnboardingModal /> : null}
       {positions.map((position?: Position) =>
         position !== undefined ? (
           <label key={"position_small_" + position.id} htmlFor="modal">
