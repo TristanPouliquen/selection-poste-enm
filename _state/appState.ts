@@ -14,8 +14,8 @@ const useAppStateAction = () => {
     setAppState(await invoke<AppState>("get_app_state"));
   };
 
-  const update = async () => {
-    setAppState(await invoke<AppState>("update_app_state"));
+  const update = async (appState: AppState) => {
+    setAppState(await invoke<AppState>("update_app_state", { appState }));
   };
 
   return { get, update };

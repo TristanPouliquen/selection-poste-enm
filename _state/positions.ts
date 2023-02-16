@@ -19,9 +19,11 @@ const positionsSelector = selector({
   key: "positionsSelector",
   get: ({ get }) => {
     const positions = get(positionsAtom);
-    return positions.map((position: Position) =>
-      get(positionSelector(position.id))
-    );
+    return [...positions]
+      .sort((a, b) => a.ranking - b.ranking)
+      .map(
+        (position: Position) => get(positionSelector(position.id)) ?? position
+      );
   },
 });
 

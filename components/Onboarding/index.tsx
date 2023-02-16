@@ -3,15 +3,22 @@ import Step1 from "@/components/Onboarding/step1";
 import Step2 from "@/components/Onboarding/step2";
 import Step3 from "@/components/Onboarding/step3";
 import Step4 from "@/components/Onboarding/step4";
+import { appStateAtom, useAppStateAction } from "@/_state";
+import { useRecoilValue } from "recoil";
 
 export interface IStepProps {
   exitOnboarding: () => void;
   nextStep: () => void;
+  confirmRanking: () => void;
 }
 const OnboardingModal = () => {
   const [step, setStep] = useState<number>(1);
-  const exitOnboarding = () => console.log("skip");
+  const appState = useRecoilValue(appStateAtom);
+  const { update } = useAppStateAction();
+  const exitOnboarding = () =>
+    appState ? update({ ...appState, onboarded: true }) : null;
   const nextStep = () => setStep(step + 1);
+  const confirmRanking = exitOnboarding;
   const navigateTo = (actualStep: number, targetStep: number) =>
     targetStep > 0 && targetStep < actualStep ? setStep(targetStep) : null;
   let Component: React.FC<IStepProps>;
@@ -65,7 +72,11 @@ const OnboardingModal = () => {
             Résumé
           </li>
         </ul>
-        <Component exitOnboarding={exitOnboarding} nextStep={nextStep} />
+        <Component
+          exitOnboarding={exitOnboarding}
+          nextStep={nextStep}
+          confirmRanking={confirmRanking}
+        />
       </div>
     </div>
   );
