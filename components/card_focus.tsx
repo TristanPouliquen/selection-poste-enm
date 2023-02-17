@@ -3,7 +3,7 @@ import { Position } from "@/types/types";
 import { BackpackIcon, BookmarkIcon, Cross2Icon } from "@radix-ui/react-icons";
 import { usePositionsActions } from "@/_state";
 import RankInputGroup from "@/components/rank_inputgroup";
-import ReactEditorForm, { IFormValues } from "@/components/react_editor_form";
+import ReactEditorForm from "@/components/react_editor_form";
 import TribunalDetails from "@/components/tribunal_details";
 
 interface IProps {
@@ -23,8 +23,8 @@ const CardFocus = ({ position }: IProps) => {
     return () => document.removeEventListener("keydown", closeOnEsc, false);
   });
   const { update, updateRanking } = usePositionsActions();
-  const onSubmit = (values: IFormValues) => {
-    return update({ ...position, ...values });
+  const onChange = (notes: string) => {
+    return update({ ...position, notes });
   };
 
   return position ? (
@@ -48,7 +48,7 @@ const CardFocus = ({ position }: IProps) => {
         <div className="grow">
           <ReactEditorForm
             value={position.notes}
-            onSubmitCallback={onSubmit}
+            onChangeCallback={onChange}
             key={"position_notes_" + position.id}
           />
         </div>

@@ -26,7 +26,11 @@ pub fn tribunal_list() -> Vec<Tribunal> {
 
 pub fn tribunal_update(tribunal: Tribunal) -> Tribunal {
     diesel::update(tribunals::table.find(tribunal.id))
-        .set(&tribunal)
+        .set((
+            tribunals::notes.eq(tribunal.notes),
+            tribunals::time_to.eq(tribunal.time_to),
+            tribunals::color.eq(tribunal.color)
+            ))
         .get_result(&mut establish_connection())
         .unwrap()
 }
