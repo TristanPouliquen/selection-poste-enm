@@ -32,7 +32,9 @@ const useTribunalsAction = () => {
     setTribunals(await invoke<Tribunal[]>("get_tribunals"));
   };
   const update = async (tribunal: Tribunal) => {
-    const updatedTribunal = await invoke<Tribunal>("update_tribunal", tribunal);
+    const updatedTribunal = await invoke<Tribunal>("update_tribunal", {
+      tribunal,
+    });
     setTribunals(
       tribunals.map((t) => (t.id === updatedTribunal.id ? updatedTribunal : t))
     );

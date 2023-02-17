@@ -7,7 +7,7 @@ interface IProps {
   updatePosition: (position: Position) => void;
 }
 const RankInputGroup = ({ position, updatePosition }: IProps) => (
-  <div className="form-control mr-6">
+  <div className="form-control mr-6 font-normal">
     <div className="input-group">
       <button
         className="btn btn-square font-bold"

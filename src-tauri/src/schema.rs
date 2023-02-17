@@ -65,8 +65,9 @@ diesel::table! {
     tribunals (id) {
         id -> Integer,
         name -> Text,
-        color -> Text,
+        notes -> Nullable<Text>,
         time_to -> Nullable<Integer>,
+        color -> Text,
         group_id -> Integer,
         appeal_court_id -> Integer,
     }

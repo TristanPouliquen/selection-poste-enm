@@ -23,7 +23,7 @@ const CardSmall = ({ position }: IProps) => {
       onClick={() => setCurrentPosition(position.id)}
     >
       <div className="card-body">
-        <h2 className="card-title flex items-center">
+        <h2 className="card-title flex items-center font-normal">
           <div className="mr-4 text-base-300">{position.ranking}.</div>
           <div className="flex w-1/4 grow">
             <div>{position.role?.name}</div>

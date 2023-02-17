@@ -3,7 +3,7 @@ import { DragDropContext, Draggable, DropResult } from "react-beautiful-dnd";
 import { useRecoilState } from "recoil";
 import { Position } from "@/types/types";
 import { positionsSelector, usePositionsActions } from "@/_state";
-import { StrictModeDroppable } from "@/components/StrictModeDroppable";
+import { StrictModeDroppable } from "@/components/strict_mode_droppable";
 import CardSmall from "@/components/card_small";
 
 const PositionsList = () => {
