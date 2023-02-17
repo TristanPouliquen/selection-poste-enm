@@ -11,15 +11,3 @@
         -moz-appearance: textfield !important;
     }
 }
-
-.w-md-editor {
-    border-bottom: 1px solid lightgray;
-}
-
-.w-md-editor .w-md-editor-toolbar {
-    border-bottom: 1px solid lightgray;
-}
-
-.w-md-editor .w-md-editor-text {
-    border-right: 1px solid lightgray;
-}

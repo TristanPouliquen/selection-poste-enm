@@ -2,7 +2,7 @@ import React from "react";
 import { formatDuration } from "date-fns";
 import { fr } from "date-fns/locale";
 import { Tribunal } from "@/types/types";
-import ReactEditorForm, { IFormValues } from "@/components/react_editor_form";
+import ReactEditorForm from "@/components/react_editor_form";
 import { useTribunalsAction } from "@/_state";
 
 interface IProps {
@@ -10,8 +10,8 @@ interface IProps {
 }
 const TribunalDetails = ({ tribunal }: IProps) => {
   const { update } = useTribunalsAction();
-  const onSubmit = (values: IFormValues) => {
-    return update({ ...tribunal, notes: values.notes });
+  const onChange = (notes: string) => {
+    return update({ ...tribunal, notes });
   };
   return (
     <div>
@@ -33,7 +33,7 @@ const TribunalDetails = ({ tribunal }: IProps) => {
       </div>
       <ReactEditorForm
         value={tribunal.notes}
-        onSubmitCallback={onSubmit}
+        onChangeCallback={onChange}
         key={"tribunal_notes_" + tribunal.id}
       />
     </div>

@@ -1,65 +1,39 @@
-import React, { MouseEvent, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import ReactMarkdown from "react-markdown";
-import { CheckCircledIcon, Pencil1Icon } from "@radix-ui/react-icons";
+import React from "react";
 import dynamic from "next/dynamic";
-import "@uiw/react-md-editor/markdown-editor.css";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { ContentState, convertToRaw, RawDraftContentState } from "draft-js";
 
-const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
+const Editor = dynamic(
+  () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
+  { ssr: false }
+);
 interface IProps {
-  onSubmitCallback: (values: IFormValues) => Promise<void>;
+  onChangeCallback: (value: string) => Promise<void>;
   value: string | undefined;
 }
-export interface IFormValues {
-  notes?: string;
-}
-const ReactEditorForm = ({ onSubmitCallback, value }: IProps) => {
-  const [editing, setEditing] = useState<boolean>(false);
-  const { handleSubmit, control } = useForm<IFormValues>();
-  const editNotes = (e: MouseEvent) => {
-    e.preventDefault();
-    setEditing(true);
-  };
-  const onSubmit = (values: IFormValues) => {
-    onSubmitCallback(values).then(() => setEditing(false));
+const ReactEditorForm = ({ onChangeCallback, value }: IProps) => {
+  const onChange = (contentState: RawDraftContentState) => {
+    onChangeCallback(JSON.stringify(contentState));
   };
   return (
     <>
       <div className="flex flex-row justify-between">
         <h3 className="font-bold mb-3">Commentaires</h3>
-        {editing ? (
-          <div
-            className="btn btn-sm -btn-accent no-animation w-36 flex justify-start font-normal"
-            onClick={handleSubmit(onSubmit)}
-          >
-            <CheckCircledIcon className="h-5 w-5 mr-1" />
-            Enregistrer
-          </div>
-        ) : (
-          <div
-            className="btn btn-sm btn-ghost no-animation w-36 flex justify-start font-normal"
-            onClick={editNotes}
-          >
-            <Pencil1Icon className="h-5 w-5 mr-2" />
-            Modifier
-          </div>
-        )}
       </div>
-      {editing ? (
-        <form className="min-h-[100px]">
-          <Controller
-            render={({ field }) => <MDEditor defaultValue={value} {...field} />}
-            name="notes"
-            control={control}
-          />
-        </form>
-      ) : (
-        <div>
-          <ReactMarkdown>
-            {value ?? "*Aucun commentaire pour le moment.*"}
-          </ReactMarkdown>
-        </div>
-      )}
+      <form className="min-h-[100px]">
+        <Editor
+          defaultContentState={
+            value
+              ? JSON.parse(value)
+              : convertToRaw(ContentState.createFromText(""))
+          }
+          toolbarOnFocus
+          onContentStateChange={onChange}
+          wrapperClassName="hover:bg-base-200/25 focus-within:bg-base-100"
+          editorClassName="p-2 hover:cursor-text focus-within:border focus-within:rounded focus-within:border-base-200"
+          toolbarClassName="border rounded border-base-200"
+        />
+      </form>
     </>
   );
 };
