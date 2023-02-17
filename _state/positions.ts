@@ -17,7 +17,7 @@ const currentPositionIdAtom = atom<number | undefined>({
 
 const positionsSelector = selector({
   key: "positionsSelector",
-  get: ({ get }) => {
+  get: ({ get }): Position[] => {
     const positions = get(positionsAtom);
     return [...positions].map(
       (position: Position) => get(positionSelector(position.id)) ?? position
@@ -30,7 +30,7 @@ const positionSelector = selectorFamily({
   key: "positionSelector",
   get:
     (id) =>
-    ({ get }) => {
+    ({ get }): Position | undefined => {
       if (id === undefined) {
         return undefined;
       }

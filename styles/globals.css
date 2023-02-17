@@ -11,3 +11,7 @@
         -moz-appearance: textfield !important;
     }
 }
+
+.card {
+    position: unset;
+}
