@@ -28,10 +28,12 @@ const TimeWindowForm = ({ timeWindow }: IProps) => {
       reset();
     }
   };
-
   return (
     <form
       className="form-control flex flex-row justify-between border rounded mb-3 p-2 shadow-md"
+      style={
+        timeWindow ? { backgroundColor: `${timeWindow.color}33` } : undefined
+      }
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex items-center">
@@ -63,14 +65,20 @@ const TimeWindowForm = ({ timeWindow }: IProps) => {
             {...register("tooFar")}
           />
         </label>
-        <label className="flex flex-row">
+        <label className="flex flex-row items-center">
           Couleur{" "}
           <Controller
             name="color"
             control={control}
             rules={{ required: true }}
             render={({ field: { value, onChange } }) => (
-              <ColorPicker value={value} onChange={onChange} />
+              <ColorPicker
+                value={value}
+                onChange={onChange}
+                id={`time_window_color_picker_${
+                  timeWindow ? timeWindow.id : 0
+                }`}
+              />
             )}
           />
         </label>

@@ -38,7 +38,8 @@ pub fn time_window_delete(time_window: TimeWindow) -> bool {
 #[derive(Insertable, Deserialize)]
 #[diesel(table_name = time_windows)]
 #[serde(rename_all = "camelCase")]
-pub struct NewTimeWindow {
+pub struct NewTimeWindow<'a> {
+    pub color: &'a str,
     pub too_far: bool,
     pub min_time: i32,
     pub max_time: Option<i32>,

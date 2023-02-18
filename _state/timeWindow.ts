@@ -24,11 +24,8 @@ const timeWindowSelector = selectorFamily({
 const useTimeWindowsActions = () => {
   const [timeWindows, setTimeWindows] = useRecoilState(timeWindowAtom);
 
-  const getAll = async () => {
-    const result = await invoke<TimeWindow[]>("get_time_windows");
-    console.log(result);
-    setTimeWindows(result);
-  };
+  const getAll = async () =>
+    setTimeWindows(await invoke<TimeWindow[]>("get_time_windows"));
 
   const update = async (timeWindow: TimeWindow) => {
     const updated = await invoke<TimeWindow>("update_time_window", {
@@ -44,7 +41,6 @@ const useTimeWindowsActions = () => {
     const created = await invoke<TimeWindow>("create_time_window", {
       timeWindow,
     });
-    console.log(created);
 
     setTimeWindows([...timeWindows, created]);
   };
