@@ -80,7 +80,8 @@ pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 
 fn main() {
     let connection = &mut establish_connection();
-    connection.run_pending_migrations(MIGRATIONS);
+    connection.run_pending_migrations(MIGRATIONS)
+        .unwrap_or_else(|_| panic!("Error loading migrations"));
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             get_app_state,
