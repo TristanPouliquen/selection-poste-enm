@@ -1,4 +1,4 @@
-import { atom, selectorFamily, useSetRecoilState } from "recoil";
+import { atom, selectorFamily, useRecoilState } from "recoil";
 import { AppealCourt } from "@/types/types";
 import { invoke } from "@tauri-apps/api/tauri";
 
@@ -16,11 +16,20 @@ const appealCourtSelector = selectorFamily({
 });
 
 const useAppealCourtsAction = () => {
-  const setAppealCourts = useSetRecoilState(appealCourtsAtom);
+  const [appealCourts, setAppealCourts] = useRecoilState(appealCourtsAtom);
   const getAll = async () => {
     setAppealCourts(await invoke<AppealCourt[]>("get_appeal_courts"));
   };
-  return { getAll };
+
+  const update = async (appealCourt: AppealCourt) => {
+    const updated = await invoke<AppealCourt>("update_appeal_court", {
+      appealCourt,
+    });
+    setAppealCourts(
+      appealCourts.map((ac) => (ac.id == updated.id ? updated : ac))
+    );
+  };
+  return { getAll, update };
 };
 
 export { appealCourtsAtom, appealCourtSelector, useAppealCourtsAction };

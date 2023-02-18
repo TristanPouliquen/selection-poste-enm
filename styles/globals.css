@@ -15,3 +15,7 @@
 .card {
     position: unset;
 }
+
+.input:focus {
+    outline: none;
+}

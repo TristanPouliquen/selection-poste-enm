@@ -13,6 +13,7 @@ use crate::models::group::*;
 use crate::models::position::*;
 use crate::models::role::*;
 use crate::models::tag::*;
+use crate::models::time_window::*;
 use crate::models::tribunal::*;
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
 
@@ -76,6 +77,26 @@ fn update_tribunal(tribunal: Tribunal) -> Tribunal {
     tribunal_update(tribunal)
 }
 
+#[tauri::command]
+fn get_time_windows() -> Vec<TimeWindow> {
+    time_window_list()
+}
+
+#[tauri::command]
+fn update_time_window(time_window: TimeWindow) -> TimeWindow {
+    time_window_update(time_window)
+}
+
+#[tauri::command]
+fn create_time_window(time_window: NewTimeWindow) -> TimeWindow {
+    time_window_create(time_window)
+}
+
+#[tauri::command]
+fn delete_time_window(time_window: TimeWindow) -> bool {
+    time_window_delete(time_window)
+}
+
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 
 fn main() {
@@ -96,7 +117,11 @@ fn main() {
             get_roles,
             get_tags,
             get_tribunals,
-            update_tribunal
+            update_tribunal,
+            get_time_windows,
+            update_time_window,
+            create_time_window,
+            delete_time_window
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

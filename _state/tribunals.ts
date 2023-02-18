@@ -3,6 +3,7 @@ import { Tribunal } from "@/types/types";
 import { invoke } from "@tauri-apps/api/tauri";
 import { appealCourtSelector } from "@/_state/appealCourts";
 import { groupSelector } from "@/_state/groups";
+import { timeWindowSelector } from "@/_state/timeWindow";
 
 const tribunalsAtom = atom<Tribunal[]>({
   key: "tribunalsAtom",
@@ -22,7 +23,10 @@ const tribunalSelector = selectorFamily({
       }
       const appealCourt = get(appealCourtSelector(tribunal.appealCourtId));
       const group = get(groupSelector(tribunal.groupId));
-      return { ...tribunal, appealCourt, group };
+      const timeWindow = tribunal.timeTo
+        ? get(timeWindowSelector(tribunal.timeTo))
+        : undefined;
+      return { ...tribunal, appealCourt, group, timeWindow };
     },
 });
 

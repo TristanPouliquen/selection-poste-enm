@@ -26,9 +26,19 @@ const TribunalDetails = ({ tribunal }: IProps) => {
         </p>
         <p>
           <span className="font-bold">Temps de trajet: </span>
-          {tribunal.timeTo
-            ? formatDuration({ minutes: tribunal.timeTo }, { locale: fr })
-            : "Non renseigné"}
+          {tribunal.timeTo ? (
+            <span
+              className={`badge badge-outline${
+                tribunal.timeWindow
+                  ? ` color-[${tribunal.timeWindow.color}]`
+                  : null
+              } `}
+            >
+              {formatDuration({ minutes: tribunal.timeTo }, { locale: fr })}
+            </span>
+          ) : (
+            "Non renseigné"
+          )}
         </p>
       </div>
       <ReactEditorForm
