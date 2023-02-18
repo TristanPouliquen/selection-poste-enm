@@ -2,7 +2,7 @@ import React from "react";
 import { formatDuration } from "date-fns";
 import { fr } from "date-fns/locale";
 import { Tribunal } from "@/types/types";
-import ReactEditorForm from "@/components/react_editor_form";
+import ReactEditorForm from "@/components/CardFocus/react_editor_form";
 import { useTribunalsAction } from "@/_state";
 
 interface IProps {

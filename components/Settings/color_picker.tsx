@@ -16,21 +16,19 @@ const ColorPicker = ({ name, color, onColorChanged }: IProps) => {
   return (
     <div className="flex items-baseline mt-2">
       <div className="w-40 mr-3">{name}</div>
-      <div className="relative">
-        <input
-          className="input input-bordered input-xs max-w-xs"
-          value={color}
-          onFocus={() => setDisplayColorPicker(true)}
-          onBlur={(e) => console.log(e)}
+      <input
+        className="input input-bordered input-xs max-w-xs"
+        value={color}
+        onFocus={() => setDisplayColorPicker(true)}
+        onBlur={(e) => console.log(e)}
+      />
+      {displayColorPicker ? (
+        <Block
+          className="absolute z-2 top-2 drop-shadow-md"
+          color={color}
+          onChange={onChange}
         />
-        {displayColorPicker ? (
-          <Block
-            className="absolute z-2 top-2 drop-shadow-md"
-            color={color}
-            onChange={onChange}
-          />
-        ) : null}
-      </div>
+      ) : null}
     </div>
   );
 };

@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { Position } from "@/types/types";
 import { BackpackIcon, BookmarkIcon, Cross2Icon } from "@radix-ui/react-icons";
 import { usePositionsActions } from "@/_state";
-import RankInputGroup from "@/components/rank_inputgroup";
-import ReactEditorForm from "@/components/react_editor_form";
-import TribunalDetails from "@/components/tribunal_details";
+import RankInputGroup from "@/components/CardFocus/rank_inputgroup";
+import ReactEditorForm from "@/components/CardFocus/react_editor_form";
+import TribunalDetails from "@/components/CardFocus/tribunal_details";
 
 interface IProps {
   position: Position;
