@@ -7,6 +7,7 @@ import { appStateAtom, useAppStateAction } from "@/_state/appState";
 import { useTribunalsAction } from "@/_state/tribunals";
 import { usePositionsActions } from "@/_state/positions";
 import { useState } from "react";
+import { useTimeWindowsActions } from "@/_state/timeWindow";
 
 export * from "@/_state/appealCourts";
 export * from "@/_state/appState";
@@ -26,6 +27,7 @@ const useInitializeState = () => {
   const { getAll: getAllTags } = useTagsAction();
   const { getAll: getAllTribunals } = useTribunalsAction();
   const { getAll: getAllPositions } = usePositionsActions();
+  const { getAll: getAllTimeWindows } = useTimeWindowsActions();
   const initializeState = () => {
     setLoading(true);
     Promise.all([
@@ -33,6 +35,7 @@ const useInitializeState = () => {
       getAllAppealCourts(),
       getAllGroups(),
       getAllTags(),
+      getAllTimeWindows(),
       getAllRoles(),
       getAllTribunals(),
       getAllPositions(),

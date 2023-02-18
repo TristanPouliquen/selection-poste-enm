@@ -62,6 +62,16 @@ diesel::table! {
 }
 
 diesel::table! {
+    time_windows (id) {
+        id -> Integer,
+        too_far -> Bool,
+        min_time -> Integer,
+        max_time -> Nullable<Integer>,
+        color -> Text,
+    }
+}
+
+diesel::table! {
     tribunals (id) {
         id -> Integer,
         name -> Text,
@@ -73,6 +83,13 @@ diesel::table! {
     }
 }
 
+diesel::joinable!(position_tags -> positions (position_id));
+diesel::joinable!(position_tags -> tags (tag_id));
+diesel::joinable!(positions -> roles (role_id));
+diesel::joinable!(positions -> tribunals (tribunal_id));
+diesel::joinable!(tribunals -> appeal_courts (appeal_court_id));
+diesel::joinable!(tribunals -> groups (group_id));
+
 diesel::allow_tables_to_appear_in_same_query!(
     app_state,
     appeal_courts,
@@ -81,5 +98,6 @@ diesel::allow_tables_to_appear_in_same_query!(
     positions,
     roles,
     tags,
+    time_windows,
     tribunals,
 );

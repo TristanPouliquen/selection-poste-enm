@@ -3,30 +3,30 @@ import Block from "@uiw/react-color-block";
 import { ColorResult } from "@uiw/color-convert";
 
 interface IProps {
-  name: string;
-  color: string;
-  onColorChanged: (color: ColorResult) => void;
+  value: string;
+  onChange: (color: string) => void;
 }
-const ColorPicker = ({ name, color, onColorChanged }: IProps) => {
+const ColorPicker = ({ value, onChange }: IProps) => {
   const [displayColorPicker, setDisplayColorPicker] = useState<boolean>(false);
-  const onChange = (color: ColorResult) => {
+  const onColorChanged = (color: ColorResult) => {
     setDisplayColorPicker(false);
-    onColorChanged(color);
+    onChange(color.hex);
   };
   return (
-    <div className="flex items-baseline mt-2">
-      <div className="w-40 mr-3">{name}</div>
+    <div>
       <input
         className="input input-bordered input-xs max-w-xs"
-        value={color}
+        value={value}
+        readOnly={true}
         onFocus={() => setDisplayColorPicker(true)}
         onBlur={(e) => console.log(e)}
       />
       {displayColorPicker ? (
         <Block
-          className="absolute z-2 top-2 drop-shadow-md"
-          color={color}
-          onChange={onChange}
+          style={{ position: "absolute" }}
+          className="absolute z-2 drop-shadow-md"
+          color={value}
+          onChange={onColorChanged}
         />
       ) : null}
     </div>

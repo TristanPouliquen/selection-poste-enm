@@ -20,6 +20,7 @@ export type Tribunal = {
   appealCourt?: AppealCourt;
   groupId: number;
   group?: Group;
+  timeWindow?: TimeWindow;
 };
 
 export type Group = {
@@ -52,4 +53,12 @@ export type Position = {
   roleId: number;
   role?: Role;
   tags?: Tag[];
+};
+
+export type TimeWindow = {
+  id: number;
+  tooFar: boolean;
+  minTime: number;
+  maxTime?: number;
+  color: string;
 };

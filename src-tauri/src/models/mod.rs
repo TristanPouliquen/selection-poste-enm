@@ -8,6 +8,7 @@ pub mod group;
 pub mod position;
 pub mod role;
 pub mod tag;
+pub mod time_window;
 pub mod tribunal;
 
 pub fn establish_connection() -> SqliteConnection {
