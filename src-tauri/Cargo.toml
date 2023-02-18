@@ -21,6 +21,7 @@ tauri = { version = "1.2.4", features = [] }
 diesel = { version = "2.0.0", features = ["sqlite", "returning_clauses_for_sqlite_3_35"] }
 dotenvy = "0.15"
 libsqlite3-sys = { version = "0.25.2", features = ["bundled"] }
+diesel_migrations = {version = "2.0.0", features = ["sqlite"] }
 
 [features]
 # by default Tauri runs in production mode

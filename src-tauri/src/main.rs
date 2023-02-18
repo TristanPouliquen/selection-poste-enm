@@ -4,14 +4,17 @@
 )]
 pub mod models;
 pub mod schema;
+extern crate diesel_migrations;
 
 use crate::models::app_state::*;
 use crate::models::appeal_court::*;
+use crate::models::establish_connection;
 use crate::models::group::*;
 use crate::models::position::*;
 use crate::models::role::*;
 use crate::models::tag::*;
 use crate::models::tribunal::*;
+use diesel_migrations::{embed_migrations, EmbeddedMigrations};
 
 #[tauri::command]
 fn get_app_state() -> AppState {
@@ -73,7 +76,11 @@ fn update_tribunal(tribunal: Tribunal) -> Tribunal {
     tribunal_update(tribunal)
 }
 
+pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("../migrations");
+
 fn main() {
+    connection = &mut establish_connection();
+    connection.run_pending_migrations(MIGRATIONS);
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             get_app_state,
