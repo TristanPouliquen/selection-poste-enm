@@ -14,7 +14,7 @@ use crate::models::position::*;
 use crate::models::role::*;
 use crate::models::tag::*;
 use crate::models::tribunal::*;
-use diesel_migrations::{embed_migrations, EmbeddedMigrations};
+use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
 
 #[tauri::command]
 fn get_app_state() -> AppState {
@@ -76,10 +76,10 @@ fn update_tribunal(tribunal: Tribunal) -> Tribunal {
     tribunal_update(tribunal)
 }
 
-pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("../migrations");
+pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 
 fn main() {
-    connection = &mut establish_connection();
+    let connection = &mut establish_connection();
     connection.run_pending_migrations(MIGRATIONS);
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
