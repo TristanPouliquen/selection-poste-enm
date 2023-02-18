@@ -13,10 +13,10 @@ const AppealCourtColor = () => {
       <div className="pl-2">
         <ul>
           {appealCourts.map((appealCourt: AppealCourt) => (
-            <label>
+            <label key={"colorpicker_appealCourt_" + appealCourt.id}>
               {appealCourt.name}
               <ColorPicker
-                key={"colorpicker_appealCourt_" + appealCourt.id}
+                id={"colorpicker_appealCourt_" + appealCourt.id}
                 value={appealCourt.color}
                 onChange={(color) => update({ ...appealCourt, color })}
               />
