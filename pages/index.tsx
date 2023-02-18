@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-import CardFocus from "@/components/card_focus";
+import CardFocus from "@/components/CardFocus";
 import {
   currentPositionIdAtom,
   positionSelector,
@@ -9,7 +9,7 @@ import {
 import { useRecoilValue } from "recoil";
 import React, { useEffect } from "react";
 import OnboardingModal from "@/components/Onboarding";
-import PositionsList from "@/components/positions_list";
+import PositionsList from "@/components/Home/positions_list";
 
 export default function Home() {
   const appState = useRecoilValue(appStateAtom);

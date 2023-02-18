@@ -1,15 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { MixerHorizontalIcon } from "@radix-ui/react-icons";
-import SearchBar from "@/components/search_bar";
+import SearchBar from "@/components/Header/search_bar";
 
 interface IProps {
   home: boolean;
 }
-const Header = ({ home }: IProps) => {
+const Index = ({ home }: IProps) => {
   return (
-    <header>
-      <div className="navbar bg-base-100 px-6">
+    <header className="sticky top-0 bg-base-100 h-16">
+      <div className="navbar bg-base-100 px-6 border-0 border-b border-base-200">
         <div className="flex-1">
           {home ? (
             <span className="normal-case text-xl">Mes postes ENM</span>
@@ -28,4 +28,4 @@ const Header = ({ home }: IProps) => {
   );
 };
 
-export default Header;
+export default Index;
