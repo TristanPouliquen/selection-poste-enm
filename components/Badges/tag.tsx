@@ -1,18 +1,19 @@
 import React from "react";
-import { Position, Tag } from "@/types/types";
-import { usePositionsActions } from "@/_state";
+import { Tag } from "@/types/types";
 
 interface IProps {
-  position: Position;
-  tag: Tag,
-  isRemovable: boolean
+  tag: Tag;
 }
 
-const TagBadge = ({position, tag, isRemovable}: IProps) => {
-  const {removeTag} = usePositionsActions();
-  const onRemove = () => removeTag(position, tag);
-
-  return <div className="badge badge-outline" style={{color: `${tag.color}`}}>{tag.name}</div>
-}
+const TagBadge = ({ tag }: IProps) => {
+  return (
+    <div
+      className="badge rounded-lg badge-outline"
+      style={{ color: `${tag.color}` }}
+    >
+      {tag.name}
+    </div>
+  );
+};
 
 export default TagBadge;

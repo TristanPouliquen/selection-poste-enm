@@ -1,10 +1,12 @@
 use crate::models::establish_connection;
+use crate::models::tag::{PositionTag, Tag};
 use crate::schema::positions;
+use crate::schema::tags;
 use diesel::dsl::count;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 
-#[derive(Identifiable, Queryable, Serialize, Deserialize, AsChangeset)]
+#[derive(Identifiable, Queryable, Selectable, Serialize, Deserialize, AsChangeset)]
 #[diesel(belongs_to(Tribunal))]
 #[diesel(belongs_to(Role))]
 #[serde(rename_all = "camelCase")]
@@ -19,12 +21,39 @@ pub struct Position {
     pub tribunal_id: i32,
 }
 
-pub fn position_list() -> Vec<Position> {
-    positions::dsl::positions
-        .select(positions::all_columns)
+#[derive(Serialize)]
+pub struct PositionWithTags {
+    #[serde(flatten)]
+    position: Position,
+    tags: Vec<Tag>,
+}
+
+pub fn position_list() -> Vec<PositionWithTags> {
+    let all_positions = positions::table
+        .select(Position::as_select())
         .order((positions::ranking.asc(), positions::id.asc()))
         .load::<Position>(&mut establish_connection())
-        .expect("Loading positions failed")
+        .expect("Error loading positions");
+    let all_tags = PositionTag::belonging_to(&all_positions)
+        .inner_join(tags::table)
+        .select((PositionTag::as_select(), Tag::as_select()))
+        .load(&mut establish_connection())
+        .expect("Error loading tags");
+
+    all_tags
+        .grouped_by(&all_positions)
+        .into_iter()
+        .zip(all_positions)
+        .map(|(t, position)| {
+            (
+                position,
+                t.into_iter().map(|(_, tag)| tag).collect::<Vec<Tag>>(),
+            )
+        })
+        .collect::<Vec<(Position, Vec<Tag>)>>()
+        .into_iter()
+        .map(|(position, tags)| PositionWithTags { position, tags })
+        .collect()
 }
 
 pub fn position_update(position: Position) -> Position {
@@ -38,7 +67,7 @@ pub fn position_update(position: Position) -> Position {
         .unwrap()
 }
 
-pub fn position_update_ranking(mut position: Position) -> Vec<Position> {
+pub fn position_update_ranking(mut position: Position) -> Vec<PositionWithTags> {
     let total_positions = positions::dsl::positions
         .select(count(positions::id))
         .first(&mut establish_connection())

@@ -5,6 +5,7 @@ import { usePositionsActions } from "@/_state";
 import RankInputGroup from "@/components/CardFocus/rank_inputgroup";
 import ReactEditorForm from "@/components/CardFocus/react_editor_form";
 import TribunalDetails from "@/components/CardFocus/tribunal_details";
+import TagContainer from "@/components/CardFocus/tag_container";
 
 interface IProps {
   position: Position;
@@ -45,6 +46,17 @@ const CardFocus = ({ position }: IProps) => {
           </label>
         </h1>
         <div className="divider"></div>
+        <div className="divide-x flex flex-row">
+          <h3 className="text-lg flex items-center pr-1">
+            <BookmarkIcon className="h-4 w-4" />
+            Tags
+          </h3>
+          <TagContainer
+            position={position}
+            key={`tag_container_position_${position.id}`}
+          />
+        </div>
+        <div className="divider"></div>
         <div className="grow">
           <ReactEditorForm
             value={position.notes}
@@ -58,13 +70,6 @@ const CardFocus = ({ position }: IProps) => {
             <TribunalDetails tribunal={position.tribunal} />
           </>
         ) : null}
-        <div className="divider"></div>
-        <div>
-          <h3 className="text-lg font-bold flex items-center">
-            <BookmarkIcon className="h-4 w-4" />
-            Tags
-          </h3>
-        </div>
       </label>
     </label>
   ) : null;

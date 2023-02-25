@@ -43,7 +43,7 @@ fn get_groups() -> Vec<Group> {
 }
 
 #[tauri::command]
-fn get_positions() -> Vec<Position> {
+fn get_positions() -> Vec<PositionWithTags> {
     position_list()
 }
 
@@ -53,13 +53,8 @@ fn update_position(position: Position) -> Position {
 }
 
 #[tauri::command]
-fn update_position_ranking(position: Position) -> Vec<Position> {
+fn update_position_ranking(position: Position) -> Vec<PositionWithTags> {
     position_update_ranking(position)
-}
-
-#[tauri::command]
-fn get_position_tags(position: Position) -> Vec<Tag> {
-    position_tag_list(position)
 }
 
 #[tauri::command]
@@ -134,7 +129,6 @@ fn main() {
             get_positions,
             update_position,
             update_position_ranking,
-            get_position_tags,
             add_position_tag,
             remove_position_tag,
             get_roles,

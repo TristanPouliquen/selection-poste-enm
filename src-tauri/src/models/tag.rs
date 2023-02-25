@@ -4,7 +4,7 @@ use crate::schema::{position_tags, tags};
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 
-#[derive(Identifiable, Queryable, Serialize, Deserialize)]
+#[derive(Identifiable, Queryable, Selectable, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Tag {
     pub id: i32,
@@ -26,7 +26,7 @@ pub struct NewTag<'a> {
     pub color: &'a str,
 }
 
-#[derive(Queryable, Serialize)]
+#[derive(Identifiable, Queryable, Selectable, Serialize, Associations)]
 #[diesel(belongs_to(Position))]
 #[diesel(belongs_to(Tag))]
 #[serde(rename_all = "camelCase")]
@@ -34,19 +34,6 @@ pub struct PositionTag {
     pub id: i32,
     pub position_id: i32,
     pub tag_id: i32,
-}
-
-pub fn position_tag_list(position: Position) -> Vec<Tag> {
-    let tag_ids: Vec<i32> = position_tags::dsl::position_tags
-        .select(position_tags::tag_id)
-        .filter(position_tags::position_id.eq(position.id))
-        .load::<i32>(&mut establish_connection())
-        .expect("Error loading position tags");
-
-    tags::dsl::tags
-        .filter(tags::id.eq_any(tag_ids))
-        .load::<Tag>(&mut establish_connection())
-        .expect("Error loading tags")
 }
 
 pub fn position_tag_add(position: Position, tag: Tag) -> PositionTag {
