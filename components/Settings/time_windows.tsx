@@ -108,7 +108,7 @@ const TimeWindows = () => {
   return (
     <>
       <h1 className="text-2xl font-bold mb-4">
-        Gérer les fenêtres de temps de trajet
+        Configurer les fenêtres de temps de trajet
       </h1>
       <div className="pl-2">
         {timeWindows.map((timeWindow) => (
