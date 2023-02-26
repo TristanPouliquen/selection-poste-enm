@@ -14,7 +14,7 @@ pub mod tribunal;
 pub fn establish_connection() -> SqliteConnection {
     dotenv().ok();
 
-    let database_url = "db/selection-poste-enm.sqlite3";
+    let database_url = "../../db/selection-poste-enm.sqlite3";
     SqliteConnection::establish(&database_url)
         .unwrap_or_else(|_| panic!("Error connecting to {database_url}"))
 }
