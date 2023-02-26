@@ -83,6 +83,16 @@ fn get_tags() -> Vec<Tag> {
 }
 
 #[tauri::command]
+fn update_tag(tag: Tag) -> Tag {
+    tag_update(tag)
+}
+
+#[tauri::command]
+fn delete_tag(tag: Tag) -> bool {
+    tag_delete(tag)
+}
+
+#[tauri::command]
 fn create_tag(tag: NewTag) -> Tag {
     tag_create(tag)
 }
@@ -140,6 +150,8 @@ fn main() {
             get_roles,
             get_tags,
             create_tag,
+            update_tag,
+            delete_tag,
             get_tribunals,
             update_tribunal,
             get_time_windows,

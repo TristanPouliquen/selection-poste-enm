@@ -4,7 +4,7 @@ use crate::schema::{position_tags, tags};
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 
-#[derive(Identifiable, Queryable, Selectable, Serialize, Deserialize)]
+#[derive(Identifiable, Queryable, Selectable, Serialize, Deserialize, AsChangeset)]
 #[serde(rename_all = "camelCase")]
 pub struct Tag {
     pub id: i32,
@@ -17,6 +17,20 @@ pub fn tag_list() -> Vec<Tag> {
         .select(tags::all_columns)
         .load::<Tag>(&mut establish_connection())
         .expect("Failed loading Tags")
+}
+
+pub fn tag_update(tag: Tag) -> Tag {
+    diesel::update(tags::table.find(tag.id))
+        .set(&tag)
+        .get_result(&mut establish_connection())
+        .unwrap()
+}
+
+pub fn tag_delete(tag: Tag) -> bool {
+    diesel::delete(tags::table.find(tag.id))
+        .execute(&mut establish_connection())
+        .unwrap();
+    true
 }
 
 #[derive(Insertable, Deserialize)]
