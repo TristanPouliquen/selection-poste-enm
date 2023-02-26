@@ -22,11 +22,12 @@ const useTagsAction = () => {
     setTags(await invoke<Tag[]>("get_tags"));
   };
 
-  const add = async (newTag: Partial<Tag>) => {
+  const create = async (newTag: Partial<Tag>) => {
     const tag = await invoke<Tag>("create_tag", { tag: newTag });
     setTags([...tags, tag]);
+    return tag;
   };
-  return { getAll, add };
+  return { getAll, create };
 };
 
 export { tagsAtom, tagSelector, useTagsAction };

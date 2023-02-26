@@ -50,8 +50,10 @@ const positionSelector = selectorFamily({
 const usePositionsActions = () => {
   const [positions, setPositions] = useRecoilState(positionsAtom);
   const [tags, setTags] = useRecoilState(tagsAtom);
-  const getAll = async () =>
-    setPositions(await invoke<Position[]>("get_positions"));
+  const getAll = async () => {
+    const result = await invoke<Position[]>("get_positions");
+    setPositions(result);
+  };
 
   const update = async (position: Position) => {
     const updatedPosition = await invoke<Position>("update_position", {
@@ -65,31 +67,32 @@ const usePositionsActions = () => {
   const updateRanking = async (position: Position) =>
     setPositions(await invoke("update_position_ranking", { position }));
   const getTags = async (position: Position) => {
-    const tags = await invoke<Tag[]>("get_position_tagss", { position });
+    const tags = await invoke<Tag[]>("get_position_tags", { position });
     setPositions(
       positions.map((pos) => (position.id === pos.id ? { ...pos, tags } : pos))
     );
   };
   const addTag = async (position: Position, tag: Tag) => {
     await invoke("add_position_tag", { position, tag });
+    const newPosition = await invoke<Position>("get_position", {
+      id: position.id,
+    });
     setPositions(
-      positions.map((pos) =>
-        pos.id === position.id
-          ? { ...pos, tags: [...(pos.tags ?? []), tag] }
-          : pos
-      )
+      positions.map((pos) => (pos.id === position.id ? newPosition : pos))
     );
   };
   const removeTag = async (position: Position, tag: Tag) => {
-    const result = await invoke<Tag>("remove_position_tag", { position, tag });
+    const result = await invoke<boolean>("remove_position_tag", {
+      position,
+      tag,
+    });
+    const newPosition = await invoke<Position>("get_position", {
+      id: position.id,
+    });
     setPositions(
-      positions.map((pos) =>
-        pos.id === position.id
-          ? { ...pos, tags: (pos.tags ?? []).filter((t) => t.id !== tag.id) }
-          : pos
-      )
+      positions.map((pos) => (pos.id === position.id ? newPosition : pos))
     );
-    if (null === result) {
+    if (!result) {
       // Tag has been deleted from database because it was the last occurence
       setTags(tags.filter((t) => t.id !== tag.id));
     }

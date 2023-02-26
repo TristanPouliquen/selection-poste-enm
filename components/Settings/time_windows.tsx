@@ -18,7 +18,7 @@ const TimeWindowForm = ({ timeWindow }: IProps) => {
     reset,
     formState: { errors },
   } = useForm<TimeWindow>({
-    defaultValues: timeWindow ?? { tooFar: false, color: "#cacaca" },
+    defaultValues: timeWindow ?? { tooFar: false, color: "#797979" },
   });
   const onSubmit = (formValue: TimeWindow) => {
     if (timeWindow) {

@@ -43,8 +43,13 @@ fn get_groups() -> Vec<Group> {
 }
 
 #[tauri::command]
-fn get_positions() -> Vec<Position> {
+fn get_positions() -> Vec<PositionWithTags> {
     position_list()
+}
+
+#[tauri::command]
+fn get_position(id: i32) -> PositionWithTags {
+    position_get(id)
 }
 
 #[tauri::command]
@@ -53,8 +58,18 @@ fn update_position(position: Position) -> Position {
 }
 
 #[tauri::command]
-fn update_position_ranking(position: Position) -> Vec<Position> {
+fn update_position_ranking(position: Position) -> Vec<PositionWithTags> {
     position_update_ranking(position)
+}
+
+#[tauri::command]
+fn add_position_tag(position: Position, tag: Tag) -> PositionTag {
+    position_tag_add(position, tag)
+}
+
+#[tauri::command]
+fn remove_position_tag(position: Position, tag: Tag) -> bool {
+    position_tag_remove(position, tag)
 }
 
 #[tauri::command]
@@ -65,6 +80,21 @@ fn get_roles() -> Vec<Role> {
 #[tauri::command]
 fn get_tags() -> Vec<Tag> {
     tag_list()
+}
+
+#[tauri::command]
+fn update_tag(tag: Tag) -> Tag {
+    tag_update(tag)
+}
+
+#[tauri::command]
+fn delete_tag(tag: Tag) -> bool {
+    tag_delete(tag)
+}
+
+#[tauri::command]
+fn create_tag(tag: NewTag) -> Tag {
+    tag_create(tag)
 }
 
 #[tauri::command]
@@ -112,10 +142,16 @@ fn main() {
             update_appeal_court,
             get_groups,
             get_positions,
+            get_position,
             update_position,
             update_position_ranking,
+            add_position_tag,
+            remove_position_tag,
             get_roles,
             get_tags,
+            create_tag,
+            update_tag,
+            delete_tag,
             get_tribunals,
             update_tribunal,
             get_time_windows,

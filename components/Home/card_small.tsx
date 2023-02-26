@@ -3,6 +3,9 @@ import { Position } from "@/types/types";
 import { BackpackIcon, EyeNoneIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import { useSetRecoilState } from "recoil";
 import { currentPositionIdAtom, usePositionsActions } from "@/_state";
+import PrevalentDomainBadge from "@/components/Badges/prevalent_domain";
+import PlacedBadge from "@/components/Badges/placed";
+import TagBadge from "@/components/Badges/tag";
 
 interface IProps {
   position: Position;
@@ -33,12 +36,11 @@ const CardSmall = ({ position }: IProps) => {
             </div>
           </div>
           <div className="flex flex-row-reverse">
-            <div className="badge badge-outline rounded-lg ml-3">
-              {position.prevalentDomain}
-            </div>
-            {position.placed ? (
-              <div className="badge rounded-lg badge-secondary ml-3">Placé</div>
-            ) : null}
+            {...(position.tags ?? []).map((tag) => (
+              <TagBadge key={`tag_${tag.id}`} tag={tag} />
+            ))}
+            <PrevalentDomainBadge position={position} />
+            <PlacedBadge position={position} />
           </div>
           <div className="p-1 pl-3" onClick={toggleTaken}>
             {position.taken ? (
