@@ -102,6 +102,7 @@ const usePositionsActions = () => {
 };
 
 export {
+  positionsAtom,
   positionsSelector,
   currentPositionIdAtom,
   positionSelector,
