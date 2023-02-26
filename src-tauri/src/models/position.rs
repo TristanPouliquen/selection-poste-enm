@@ -56,6 +56,20 @@ pub fn position_list() -> Vec<PositionWithTags> {
         .collect()
 }
 
+pub fn position_get(id: i32) -> PositionWithTags {
+    let position = positions::dsl::positions
+        .find(id)
+        .first::<Position>(&mut establish_connection())
+        .expect("Error loading position");
+    let tags = PositionTag::belonging_to(&position)
+        .inner_join(tags::table)
+        .select(Tag::as_select())
+        .load::<Tag>(&mut establish_connection())
+        .expect("Error loading tags");
+
+    PositionWithTags { position, tags }
+}
+
 pub fn position_update(position: Position) -> Position {
     diesel::update(positions::table.find(position.id))
         .set((

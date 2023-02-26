@@ -33,6 +33,7 @@ const CardFocus = ({ position }: IProps) => {
       <label
         htmlFor=""
         className="modal-box h-5/6 w-11/12 max-w-7xl flex flex-col"
+        onClick={(e) => e.stopPropagation()}
       >
         <h1 className="mx-2 text-4xl font-bold flex flex-row items-center">
           <div className="flex flex-row grow">

@@ -5,7 +5,7 @@ interface IProps {
   position: Position;
 }
 const PrevalentDomainBadge = ({ position }: IProps) => (
-  <div className="badge badge-outline rounded-lg ml-3">
+  <div className="badge badge-outline rounded-lg mr-2">
     {position.prevalentDomain}
   </div>
 );

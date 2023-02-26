@@ -8,7 +8,7 @@ interface IProps {
 const TagBadge = ({ tag }: IProps) => {
   return (
     <div
-      className="badge rounded-lg badge-outline"
+      className="badge rounded-lg badge-outline mr-2"
       style={{ color: `${tag.color}` }}
     >
       {tag.name}

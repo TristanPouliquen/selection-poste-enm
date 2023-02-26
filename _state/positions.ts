@@ -74,12 +74,11 @@ const usePositionsActions = () => {
   };
   const addTag = async (position: Position, tag: Tag) => {
     await invoke("add_position_tag", { position, tag });
+    const newPosition = await invoke<Position>("get_position", {
+      id: position.id,
+    });
     setPositions(
-      positions.map((pos) =>
-        pos.id === position.id
-          ? { ...pos, tags: [...(pos.tags ?? []), tag] }
-          : pos
-      )
+      positions.map((pos) => (pos.id === position.id ? newPosition : pos))
     );
   };
   const removeTag = async (position: Position, tag: Tag) => {
@@ -87,12 +86,11 @@ const usePositionsActions = () => {
       position,
       tag,
     });
+    const newPosition = await invoke<Position>("get_position", {
+      id: position.id,
+    });
     setPositions(
-      positions.map((pos) =>
-        pos.id === position.id
-          ? { ...pos, tags: (pos.tags ?? []).filter((t) => t.id !== tag.id) }
-          : pos
-      )
+      positions.map((pos) => (pos.id === position.id ? newPosition : pos))
     );
     if (!result) {
       // Tag has been deleted from database because it was the last occurence

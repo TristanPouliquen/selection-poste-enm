@@ -7,7 +7,7 @@ interface IProps {
 
 const PlacedBadge = ({ position }: IProps) =>
   position.placed ? (
-    <div className="badge rounded-lg badge-secondary ml-3">Placé</div>
+    <div className="badge rounded-lg badge-secondary mr-2">Placé</div>
   ) : null;
 
 export default PlacedBadge;

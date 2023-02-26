@@ -24,7 +24,6 @@ const PositionsList = () => {
     setPositions(copy);
     updateRanking({ ...movedPosition, ranking: replacedPosition.ranking });
   };
-  console.log(positions);
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <StrictModeDroppable droppableId="positionList">

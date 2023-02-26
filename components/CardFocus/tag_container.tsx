@@ -25,7 +25,9 @@ interface IOption {
 
 const styles: StylesConfig<IOption, true> = {
   multiValueRemove: (base, state) => {
-    return state.data.isFixed ? { ...base, display: "none" } : base;
+    return state.data.isFixed
+      ? { ...base, display: "none" }
+      : { ...base, "&:hover": { backgroundColor: "transparent" } };
   },
   multiValue: (base) => ({
     ...base,
@@ -59,7 +61,9 @@ const MultiValueContainer = (props: MultiValueGenericProps<IOption>) => (
     } ${!props.data.isFixed ? "pr-0" : ""}`}
     style={props.data.color ? { color: props.data.color } : undefined}
   >
-    <components.MultiValueContainer {...props} />
+    <components.MultiValueContainer {...props}>
+      {props.children}
+    </components.MultiValueContainer>
   </div>
 );
 
@@ -67,9 +71,7 @@ const TagContainer = ({ position }: IProps) => {
   const { getTags, addTag, removeTag } = usePositionsActions();
   const { create } = useTagsAction();
   const tags = useRecoilValue(tagsAtom);
-  console.log(position);
   useEffect(() => {
-    console.log(position.tags);
     if (!position.tags) {
       getTags(position);
     }
@@ -109,9 +111,14 @@ const TagContainer = ({ position }: IProps) => {
         if (actionMeta.removedValue.isFixed) {
           return;
         }
-        removeTag(position, convertOptionToTag(actionMeta.removedValue));
+        const tag =
+          actionMeta.removedValue.id === 0
+            ? (tags.find((t) => t.name === actionMeta.removedValue.name) as Tag)
+            : convertOptionToTag(actionMeta.removedValue);
+        removeTag(position, tag);
         break;
       case "clear":
+        console.log(actionMeta.removedValues);
         newValue = value.filter((o) => o.isFixed);
         actionMeta.removedValues.map((o) =>
           !o.isFixed ? removeTag(position, convertOptionToTag(o)) : null
@@ -138,7 +145,7 @@ const TagContainer = ({ position }: IProps) => {
     setValue(newValue);
   };
   return (
-    <div className="grow p-2">
+    <div className="grow p-2" onClick={(e) => e.preventDefault()}>
       <CreatableSelect
         isMulti
         getNewOptionData={(inputValue) => ({

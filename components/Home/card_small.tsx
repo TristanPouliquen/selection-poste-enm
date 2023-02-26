@@ -36,11 +36,11 @@ const CardSmall = ({ position }: IProps) => {
             </div>
           </div>
           <div className="flex flex-row-reverse">
-            <PrevalentDomainBadge position={position} />
-            <PlacedBadge position={position} />
             {...(position.tags ?? []).map((tag) => (
               <TagBadge key={`tag_${tag.id}`} tag={tag} />
             ))}
+            <PrevalentDomainBadge position={position} />
+            <PlacedBadge position={position} />
           </div>
           <div className="p-1 pl-3" onClick={toggleTaken}>
             {position.taken ? (

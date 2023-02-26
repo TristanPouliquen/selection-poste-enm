@@ -48,6 +48,11 @@ fn get_positions() -> Vec<PositionWithTags> {
 }
 
 #[tauri::command]
+fn get_position(id: i32) -> PositionWithTags {
+    position_get(id)
+}
+
+#[tauri::command]
 fn update_position(position: Position) -> Position {
     position_update(position)
 }
@@ -127,6 +132,7 @@ fn main() {
             update_appeal_court,
             get_groups,
             get_positions,
+            get_position,
             update_position,
             update_position_ranking,
             add_position_tag,
