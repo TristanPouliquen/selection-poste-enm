@@ -35,7 +35,7 @@ jobs:
       - name: run step if secret is present
         if: (steps.checksecrets.outputs.secretspresent == 'YES')
         run: echo secret is present
-      - name: Setup Node
+      - name: Setup Node & restore Yarn dependencies
         uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -47,7 +47,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
-      - uses: actions/cache@v3
+      - name: Restore Cargo cache
+        uses: actions/cache@v3
         with:
           path: |
             ~/src-tauri/.cargo/bin/
