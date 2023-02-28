@@ -10,6 +10,5 @@ pub mod time_window;
 pub mod tribunal;
 
 pub fn establish_connection(path: &str) -> SqliteConnection {
-    SqliteConnection::establish(path)
-        .unwrap_or_else(|_| panic!("Error connecting to database"))
+    SqliteConnection::establish(path).unwrap_or_else(|_| panic!("Error connecting to database"))
 }

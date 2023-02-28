@@ -18,10 +18,7 @@ pub fn appeal_court_list(db_path: String) -> Vec<AppealCourt> {
         .expect("Loading appeal courts failed")
 }
 
-pub fn appeal_court_update(
-    db_path: String,
-    appeal_court: AppealCourt,
-) -> AppealCourt {
+pub fn appeal_court_update(db_path: String, appeal_court: AppealCourt) -> AppealCourt {
     diesel::update(appeal_courts::table.find(appeal_court.id))
         .set(&appeal_court)
         .get_result(&mut establish_connection(&db_path))

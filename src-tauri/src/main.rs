@@ -8,6 +8,7 @@ extern crate diesel_migrations;
 
 use crate::models::app_state::*;
 use crate::models::appeal_court::*;
+use crate::models::establish_connection;
 use crate::models::group::*;
 use crate::models::position::*;
 use crate::models::role::*;
@@ -15,7 +16,6 @@ use crate::models::tag::*;
 use crate::models::time_window::*;
 use crate::models::tribunal::*;
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
-use crate::models::establish_connection;
 
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 pub const DATABASE_NAME: &str = "selection-poste-enm.sqlite3";
@@ -45,10 +45,7 @@ fn get_appeal_courts(app_handle: tauri::AppHandle) -> Vec<AppealCourt> {
 }
 
 #[tauri::command]
-fn update_appeal_court(
-    app_handle: tauri::AppHandle,
-    appeal_court: AppealCourt,
-) -> AppealCourt {
+fn update_appeal_court(app_handle: tauri::AppHandle, appeal_court: AppealCourt) -> AppealCourt {
     let db_path = get_db_path(app_handle);
     appeal_court_update(db_path, appeal_court)
 }
@@ -87,11 +84,7 @@ fn update_position_ranking(
 }
 
 #[tauri::command]
-fn add_position_tag(
-    app_handle: tauri::AppHandle,
-    position: Position,
-    tag: Tag,
-) -> PositionTag {
+fn add_position_tag(app_handle: tauri::AppHandle, position: Position, tag: Tag) -> PositionTag {
     let db_path = get_db_path(app_handle);
     position_tag_add(db_path, position, tag)
 }
@@ -157,10 +150,7 @@ fn update_time_window(app_handle: tauri::AppHandle, time_window: TimeWindow) -> 
 }
 
 #[tauri::command]
-fn create_time_window(
-    app_handle: tauri::AppHandle,
-    time_window: NewTimeWindow,
-) -> TimeWindow {
+fn create_time_window(app_handle: tauri::AppHandle, time_window: NewTimeWindow) -> TimeWindow {
     let db_path = get_db_path(app_handle);
     time_window_create(db_path, time_window)
 }
@@ -179,7 +169,8 @@ fn main() {
             dir_path.push(DATABASE_NAME);
             let path = dir_path.display().to_string();
             let connection = &mut establish_connection(&path);
-            connection.run_pending_migrations(MIGRATIONS)
+            connection
+                .run_pending_migrations(MIGRATIONS)
                 .expect("Error running pending migrations");
             Ok(())
         })

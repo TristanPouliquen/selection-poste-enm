@@ -45,10 +45,7 @@ pub struct NewTimeWindow<'a> {
     pub max_time: Option<i32>,
 }
 
-pub fn time_window_create(
-    db_path: String,
-    time_window: NewTimeWindow,
-) -> TimeWindow {
+pub fn time_window_create(db_path: String, time_window: NewTimeWindow) -> TimeWindow {
     diesel::insert_into(time_windows::dsl::time_windows)
         .values(&time_window)
         .get_result(&mut establish_connection(&db_path))

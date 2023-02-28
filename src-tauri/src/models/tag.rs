@@ -50,11 +50,7 @@ pub struct PositionTag {
     pub tag_id: i32,
 }
 
-pub fn position_tag_add(
-    db_path: String,
-    position: Position,
-    tag: Tag,
-) -> PositionTag {
+pub fn position_tag_add(db_path: String, position: Position, tag: Tag) -> PositionTag {
     diesel::insert_into(position_tags::dsl::position_tags)
         .values((
             position_tags::position_id.eq(position.id),

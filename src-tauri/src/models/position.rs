@@ -81,10 +81,7 @@ pub fn position_update(db_path: String, position: Position) -> Position {
         .unwrap()
 }
 
-pub fn position_update_ranking(
-    db_path: String,
-    mut position: Position,
-) -> Vec<PositionWithTags> {
+pub fn position_update_ranking(db_path: String, mut position: Position) -> Vec<PositionWithTags> {
     let total_positions = positions::dsl::positions
         .select(count(positions::id))
         .first(&mut establish_connection(&db_path))
