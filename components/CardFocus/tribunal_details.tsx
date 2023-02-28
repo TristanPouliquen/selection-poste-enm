@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import { formatDuration } from "date-fns";
 import { fr } from "date-fns/locale";
 import { Tribunal } from "@/types/types";
@@ -29,7 +29,7 @@ const TribunalDetails = ({ tribunal }: IProps) => {
     await update({ ...tribunal, timeTo: formValue.timeTo });
     setEditingTribunal(false);
   };
-  const toggleForm = (e: Event) => {
+  const toggleForm = (e: MouseEvent) => {
     e.preventDefault();
     setEditingTribunal(true);
   };
