@@ -50,7 +50,12 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://github.com/TristanPouliquen/selection-poste-enm/latest-version.json"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDUxODE0QkI0QTZFRTQyNDcKUldSSFF1Nm10RXVCVWZFVW9EMkl4MEl4NW82eXRWRG1VV2dJWExCU0tEQ3FFL1A0V1c5L0JUaHkK"
     },
     "windows": [
       {

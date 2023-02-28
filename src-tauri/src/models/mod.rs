@@ -9,7 +9,6 @@ pub mod tag;
 pub mod time_window;
 pub mod tribunal;
 
-pub fn establish_connection() -> SqliteConnection {
-    SqliteConnection::establish("../../db/selection-poste-enm.sqlite3")
-        .unwrap_or_else(|_| panic!("Error connecting to database"))
+pub fn establish_connection(path: &str) -> SqliteConnection {
+    SqliteConnection::establish(path).unwrap_or_else(|_| panic!("Error connecting to database"))
 }
