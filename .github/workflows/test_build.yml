@@ -22,19 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Check secrets presence
-        id: checksecrets
         shell: bash
-        run: |
-          if [ "$TAURI_PRIVATE_KEY" == "" ]; then
-            echo "secretspresent=NO" >> $GITHUB_OUTPUT
-          else
-            echo "secretspresent=YES" >> $GITHUB_OUTPUT
-          fi
+        run: echo "$TAURI_PRIVATE_KEY"
         env:
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY}}
-      - name: run step if secret is present
-        if: (steps.checksecrets.outputs.secretspresent == 'YES')
-        run: echo secret is present
       - name: Setup Node & restore Yarn dependencies
         uses: actions/setup-node@v3
         with:
