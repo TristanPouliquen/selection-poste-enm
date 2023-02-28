@@ -11,9 +11,9 @@ pub struct Role {
     pub color: String,
 }
 
-pub fn role_list() -> Vec<Role> {
+pub fn role_list(db_path: String) -> Vec<Role> {
     roles::dsl::roles
         .select(roles::all_columns)
-        .load::<Role>(&mut establish_connection())
+        .load::<Role>(&mut establish_connection(&db_path))
         .expect("Loading roles failed")
 }

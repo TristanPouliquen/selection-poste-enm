@@ -28,16 +28,16 @@ pub struct PositionWithTags {
     tags: Vec<Tag>,
 }
 
-pub fn position_list() -> Vec<PositionWithTags> {
+pub fn position_list(db_path: String) -> Vec<PositionWithTags> {
     let all_positions = positions::table
         .select(Position::as_select())
         .order((positions::ranking.asc(), positions::id.asc()))
-        .load::<Position>(&mut establish_connection())
+        .load::<Position>(&mut establish_connection(&db_path))
         .expect("Error loading positions");
     let all_tags = PositionTag::belonging_to(&all_positions)
         .inner_join(tags::table)
         .select((PositionTag::as_select(), Tag::as_select()))
-        .load(&mut establish_connection())
+        .load(&mut establish_connection(&db_path))
         .expect("Error loading tags");
 
     all_tags
@@ -56,35 +56,38 @@ pub fn position_list() -> Vec<PositionWithTags> {
         .collect()
 }
 
-pub fn position_get(id: i32) -> PositionWithTags {
+pub fn position_get(db_path: String, id: i32) -> PositionWithTags {
     let position = positions::dsl::positions
         .find(id)
-        .first::<Position>(&mut establish_connection())
+        .first::<Position>(&mut establish_connection(&db_path))
         .expect("Error loading position");
     let tags = PositionTag::belonging_to(&position)
         .inner_join(tags::table)
         .select(Tag::as_select())
-        .load::<Tag>(&mut establish_connection())
+        .load::<Tag>(&mut establish_connection(&db_path))
         .expect("Error loading tags");
 
     PositionWithTags { position, tags }
 }
 
-pub fn position_update(position: Position) -> Position {
+pub fn position_update(db_path: String, position: Position) -> Position {
     diesel::update(positions::table.find(position.id))
         .set((
             positions::notes.eq(position.notes),
             positions::prevalent_domain.eq(position.prevalent_domain),
             positions::taken.eq(position.taken),
         ))
-        .get_result(&mut establish_connection())
+        .get_result(&mut establish_connection(&db_path))
         .unwrap()
 }
 
-pub fn position_update_ranking(mut position: Position) -> Vec<PositionWithTags> {
+pub fn position_update_ranking(
+    db_path: String,
+    mut position: Position,
+) -> Vec<PositionWithTags> {
     let total_positions = positions::dsl::positions
         .select(count(positions::id))
-        .first(&mut establish_connection())
+        .first(&mut establish_connection(&db_path))
         .map(|x: i64| x as i32)
         .unwrap_or_else(|_| panic!("Unable to count Positions"));
     if position.ranking < 1 {
@@ -95,7 +98,7 @@ pub fn position_update_ranking(mut position: Position) -> Vec<PositionWithTags> 
     }
     let previous_position: Position = positions::table
         .find(position.id)
-        .get_result::<Position>(&mut establish_connection())
+        .get_result::<Position>(&mut establish_connection(&db_path))
         .unwrap_or_else(|_| panic!("Unable to find Position {0}", position.id));
     if previous_position.ranking > position.ranking {
         diesel::update(
@@ -106,7 +109,7 @@ pub fn position_update_ranking(mut position: Position) -> Vec<PositionWithTags> 
             ),
         )
         .set(positions::ranking.eq(positions::ranking + 1))
-        .execute(&mut establish_connection())
+        .execute(&mut establish_connection(&db_path))
         .expect("Failed updating ranking");
     } else {
         diesel::update(
@@ -117,12 +120,12 @@ pub fn position_update_ranking(mut position: Position) -> Vec<PositionWithTags> 
             ),
         )
         .set(positions::ranking.eq(positions::ranking - 1))
-        .execute(&mut establish_connection())
+        .execute(&mut establish_connection(&db_path))
         .expect("Failed updating ranking");
     }
     diesel::update(positions::table.find(position.id))
         .set(positions::ranking.eq(position.ranking))
-        .execute(&mut establish_connection())
+        .execute(&mut establish_connection(&db_path))
         .expect("Failed updating ranking");
-    position_list()
+    position_list(db_path)
 }

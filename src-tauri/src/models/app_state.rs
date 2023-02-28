@@ -12,15 +12,15 @@ pub struct AppState {
     pub active_filters: Option<String>,
 }
 
-pub fn app_state_get() -> AppState {
+pub fn app_state_get(db_path: String) -> AppState {
     app_state::dsl::app_state
-        .first(&mut establish_connection())
+        .first(&mut establish_connection(&db_path))
         .expect("Failed loading app state")
 }
 
-pub fn app_state_update(app_state: AppState) -> AppState {
+pub fn app_state_update(db_path: String, app_state: AppState) -> AppState {
     diesel::update(app_state::table.find(app_state.id))
         .set(&app_state)
-        .get_result(&mut establish_connection())
+        .get_result(&mut establish_connection(&db_path))
         .unwrap()
 }

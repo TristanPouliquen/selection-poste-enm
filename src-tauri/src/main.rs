@@ -8,7 +8,6 @@ extern crate diesel_migrations;
 
 use crate::models::app_state::*;
 use crate::models::appeal_court::*;
-use crate::models::establish_connection;
 use crate::models::group::*;
 use crate::models::position::*;
 use crate::models::role::*;
@@ -16,125 +15,175 @@ use crate::models::tag::*;
 use crate::models::time_window::*;
 use crate::models::tribunal::*;
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
+use crate::models::establish_connection;
 
-#[tauri::command]
-fn get_app_state() -> AppState {
-    app_state_get()
+fn get_db_path(app_handle: tauri::AppHandle) -> String {
+    let mut app_dir = app_handle.path_resolver().app_data_dir().unwrap();
+    app_dir.push("selection-poste-enm.sqlite3");
+    app_dir.display().to_string()
 }
 
 #[tauri::command]
-fn update_app_state(app_state: AppState) -> AppState {
-    app_state_update(app_state)
+fn get_app_state(app_handle: tauri::AppHandle) -> AppState {
+    let db_path = get_db_path(app_handle);
+    app_state_get(db_path)
 }
 
 #[tauri::command]
-fn get_appeal_courts() -> Vec<AppealCourt> {
-    appeal_court_list()
+fn update_app_state(app_handle: tauri::AppHandle, app_state: AppState) -> AppState {
+    let db_path = get_db_path(app_handle);
+    app_state_update(db_path, app_state)
 }
 
 #[tauri::command]
-fn update_appeal_court(appeal_court: AppealCourt) -> AppealCourt {
-    appeal_court_update(appeal_court)
+fn get_appeal_courts(app_handle: tauri::AppHandle) -> Vec<AppealCourt> {
+    let db_path = get_db_path(app_handle);
+    appeal_court_list(db_path)
 }
 
 #[tauri::command]
-fn get_groups() -> Vec<Group> {
-    group_list()
+fn update_appeal_court(
+    app_handle: tauri::AppHandle,
+    appeal_court: AppealCourt,
+) -> AppealCourt {
+    let db_path = get_db_path(app_handle);
+    appeal_court_update(db_path, appeal_court)
 }
 
 #[tauri::command]
-fn get_positions() -> Vec<PositionWithTags> {
-    position_list()
+fn get_groups(app_handle: tauri::AppHandle) -> Vec<Group> {
+    let db_path = get_db_path(app_handle);
+    group_list(db_path)
 }
 
 #[tauri::command]
-fn get_position(id: i32) -> PositionWithTags {
-    position_get(id)
+fn get_positions(app_handle: tauri::AppHandle) -> Vec<PositionWithTags> {
+    let db_path = get_db_path(app_handle);
+    position_list(db_path)
 }
 
 #[tauri::command]
-fn update_position(position: Position) -> Position {
-    position_update(position)
+fn get_position(app_handle: tauri::AppHandle, id: i32) -> PositionWithTags {
+    let db_path = get_db_path(app_handle);
+    position_get(db_path, id)
 }
 
 #[tauri::command]
-fn update_position_ranking(position: Position) -> Vec<PositionWithTags> {
-    position_update_ranking(position)
+fn update_position(app_handle: tauri::AppHandle, position: Position) -> Position {
+    let db_path = get_db_path(app_handle);
+    position_update(db_path, position)
 }
 
 #[tauri::command]
-fn add_position_tag(position: Position, tag: Tag) -> PositionTag {
-    position_tag_add(position, tag)
+fn update_position_ranking(
+    app_handle: tauri::AppHandle,
+    position: Position,
+) -> Vec<PositionWithTags> {
+    let db_path = get_db_path(app_handle);
+    position_update_ranking(db_path, position)
 }
 
 #[tauri::command]
-fn remove_position_tag(position: Position, tag: Tag) -> bool {
-    position_tag_remove(position, tag)
+fn add_position_tag(
+    app_handle: tauri::AppHandle,
+    position: Position,
+    tag: Tag,
+) -> PositionTag {
+    let db_path = get_db_path(app_handle);
+    position_tag_add(db_path, position, tag)
 }
 
 #[tauri::command]
-fn get_roles() -> Vec<Role> {
-    role_list()
+fn remove_position_tag(app_handle: tauri::AppHandle, position: Position, tag: Tag) -> bool {
+    let db_path = get_db_path(app_handle);
+    position_tag_remove(db_path, position, tag)
 }
 
 #[tauri::command]
-fn get_tags() -> Vec<Tag> {
-    tag_list()
+fn get_roles(app_handle: tauri::AppHandle) -> Vec<Role> {
+    let db_path = get_db_path(app_handle);
+    role_list(db_path)
 }
 
 #[tauri::command]
-fn update_tag(tag: Tag) -> Tag {
-    tag_update(tag)
+fn get_tags(app_handle: tauri::AppHandle) -> Vec<Tag> {
+    let db_path = get_db_path(app_handle);
+    tag_list(db_path)
 }
 
 #[tauri::command]
-fn delete_tag(tag: Tag) -> bool {
-    tag_delete(tag)
+fn update_tag(app_handle: tauri::AppHandle, tag: Tag) -> Tag {
+    let db_path = get_db_path(app_handle);
+    tag_update(db_path, tag)
 }
 
 #[tauri::command]
-fn create_tag(tag: NewTag) -> Tag {
-    tag_create(tag)
+fn delete_tag(app_handle: tauri::AppHandle, tag: Tag) -> bool {
+    let db_path = get_db_path(app_handle);
+    tag_delete(db_path, tag)
 }
 
 #[tauri::command]
-fn get_tribunals() -> Vec<Tribunal> {
-    tribunal_list()
+fn create_tag(app_handle: tauri::AppHandle, tag: NewTag) -> Tag {
+    let db_path = get_db_path(app_handle);
+    tag_create(db_path, tag)
 }
 
 #[tauri::command]
-fn update_tribunal(tribunal: Tribunal) -> Tribunal {
-    tribunal_update(tribunal)
+fn get_tribunals(app_handle: tauri::AppHandle) -> Vec<Tribunal> {
+    let db_path = get_db_path(app_handle);
+    tribunal_list(db_path)
 }
 
 #[tauri::command]
-fn get_time_windows() -> Vec<TimeWindow> {
-    time_window_list()
+fn update_tribunal(app_handle: tauri::AppHandle, tribunal: Tribunal) -> Tribunal {
+    let db_path = get_db_path(app_handle);
+    tribunal_update(db_path, tribunal)
 }
 
 #[tauri::command]
-fn update_time_window(time_window: TimeWindow) -> TimeWindow {
-    time_window_update(time_window)
+fn get_time_windows(app_handle: tauri::AppHandle) -> Vec<TimeWindow> {
+    let db_path = get_db_path(app_handle);
+    time_window_list(db_path)
 }
 
 #[tauri::command]
-fn create_time_window(time_window: NewTimeWindow) -> TimeWindow {
-    time_window_create(time_window)
+fn update_time_window(app_handle: tauri::AppHandle, time_window: TimeWindow) -> TimeWindow {
+    let db_path = get_db_path(app_handle);
+    time_window_update(db_path, time_window)
 }
 
 #[tauri::command]
-fn delete_time_window(time_window: TimeWindow) -> bool {
-    time_window_delete(time_window)
+fn create_time_window(
+    app_handle: tauri::AppHandle,
+    time_window: NewTimeWindow,
+) -> TimeWindow {
+    let db_path = get_db_path(app_handle);
+    time_window_create(db_path, time_window)
+}
+
+#[tauri::command]
+fn delete_time_window(app_handle: tauri::AppHandle, time_window: TimeWindow) -> bool {
+    let db_path = get_db_path(app_handle);
+    time_window_delete(db_path, time_window)
 }
 
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 
+struct MyState<'a> {
+    pub db_path: &'a str,
+}
 fn main() {
-    let connection = &mut establish_connection();
-    connection
-        .run_pending_migrations(MIGRATIONS)
-        .unwrap_or_else(|_| panic!("Error loading migrations"));
     tauri::Builder::default()
+        .setup(|app| {
+            let mut dir_path = app.path_resolver().app_data_dir().unwrap();
+            let _ = std::fs::create_dir_all(&dir_path);
+            dir_path.push("selection-poste-enm.sqlite3");
+            let path = dir_path.display().to_string();
+            let connection = &mut establish_connection(&path);
+            connection.run_pending_migrations(MIGRATIONS)?;
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![
             get_app_state,
             update_app_state,

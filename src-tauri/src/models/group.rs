@@ -11,9 +11,9 @@ pub struct Group {
     pub color: String,
 }
 
-pub fn group_list() -> Vec<Group> {
+pub fn group_list(db_path: String) -> Vec<Group> {
     groups::dsl::groups
         .select(groups::all_columns)
-        .load::<Group>(&mut establish_connection())
+        .load::<Group>(&mut establish_connection(&db_path))
         .expect("Unable to load groups")
 }
