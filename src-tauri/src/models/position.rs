@@ -126,3 +126,36 @@ pub fn position_update_ranking(db_path: String, mut position: Position) -> Vec<P
         .expect("Failed updating ranking");
     position_list(db_path)
 }
+
+pub fn position_sort(sortDataInput : SortDataInput) -> bool {
+    let positions = position_list();
+
+    let mut weighted_positions = Vec::<PositionWithWeight>::new();
+
+    for (positive) in sortDataInput.positive.iter().enumerate(){
+        match positive.1.0{
+        
+            _ => todo!(),
+        }
+    }
+
+    for (negative) in sortDataInput.negative.iter().enumerate(){
+        match negative.1.0{
+        
+            _ => todo!(),
+        }
+    }
+
+    return true;
+}
+
+struct PositionWithWeight{
+    position : Position,
+    weight : i32
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct SortDataInput{
+    positive : Vec<(String, Vec<String>)>,
+    negative : Vec<(String, Vec<String>)>
+}
