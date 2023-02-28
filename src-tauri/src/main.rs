@@ -17,9 +17,12 @@ use crate::models::tribunal::*;
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
 use crate::models::establish_connection;
 
+pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
+pub const DATABASE_NAME: &str = "selection-poste-enm.sqlite3";
+
 fn get_db_path(app_handle: tauri::AppHandle) -> String {
     let mut app_dir = app_handle.path_resolver().app_data_dir().unwrap();
-    app_dir.push("selection-poste-enm.sqlite3");
+    app_dir.push(DATABASE_NAME);
     app_dir.display().to_string()
 }
 
@@ -168,20 +171,16 @@ fn delete_time_window(app_handle: tauri::AppHandle, time_window: TimeWindow) -> 
     time_window_delete(db_path, time_window)
 }
 
-pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
-
-struct MyState<'a> {
-    pub db_path: &'a str,
-}
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
             let mut dir_path = app.path_resolver().app_data_dir().unwrap();
             let _ = std::fs::create_dir_all(&dir_path);
-            dir_path.push("selection-poste-enm.sqlite3");
+            dir_path.push(DATABASE_NAME);
             let path = dir_path.display().to_string();
             let connection = &mut establish_connection(&path);
-            connection.run_pending_migrations(MIGRATIONS)?;
+            connection.run_pending_migrations(MIGRATIONS)
+                .expect("Error running pending migrations");
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
