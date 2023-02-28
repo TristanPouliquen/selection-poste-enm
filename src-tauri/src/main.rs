@@ -15,6 +15,8 @@ use crate::models::role::*;
 use crate::models::tag::*;
 use crate::models::tribunal::*;
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
+use serde::Deserialize;
+use serde::Serialize;
 
 #[tauri::command]
 fn get_app_state() -> AppState {
@@ -76,6 +78,11 @@ fn update_tribunal(tribunal: Tribunal) -> Tribunal {
     tribunal_update(tribunal)
 }
 
+#[tauri::command]
+fn get_sortedPositions(sortDataInput : SortDataInput) -> bool {
+    return position_sort(sortDataInput)
+}
+
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 
 fn main() {
@@ -95,7 +102,8 @@ fn main() {
             get_roles,
             get_tags,
             get_tribunals,
-            update_tribunal
+            update_tribunal,
+            get_sortedPositions
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
