@@ -4,9 +4,6 @@ on:
     branches:
       - release
 
-env:
-  TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-
 jobs:
   publish-tauri:
     permissions:
@@ -49,8 +46,8 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
-      - name: Install app dependencies and build it
-        run: yarn && yarn build
+      - name: Install frontend dependencies
+        run: yarn
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
