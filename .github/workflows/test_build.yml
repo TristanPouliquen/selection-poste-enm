@@ -48,14 +48,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
       - uses: actions/cache@v3
-        working-directory: ./src-tauri
         with:
           path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
+            ~/src-tauri/.cargo/bin/
+            ~/src-tauri/.cargo/registry/index/
+            ~/src-tauri/.cargo/registry/cache/
+            ~/src-tauri/.cargo/git/db/
+            ~/src-tauri/target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       - name: Install app dependencies and build it
         run: yarn && yarn tauri build
