@@ -29,7 +29,7 @@ const TribunalDetails = ({ tribunal }: IProps) => {
     await update({ ...tribunal, timeTo: formValue.timeTo });
     setEditingTribunal(false);
   };
-  const toggleForm = (e) => {
+  const toggleForm = (e: Event) => {
     e.preventDefault();
     setEditingTribunal(true);
   };
