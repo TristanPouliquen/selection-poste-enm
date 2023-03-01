@@ -6,8 +6,8 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "selection-poste-enm",
-    "version": "0.1.2"
+    "productName": "Sélection Poste ENM",
+    "version": "0.2.0"
   },
   "tauri": {
     "allowlist": {

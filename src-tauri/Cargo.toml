@@ -1,10 +1,10 @@
 [package]
-name = "app"
-version = "0.1.1"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
+name = "selection-poste-enm"
+version = "0.2.0"
+description = "Sélection Poste ENM"
+authors = ["Tristan Pouliquen <tristan.pouliquen@yahoo.fr>"]
+license = "GPL-3.0-or-later"
+repository = "https://github.com/TristanPouliquen/selection-poste-enm"
 default-run = "app"
 edition = "2021"
 rust-version = "1.59"

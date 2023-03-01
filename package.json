@@ -1,7 +1,10 @@
 {
   "name": "selection-poste-enm",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
+  "license": "GPL-3.0-or-later",
+  "author": "Tristan Pouliquen <tristan.pouliquen@yahoo.fr> (https://github.com/TristanPouliquen)",
+  "contributors": ["Vladimir Chantitch (https://github.com/VladimirChantitch)"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
