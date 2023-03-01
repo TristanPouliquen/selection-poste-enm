@@ -61,7 +61,11 @@ Si vous voulez mettre à jour les données des postes, vous pouvez:
 
 Ce projet utilise [Tauri](https://tauri.app/fr/) et [NextJS](https://nextjs.org/) pour créer un exécutable cross-platform.
 
-Pour lancer le projet, une fois le projet cloné, exécutez la commande suivante depuis la racine du projet :
+Pour installer et lancer le projet, vous devrez:
+1. Cloner le projet sur votre ordinateur via git;
+2. Avoir installé NodeJs et un package manager pour Javascript (Yarn recommandé) (https://yarnpkg.com/getting-started/install)
+3. Avoir installé Rust et Cargo comme package manager (https://doc.rust-lang.org/cargo/getting-started/installation.html)
+4. Avoir installé Diesel CLI (https://diesel.rs/guides/getting-started)
 
 ```bash
 npm run tauri dev
@@ -75,7 +79,7 @@ Le programme lancera une `WebView` en mode développement.
 
 ## Dépendances
 
-Le projet utilise:
+Le projet utilise :
 
 1. [TypeScript](https://www.typescriptlang.org/) comme surcouche Javascript,
 2. [TailwindCSS](https://tailwindcss.com/) comme librairie de style,
