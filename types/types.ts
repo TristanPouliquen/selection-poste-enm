@@ -14,7 +14,7 @@ export type Tribunal = {
   id: number;
   name: string;
   notes?: string;
-  timeTo: number;
+  timeTo?: number;
   color: string;
   appealCourtId: number;
   appealCourt?: AppealCourt;
@@ -53,6 +53,7 @@ export type Position = {
   roleId: number;
   role?: Role;
   tags?: Tag[];
+  documents?: Document[];
 };
 
 export type TimeWindow = {
@@ -61,4 +62,12 @@ export type TimeWindow = {
   minTime: number;
   maxTime?: number;
   color: string;
+};
+
+export type Document = {
+  id: number;
+  name: string;
+  path: string;
+  size: number;
+  positionId: number;
 };

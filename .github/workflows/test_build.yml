@@ -21,10 +21,17 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Node
+      - name: Setup Node & restore Yarn dependencies
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: "yarn"
+      - name: Cache NextJS
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.ts', '**.tsx') }}
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
       - name: Install dependencies (ubuntu only)
@@ -32,8 +39,21 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
-      - name: Install app dependencies and build it
-        run: yarn && yarn tauri build
+      - name: Restore Cargo cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/src-tauri/.cargo/bin/
+            ~/src-tauri/.cargo/registry/index/
+            ~/src-tauri/.cargo/registry/cache/
+            ~/src-tauri/.cargo/git/db/
+            ~/src-tauri/target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+      - name: Install frontend dependencies
+        run: yarn
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_KEY_PASSWORD: ""
