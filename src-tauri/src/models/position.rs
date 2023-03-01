@@ -1,8 +1,12 @@
+use std::{string, ffi::c_void};
+
 use crate::models::establish_connection;
 use crate::schema::positions;
 use diesel::dsl::count;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
+
+use super::tribunal;
 
 #[derive(Identifiable, Queryable, Serialize, Deserialize, AsChangeset)]
 #[diesel(belongs_to(Tribunal))]
@@ -89,19 +93,57 @@ pub fn position_sort(sortDataInput : SortDataInput) -> bool {
 
     let mut weighted_positions = Vec::<PositionWithWeight>::new();
 
-    for (positive) in sortDataInput.positive.iter().enumerate(){
-        match positive.1.0{
-        
-            _ => todo!(),
-        }
+    for (position) in positions{
+        weighted_positions.push(PositionWithWeight{position : position, weight : 0})
     }
 
-    for (negative) in sortDataInput.negative.iter().enumerate(){
-        match negative.1.0{
-        
+    let mut positive_weight : i32 = sortDataInput.positive.len().try_into().unwrap();
+    for (positive) in sortDataInput.positive{
+        match positive.0.as_str(){    
+            "appeal_court" => sort_by_appeal_court(&weighted_positions, true, positive_weight, positive.1),
+            "position" => sort_by_position(&weighted_positions, true, positive_weight),
+            "journey_length" => sort_by_journey_length(&weighted_positions, true, positive_weight),
             _ => todo!(),
+        };
+        positive_weight -= 1;
+    }
+
+    let mut negative_weight : i32 = sortDataInput.negative.len().try_into().unwrap();
+    for (negative) in sortDataInput.negative{
+        match negative.0.as_str(){
+            "appeal_court" => sort_by_appeal_court(&weighted_positions, false, positive_weight, negative.1),
+            "position" => sort_by_position(&weighted_positions, false, positive_weight),
+            "journey_length" => sort_by_journey_length(&weighted_positions, false, positive_weight),
+            _ => todo!(),
+        };
+        negative_weight -= 1;
+    }
+
+    return true;
+}
+
+fn sort_by_appeal_court(weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, positive_ids : Vec<i32>) -> bool{
+    for (w_pos) in weighted_positions{
+        for (idx) in &positive_ids{
+            if (tribunal::is_linked_to_appeal_court(*idx, w_pos.position.tribunal_id)){
+                if (isPositive){
+                    w_pos.weight += weight;
+                }
+                else{
+                    w_pos.weight -= weight;
+                }
+            }
         }
     }
+    return true;
+}
+
+fn sort_by_position(weighted_positions : &Vec::<PositionWithWeight>, isPositive : bool, weight : i32) -> bool{
+
+    return true;
+}
+
+fn sort_by_journey_length(weighted_positions : &Vec::<PositionWithWeight>, isPositive : bool, weight : i32) -> bool{
 
     return true;
 }
@@ -113,6 +155,6 @@ struct PositionWithWeight{
 
 #[derive(Serialize, Deserialize)]
 pub struct SortDataInput{
-    positive : Vec<(String, Vec<String>)>,
-    negative : Vec<(String, Vec<String>)>
+    positive : Vec<(String, Vec<i32>)>,
+    negative : Vec<(String, Vec<i32>)>
 }
