@@ -6,7 +6,7 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "Sélection Poste ENM",
+    "productName": "Selection Poste ENM",
     "version": "0.2.0"
   },
   "tauri": {
