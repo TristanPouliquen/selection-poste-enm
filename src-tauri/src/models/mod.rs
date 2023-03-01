@@ -2,6 +2,7 @@ use diesel::{Connection, SqliteConnection};
 
 pub mod app_state;
 pub mod appeal_court;
+pub mod document;
 pub mod group;
 pub mod position;
 pub mod role;

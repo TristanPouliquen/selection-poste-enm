@@ -33,7 +33,6 @@ const TribunalDetails = ({ tribunal }: IProps) => {
     e.preventDefault();
     setEditingTribunal(true);
   };
-  console.log(tribunal);
   return (
     <div>
       <h2 className="text-lg font-bold">{tribunal.name}</h2>

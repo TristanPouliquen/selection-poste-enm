@@ -1,3 +1,6 @@
 out
 src-tauri
 .next
+.yarn
+.pnp.cjs
+.pnp.loader.mjs

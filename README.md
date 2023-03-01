@@ -62,12 +62,14 @@ Si vous voulez mettre à jour les données des postes, vous pouvez:
 Ce projet utilise [Tauri](https://tauri.app/fr/) et [NextJS](https://nextjs.org/) pour créer un exécutable cross-platform.
 
 Pour installer et lancer le projet, vous devrez:
+
 1. Cloner le projet sur votre ordinateur via git;
 2. Avoir installé NodeJs et un package manager pour Javascript (Yarn recommandé) (https://yarnpkg.com/getting-started/install)
 3. Avoir installé Rust et Cargo comme package manager (https://doc.rust-lang.org/cargo/getting-started/installation.html)
 4. Avoir installé Diesel CLI (https://diesel.rs/guides/getting-started)
 
 Une fois cela fait, vous pouvez lancer le projet en exécutant:
+
 ```bash
 npm run tauri dev
 # or

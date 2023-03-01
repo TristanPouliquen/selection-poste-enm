@@ -6,6 +6,7 @@ import RankInputGroup from "@/components/CardFocus/rank_inputgroup";
 import ReactEditorForm from "@/components/CardFocus/react_editor_form";
 import TribunalDetails from "@/components/CardFocus/tribunal_details";
 import TagContainer from "@/components/CardFocus/tag_container";
+import DocumentContainer from "@/components/CardFocus/document_container";
 
 interface IProps {
   position: Position;
@@ -58,11 +59,15 @@ const CardFocus = ({ position }: IProps) => {
           />
         </div>
         <div className="divider"></div>
-        <div className="grow">
+        <div className="grow flex flex-col justify-between">
           <ReactEditorForm
             value={position.notes}
             onChangeCallback={onChange}
             key={"position_notes_" + position.id}
+          />
+          <DocumentContainer
+            position={position}
+            key={`document_container_position_${position.id}`}
           />
         </div>
         {position.tribunal ? (

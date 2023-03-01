@@ -118,7 +118,6 @@ const TagContainer = ({ position }: IProps) => {
         removeTag(position, tag);
         break;
       case "clear":
-        console.log(actionMeta.removedValues);
         newValue = value.filter((o) => o.isFixed);
         actionMeta.removedValues.map((o) =>
           !o.isFixed ? removeTag(position, convertOptionToTag(o)) : null

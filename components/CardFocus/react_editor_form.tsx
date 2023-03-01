@@ -16,7 +16,7 @@ const ReactEditorForm = ({ onChangeCallback, value }: IProps) => {
     onChangeCallback(JSON.stringify(contentState));
   };
   return (
-    <>
+    <div>
       <div className="flex flex-row justify-between">
         <h3 className="font-bold mb-3">Commentaires</h3>
       </div>
@@ -34,7 +34,7 @@ const ReactEditorForm = ({ onChangeCallback, value }: IProps) => {
           toolbarClassName="border rounded border-base-200"
         />
       </form>
-    </>
+    </div>
   );
 };
 
