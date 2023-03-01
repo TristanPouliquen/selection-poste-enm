@@ -1486,10 +1486,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uiw/color-convert@npm:1.1.1, @uiw/color-convert@npm:^1.1.1":
+"@uiw/color-convert@npm:1.1.1":
   version: 1.1.1
   resolution: "@uiw/color-convert@npm:1.1.1"
   checksum: 8b26180ee5a1881e06748c7c4bbb5d57906411c2fe6e593478f4f514010459be0bbf876d96ded25bc32bbd40273300af22d05354158116e27a5c6532b4bd7b09
+  languageName: node
+  linkType: hard
+
+"@uiw/color-convert@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@uiw/color-convert@npm:1.1.2"
+  checksum: 91b8fd9d611e2bae58811e26a142d27b9da6a4472a2be7d3b9187b19e3a8e897eb97f0e4f5a43b16ce2c8789cf5db4e943054ef452277e1e4a6967d2ff5effd5
   languageName: node
   linkType: hard
 
@@ -6247,7 +6254,7 @@ __metadata:
     "@types/react-draft-wysiwyg": ^1.13.4
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
-    "@uiw/color-convert": ^1.1.1
+    "@uiw/color-convert": ^1.1.2
     "@uiw/react-color-block": ^1.1.1
     autoprefixer: ^10.4.13
     babel-loader: ^9.1.2
