@@ -33,6 +33,7 @@ pub fn document_delete(db_path: String, document: Document) -> bool {
 
 #[derive(Insertable, Deserialize)]
 #[diesel(table_name=documents)]
+#[serde(rename_all = "camelCase")]
 pub struct NewDocument<'a> {
     pub name: &'a str,
     pub path: &'a str,
