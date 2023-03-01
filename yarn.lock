@@ -2383,9 +2383,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^2.50.0":
-  version: 2.50.1
-  resolution: "daisyui@npm:2.50.1"
+"daisyui@npm:^2.51.3":
+  version: 2.51.3
+  resolution: "daisyui@npm:2.51.3"
   dependencies:
     color: ^4.2
     css-selector-tokenizer: ^0.8.0
@@ -2394,7 +2394,7 @@ __metadata:
   peerDependencies:
     autoprefixer: ^10.0.2
     postcss: ^8.1.6
-  checksum: f010a37ec0876f5ea79e007e967f0a9f88f9d22864fe169e4c64d0fdb42e71867e322cc369368cad99801e1dc0b540090829303a5eec00b941e8aa52fa989a86
+  checksum: 489cfbd0363af5637c5ab86246cf4d127aa2f4444b1b900e20c6c850b734de78dfeaf46b52b15adbb89bcad9fb4622664278250044e7ab363956da3ae1343d3f
   languageName: node
   linkType: hard
 
@@ -6252,7 +6252,7 @@ __metadata:
     autoprefixer: ^10.4.13
     babel-loader: ^9.1.2
     babel-plugin-transform-remove-imports: ^1.7.0
-    daisyui: ^2.50.0
+    daisyui: ^2.51.3
     date-fns: ^2.29.3
     draft-js: ^0.11.7
     eslint: ^8.35.0
