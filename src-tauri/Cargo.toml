@@ -5,7 +5,7 @@ description = "Sélection Poste ENM"
 authors = ["Tristan Pouliquen <tristan.pouliquen@yahoo.fr>"]
 license = "GPL-3.0-or-later"
 repository = "https://github.com/TristanPouliquen/selection-poste-enm"
-default-run = "app"
+default-run = "selection-poste-enm"
 edition = "2021"
 rust-version = "1.59"
 
