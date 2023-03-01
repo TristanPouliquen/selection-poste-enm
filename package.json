@@ -22,7 +22,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tauri-apps/api": "^1.2.0",
     "@tauri-apps/cli": "^1.2.3",
-    "@uiw/color-convert": "^1.1.1",
+    "@uiw/color-convert": "^1.1.2",
     "@uiw/react-color-block": "^1.1.1",
     "autoprefixer": "^10.4.13",
     "daisyui": "^2.51.3",

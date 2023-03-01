@@ -45,7 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-draft-wysiwyg", "npm:1.13.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:5.52.0"],\
             ["@typescript-eslint/parser", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:5.52.0"],\
-            ["@uiw/color-convert", "npm:1.1.1"],\
+            ["@uiw/color-convert", "npm:1.1.2"],\
             ["@uiw/react-color-block", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.1.1"],\
             ["autoprefixer", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:10.4.13"],\
             ["babel-loader", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:9.1.2"],\
@@ -2152,6 +2152,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@uiw-color-convert-npm-1.1.1-cd3e2271c9-8b26180ee5.zip/node_modules/@uiw/color-convert/",\
           "packageDependencies": [\
             ["@uiw/color-convert", "npm:1.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:1.1.2", {\
+          "packageLocation": "./.yarn/cache/@uiw-color-convert-npm-1.1.2-4d209c6460-91b8fd9d61.zip/node_modules/@uiw/color-convert/",\
+          "packageDependencies": [\
+            ["@uiw/color-convert", "npm:1.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7948,7 +7955,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-draft-wysiwyg", "npm:1.13.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:5.52.0"],\
             ["@typescript-eslint/parser", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:5.52.0"],\
-            ["@uiw/color-convert", "npm:1.1.1"],\
+            ["@uiw/color-convert", "npm:1.1.2"],\
             ["@uiw/react-color-block", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.1.1"],\
             ["autoprefixer", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:10.4.13"],\
             ["babel-loader", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:9.1.2"],\
