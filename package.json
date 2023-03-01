@@ -15,7 +15,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@next/font": "13.1.5",
+    "@next/font": "13.2.3",
     "@radix-ui/react-icons": "^1.1.1",
     "@react-pdf-viewer/core": "3.11.0",
     "@react-pdf-viewer/default-layout": "^3.11.0",
