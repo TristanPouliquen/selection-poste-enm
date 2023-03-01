@@ -8,6 +8,7 @@ extern crate diesel_migrations;
 
 use crate::models::app_state::*;
 use crate::models::appeal_court::*;
+use crate::models::document::*;
 use crate::models::establish_connection;
 use crate::models::group::*;
 use crate::models::position::*;
@@ -161,6 +162,24 @@ fn delete_time_window(app_handle: tauri::AppHandle, time_window: TimeWindow) -> 
     time_window_delete(db_path, time_window)
 }
 
+#[tauri::command]
+fn get_position_documents(app_handle: tauri::AppHandle, position: Position) -> Vec<Document> {
+    let db_path = get_db_path(app_handle);
+    position_documents_list(db_path, position)
+}
+
+#[tauri::command]
+fn create_document(app_handle: tauri::AppHandle, document: NewDocument) -> Document {
+    let db_path = get_db_path(app_handle);
+    document_create(db_path, document)
+}
+
+#[tauri::command]
+fn delete_document(app_handle: tauri::AppHandle, document: Document) -> bool {
+    let db_path = get_db_path(app_handle);
+    document_delete(db_path, document)
+}
+
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
@@ -196,7 +215,10 @@ fn main() {
             get_time_windows,
             update_time_window,
             create_time_window,
-            delete_time_window
+            delete_time_window,
+            get_position_documents,
+            create_document,
+            delete_document
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
