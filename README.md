@@ -67,6 +67,7 @@ Pour installer et lancer le projet, vous devrez:
 3. Avoir installé Rust et Cargo comme package manager (https://doc.rust-lang.org/cargo/getting-started/installation.html)
 4. Avoir installé Diesel CLI (https://diesel.rs/guides/getting-started)
 
+Une fois cela fait, vous pouvez lancer le projet en exécutant:
 ```bash
 npm run tauri dev
 # or
