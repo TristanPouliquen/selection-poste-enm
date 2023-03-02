@@ -21,7 +21,7 @@
     },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
+      "category": "Productivity",
       "copyright": "",
       "deb": {
         "depends": []
@@ -44,12 +44,15 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "",
+      "shortDescription": "Outil pour aider au choix des postes en sortie de formation",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
-        "timestampUrl": ""
+        "timestampUrl": "",
+        "wix": {
+          "language": "fr_FR"
+        }
       }
     },
     "security": {
@@ -58,7 +61,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/TristanPouliquen/selection-poste-enm/latest-version.json"
+        "https://github.com/TristanPouliquen/selection-poste-enm/latest.json"
       ],
       "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDUxODE0QkI0QTZFRTQyNDcKUldSSFF1Nm10RXVCVWZFVW9EMkl4MEl4NW82eXRWRG1VV2dJWExCU0tEQ3FFL1A0V1c5L0JUaHkK"
@@ -70,7 +73,16 @@
         "resizable": true,
         "maximized": true,
         "title": "Sélection poste ENM",
-        "width": 800
+        "width": 800,
+        "visible": false
+      },
+      {
+        "width": 500,
+        "height": 300,
+        "decorations": false,
+        "url": "splashscreen.html",
+        "label": "splashscreen",
+        "center": true
       }
     ]
   }

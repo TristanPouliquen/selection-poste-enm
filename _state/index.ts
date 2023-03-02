@@ -6,8 +6,8 @@ import { useRolesAction } from "@/_state/roles";
 import { appStateAtom, useAppStateAction } from "@/_state/appState";
 import { useTribunalsAction } from "@/_state/tribunals";
 import { usePositionsActions } from "@/_state/positions";
-import { useState } from "react";
 import { useTimeWindowsActions } from "@/_state/timeWindow";
+import { invoke } from "@tauri-apps/api/tauri";
 
 export * from "@/_state/appealCourts";
 export * from "@/_state/appState";
@@ -18,7 +18,6 @@ export * from "@/_state/tags";
 export * from "@/_state/tribunals";
 
 const useInitializeState = () => {
-  const [loading, setLoading] = useState(false);
   const { get } = useAppStateAction();
   const appState = useRecoilValue(appStateAtom);
   const { getAll: getAllGroups } = useGroupsAction();
@@ -29,7 +28,7 @@ const useInitializeState = () => {
   const { getAll: getAllPositions } = usePositionsActions();
   const { getAll: getAllTimeWindows } = useTimeWindowsActions();
   const initializeState = () => {
-    setLoading(true);
+    const closeSplashScreen = async () => await invoke("close_splashscreen");
     Promise.all([
       get(),
       getAllAppealCourts(),
@@ -40,13 +39,14 @@ const useInitializeState = () => {
       getAllTribunals(),
       getAllPositions(),
     ])
-      .then(() => setLoading(false))
+      .then(() => closeSplashScreen())
       .catch((e) => {
-        setLoading(false);
+        closeSplashScreen();
+        console.error(e);
       });
   };
 
-  const isInitialized = loading || appState !== undefined;
+  const isInitialized = appState !== undefined;
   return { isInitialized, initializeState };
 };
 

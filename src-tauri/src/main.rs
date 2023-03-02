@@ -17,6 +17,7 @@ use crate::models::tag::*;
 use crate::models::time_window::*;
 use crate::models::tribunal::*;
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
+use tauri::Manager;
 
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 pub const DATABASE_NAME: &str = "selection-poste-enm.sqlite3";
@@ -180,6 +181,16 @@ fn delete_document(app_handle: tauri::AppHandle, document: Document) -> bool {
     document_delete(db_path, document)
 }
 
+#[tauri::command]
+async fn close_splashscreen(window: tauri::Window) {
+    // Close splashscreen
+    if let Some(splashscreen) = window.get_window("splashscreen") {
+        splashscreen.close().unwrap();
+    }
+    // Show main window
+    window.get_window("main").unwrap().show().unwrap();
+}
+
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
@@ -218,7 +229,8 @@ fn main() {
             delete_time_window,
             get_position_documents,
             create_document,
-            delete_document
+            delete_document,
+            close_splashscreen
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
