@@ -3,7 +3,7 @@ import { IStepProps } from "@/components/Onboarding/index";
 
 const Step4 = ({ exitOnboarding, confirmRanking }: IStepProps) => (
   <>
-    <div className="grow ml-4">
+    <div className="grow ml-4 overflow-y-auto">
       <h1 className="text-4xl font-bold mb-3">Récap</h1>
       <p>
         Voici le résumé de tes choix, si cela est bon pour toi, clique sur
