@@ -4,6 +4,7 @@ import { atom, selector, selectorFamily, useRecoilState } from "recoil";
 import { tagsAtom } from "@/_state/tags";
 import { tribunalSelector } from "@/_state/tribunals";
 import { roleSelector } from "@/_state/roles";
+import { ICriteria } from "@/components/Onboarding";
 
 const positionsAtom = atom<Position[]>({
   key: "positionsAtom",
@@ -98,7 +99,19 @@ const usePositionsActions = () => {
     }
   };
 
-  return { getAll, update, updateRanking, getTags, addTag, removeTag };
+  const rankPositions = async (criteria: ICriteria) => {
+    return !!criteria;
+  };
+
+  return {
+    getAll,
+    update,
+    updateRanking,
+    getTags,
+    addTag,
+    removeTag,
+    rankPositions,
+  };
 };
 
 export {
