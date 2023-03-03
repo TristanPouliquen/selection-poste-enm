@@ -48,6 +48,17 @@ const positionSelector = selectorFamily({
     },
 });
 
+const formatCriteriaForApi = (criteria: ICriteria) => {
+  return {
+    positive: criteria.positive.map((criterion) => ({
+      name: criterion.name,
+      value: Array.isArray(criterion.value)
+        ? criterion.value.map((item: any) => item.id)
+        : criterion.value.value,
+    })),
+  };
+};
+
 const usePositionsActions = () => {
   const [positions, setPositions] = useRecoilState(positionsAtom);
   const [tags, setTags] = useRecoilState(tagsAtom);
@@ -100,7 +111,11 @@ const usePositionsActions = () => {
   };
 
   const rankPositions = async (criteria: ICriteria) => {
-    return !!criteria;
+    // TODO Vladimir : remplacer le nom de la commande et du paramètre
+    const sortDataInput = formatCriteriaForApi(criteria);
+    await invoke("rank_positions", { sortDataInput });
+
+    await getAll();
   };
 
   return {

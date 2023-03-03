@@ -16,7 +16,6 @@ import {
 import { AppealCourt, Group, Role, Tribunal } from "@/types/types";
 import { useRecoilValue } from "recoil";
 import { DraggableProvidedDragHandleProps } from "react-beautiful-dnd";
-import { remove } from "immutable";
 
 interface IProps {
   index: number;
