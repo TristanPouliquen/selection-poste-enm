@@ -175,8 +175,9 @@ fn create_document(app_handle: tauri::AppHandle, document: NewDocument) -> Docum
 }
 
 #[tauri::command]
-fn get_sortedPositions(sortDataInput : SortDataInput) -> bool {
-    return position_sort(sortDataInput)
+fn get_sortedPositions(app_handle: tauri::AppHandle, sortDataInput : SortDataInput) -> bool {
+    let db_path = get_db_path(app_handle);
+    return position_sort(db_path ,sortDataInput)
 }
 
 #[tauri::command]
