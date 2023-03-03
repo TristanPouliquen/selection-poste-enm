@@ -143,7 +143,7 @@ pub fn position_sort(path: String, sortDataInput : SortDataInput) -> bool {
     for (positive_criterion) in sortDataInput.positive{
         match positive_criterion.name.as_str(){    
             "appealCourt" => sort_by_appeal_court(path, weighted_positions, true, positive_weight, positive_criterion.value),
-            "group" => 
+            "group" => sort_by_group(path, weighted_positions, true, positive_weight, positive_criterion.value),
             "role" =>
             "prevalent_domain" => 
             "placed" =>
@@ -192,15 +192,62 @@ fn sort_by_appeal_court(path: String, weighted_positions : Vec::<PositionWithWei
     return true;
 }
 
-fn sort_by_group(weighted_positions : &Vec::<PositionWithWeight>, isPositive : bool, weight : i32) -> bool{
-
+fn sort_by_group(path: String, weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> bool{
+    match value{
+        CriterionValue::IntegerArray(array) => {
+            for (w_pos) in weighted_positions{
+                for (idx) in &array{
+                    if (){
+                        if (isPositive){
+                            w_pos.weight += weight;
+                        }
+                        else{
+                            w_pos.weight -= weight;
+                        }
+                    }
+                }
+            }
+        }
+        CriterionValue::Boolean(num) => {
+            println!("number: {}", num);
+        }
+        CriterionValue::Number(boolean) => {
+            println!("boolean: {}", boolean);
+        }
+    }
     return true;
 }
 
-fn sort_by_role(weighted_positions : &Vec::<PositionWithWeight>, isPositive : bool, weight : i32) -> bool{
-
+fn sort_by_tribunal(path: String, weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> bool{
+    match value{
+        CriterionValue::IntegerArray(array) => {
+            for (w_pos) in weighted_positions{
+                for (idx) in &array{
+                    if (){
+                        if (isPositive){
+                            w_pos.weight += weight;
+                        }
+                        else{
+                            w_pos.weight -= weight;
+                        }
+                    }
+                }
+            }
+        }
+        CriterionValue::Boolean(num) => {
+            println!("number: {}", num);
+        }
+        CriterionValue::Number(boolean) => {
+            println!("boolean: {}", boolean);
+        }
+    }
     return true;
 }
+
+fn sort_by_role(path: String, weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> bool{
+
+    return true;
+} 
 
 struct PositionWithWeight{
     position : PositionWithTags,
