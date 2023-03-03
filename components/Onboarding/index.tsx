@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import Step1 from "@/components/Onboarding/step1";
 import Step2 from "@/components/Onboarding/step2";
 import Step3 from "@/components/Onboarding/step3";
