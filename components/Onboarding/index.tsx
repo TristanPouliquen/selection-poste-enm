@@ -15,7 +15,7 @@ export interface IStepProps {
 export interface ICriterion {
   name: string;
   label: string;
-  value: (number | string)[];
+  value: any;
 }
 export interface ICriteria {
   positive: ICriterion[];
