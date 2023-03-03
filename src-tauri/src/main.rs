@@ -181,6 +181,11 @@ fn get_sortedPositions(sortDataInput : SortDataInput) -> bool {
     return position_sort(sortDataInput)
 }
 
+#[tauri::command]
+fn get_sortedPositions(sortDataInput : SortDataInput) -> bool {
+    return position_sort(sortDataInput)
+}
+
 
 #[tauri::command]
 fn delete_document(app_handle: tauri::AppHandle, document: Document) -> bool {
@@ -224,7 +229,6 @@ fn main() {
             get_time_windows,
             update_time_window,
             create_time_window,
-            delete_time_window,
             get_position_documents,
             create_document,
             delete_document
