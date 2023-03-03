@@ -16,6 +16,7 @@ import {
 import { AppealCourt, Group, Role, Tribunal } from "@/types/types";
 import { useRecoilValue } from "recoil";
 import { DraggableProvidedDragHandleProps } from "react-beautiful-dnd";
+import { remove } from "immutable";
 
 interface IProps {
   index: number;
@@ -114,16 +115,15 @@ const CriterionSelect = ({
       return;
     }
     let copy: ICriterion | undefined = undefined;
+    console.log(actionMeta);
     switch (actionMeta.action) {
       case "remove-value":
       case "pop-value":
         copy = {
           ...crit,
-          value: crit.value.filter((v) =>
-            actionMeta.removedValue.id
-              ? v !== actionMeta.removedValue.id
-              : v !== actionMeta.removedValue.value
-          ),
+          value: configuration.isMulti
+            ? crit.value.filter((v: any) => actionMeta.removedValue !== v)
+            : undefined,
         };
         break;
       case "clear":
@@ -133,36 +133,46 @@ const CriterionSelect = ({
         };
         break;
       case "select-option":
-        if (actionMeta.option) {
+        if (configuration.isMulti && actionMeta.option) {
           copy = {
             ...crit,
-            value: [
-              ...crit.value,
-              actionMeta.option.id ?? actionMeta.option.value,
-            ],
+            value: [...crit.value, actionMeta.option],
+          };
+        } else {
+          copy = {
+            ...crit,
+            value: newValue,
           };
         }
         break;
       case "deselect-option":
-        if (actionMeta.option) {
+        if (configuration.isMulti && actionMeta.option) {
           copy = {
             ...crit,
-            value: crit.value.filter((v) =>
-              actionMeta.removedValue.id
-                ? v !== actionMeta.removedValue.id
-                : v !== actionMeta.removedValue.value
-            ),
+            value: crit.value.filter((v: any) => actionMeta.removedValue !== v),
+          };
+        } else {
+          copy = {
+            ...crit,
+            value: undefined,
           };
         }
         break;
     }
+    console.log(copy);
     if (copy) {
       setCriteria({
         ...criteria,
         // @ts-ignore
-        [stage]: criteria[stage].map((c) => (c.name === copy.name ? crit : c)),
+        [stage]: criteria[stage].map((c) => (c.name === copy.name ? copy : c)),
       });
     }
+  };
+  const removeCriterion = () => {
+    setCriteria({
+      ...criteria,
+      [stage]: criteria[stage].filter((c) => c.name !== criterion.name),
+    });
   };
   return (
     <div className="flex items-center border rounded-lg px-2 py-2 mb-3">
@@ -187,7 +197,7 @@ const CriterionSelect = ({
         onChange={onChange}
       />
       <button className="btn btn-ghost btn-sm rounded-lg ml-2 text-base-300 hover:bg-base-200/50 p-0">
-        <TrashIcon className="h-6 w-6" />
+        <TrashIcon className="h-6 w-6" onClick={removeCriterion} />
       </button>
     </div>
   );
