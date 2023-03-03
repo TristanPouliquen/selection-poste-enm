@@ -101,8 +101,6 @@ fn get_roles(app_handle: tauri::AppHandle) -> Vec<Role> {
     let db_path = get_db_path(app_handle);
     role_list(db_path)
 }
-use serde::Deserialize;
-use serde::Serialize;
 
 #[tauri::command]
 fn get_tags(app_handle: tauri::AppHandle) -> Vec<Tag> {
@@ -182,15 +180,9 @@ fn get_sortedPositions(sortDataInput : SortDataInput) -> bool {
 }
 
 #[tauri::command]
-fn get_sortedPositions(sortDataInput : SortDataInput) -> bool {
-    return position_sort(sortDataInput)
-}
-
-
-#[tauri::command]
 fn delete_document(app_handle: tauri::AppHandle, document: Document) -> bool {
     let db_path = get_db_path(app_handle);
-    document_delete(db_path, document)
+    return document_delete(db_path, document); 
 }
 
 fn main() {
