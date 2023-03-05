@@ -197,7 +197,7 @@ fn sort_by_group(path: String, weighted_positions : Vec::<PositionWithWeight>, i
         CriterionValue::IntegerArray(array) => {
             for (w_pos) in weighted_positions{
                 for (idx) in &array{
-                    if (){
+                    if (tribunal::is_linked_to_group(path, *idx, w_pos.position.position.tribunal_id)){
                         if (isPositive){
                             w_pos.weight += weight;
                         }
@@ -222,8 +222,8 @@ fn sort_by_tribunal(path: String, weighted_positions : Vec::<PositionWithWeight>
     match value{
         CriterionValue::IntegerArray(array) => {
             for (w_pos) in weighted_positions{
-                for (idx) in &array{
-                    if (){
+                for (idx) in array{
+                    if (w_pos.position.position.tribunal_id == idx){
                         if (isPositive){
                             w_pos.weight += weight;
                         }
@@ -245,7 +245,28 @@ fn sort_by_tribunal(path: String, weighted_positions : Vec::<PositionWithWeight>
 }
 
 fn sort_by_role(path: String, weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> bool{
-
+    match value{
+        CriterionValue::IntegerArray(array) => {
+            for (w_pos) in weighted_positions{
+                for (idx) in array{
+                    if (w_pos.position.position.role_id == idx){
+                        if (isPositive){
+                            w_pos.weight += weight;
+                        }
+                        else{
+                            w_pos.weight -= weight;
+                        }
+                    }
+                }
+            }
+        }
+        CriterionValue::Boolean(num) => {
+            println!("number: {}", num);
+        }
+        CriterionValue::Number(boolean) => {
+            println!("boolean: {}", boolean);
+        }
+    }
     return true;
 } 
 
