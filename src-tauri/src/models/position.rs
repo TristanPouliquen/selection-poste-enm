@@ -1,5 +1,7 @@
 use std::borrow::{BorrowMut, Borrow};
 use std::ptr::null;
+use std::borrow::{BorrowMut, Borrow};
+use std::ptr::null;
 use std::{string, ffi::c_void};
 use crate::models::establish_connection;
 use crate::models::tag::{PositionTag, Tag};
@@ -169,6 +171,8 @@ pub fn position_sort(path: String, sortDataInput : SortDataInput) -> bool {
         };
         negative_weight -= 1;
     }
+
+    order_weighted_positions_to_positions_with_tag(path, weighted_positions);
 
     order_weighted_positions_to_positions_with_tag(path, weighted_positions);
 
@@ -365,7 +369,6 @@ pub enum CriterionValue {
     Name(String),
     Boolean(bool),
 }
-
 
 #[derive(Serialize, Deserialize)]
 pub struct Criterion{
