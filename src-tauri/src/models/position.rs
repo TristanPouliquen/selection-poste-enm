@@ -1,3 +1,5 @@
+use std::borrow::{BorrowMut, Borrow};
+use std::ptr::null;
 use std::{string, ffi::c_void};
 use crate::models::establish_connection;
 use crate::models::tag::{PositionTag, Tag};
@@ -6,6 +8,7 @@ use crate::schema::tags;
 use diesel::dsl::count;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
+use std::option::Option;
 
 use super::tribunal;
 
@@ -142,12 +145,12 @@ pub fn position_sort(path: String, sortDataInput : SortDataInput) -> bool {
     let mut positive_weight : i32 = sortDataInput.positive.len().try_into().unwrap();
     for (positive_criterion) in sortDataInput.positive{
         match positive_criterion.name.as_str(){    
-            "appealCourt" => sort_by_appeal_court(path, weighted_positions, true, positive_weight, positive_criterion.value),
-            "group" => sort_by_group(path, weighted_positions, true, positive_weight, positive_criterion.value),
-            "role" =>
-            "prevalent_domain" => 
-            "placed" =>
-            "tribunal" => 
+            "appealCourt" => weighted_positions = sort_by_appeal_court(&path, weighted_positions, true, positive_weight, positive_criterion.value),
+            "group" => weighted_positions = sort_by_group(&path, weighted_positions, true, positive_weight, positive_criterion.value),
+            "role" => weighted_positions = sort_by_role(weighted_positions, true, positive_weight, positive_criterion.value),
+            "tribunal" => weighted_positions = sort_by_tribunal(weighted_positions, true, positive_weight, positive_criterion.value),
+            "placed" => weighted_positions = sort_by_placed(weighted_positions, true, positive_weight, positive_criterion.value),
+            "prevalent_domain" => weighted_positions = sort_by_prevalent_domain(weighted_positions, true, positive_weight, positive_criterion.value),
             _ => todo!(),
         };
         positive_weight -= 1;
@@ -156,119 +159,195 @@ pub fn position_sort(path: String, sortDataInput : SortDataInput) -> bool {
     let mut negative_weight : i32 = sortDataInput.negative.len().try_into().unwrap();
     for (negative_criterion) in sortDataInput.negative{
         match negative_criterion.name.as_str(){
+            "appealCourt" => weighted_positions = sort_by_appeal_court(&path, weighted_positions, false, positive_weight, negative_criterion.value),
+            "group" => weighted_positions = sort_by_group(&path, weighted_positions, false, positive_weight, negative_criterion.value),
+            "role" => weighted_positions = sort_by_role(weighted_positions, false, positive_weight, negative_criterion.value),
+            "tribunal" => weighted_positions = sort_by_tribunal(weighted_positions, false, positive_weight, negative_criterion.value),
+            "placed" => weighted_positions = sort_by_placed(weighted_positions, false, positive_weight, negative_criterion.value),
+            "prevalent_domain" => weighted_positions = sort_by_prevalent_domain(weighted_positions, false, positive_weight, negative_criterion.value),
             _ => todo!(),
         };
         negative_weight -= 1;
     }
 
+    order_weighted_positions_to_positions_with_tag(path, weighted_positions);
+
     return true;
 }
 
-fn sort_by_appeal_court(path: String, weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> bool{
+fn sort_by_appeal_court<'a>(path: &'a String, mut weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) ->  Vec<PositionWithWeight>{
     match value{
         CriterionValue::IntegerArray(array) => {
-            for (w_pos) in weighted_positions{
+            for (mut w_pos) in weighted_positions.iter_mut(){
                 for (idx) in &array{
-                    if (tribunal::is_linked_to_appeal_court(path,*idx, w_pos.position.position.tribunal_id)){
+                    if (tribunal::is_linked_to_appeal_court(&path,*idx, w_pos.position.position.tribunal_id)){
                         if (isPositive){
-                            w_pos.weight += weight;
+                            (*w_pos).weight += weight;
                         }
                         else{
-                            w_pos.weight -= weight;
+                            (*w_pos).weight -= weight;
                         }
                     }
                 }
             }
         }
-        CriterionValue::Boolean(num) => {
-            println!("number: {}", num);
-        }
-        CriterionValue::Number(boolean) => {
+        CriterionValue::Boolean(boolean) => {
             println!("boolean: {}", boolean);
+        }
+        CriterionValue::Name(name) => {
+            println!("name: {}", name);
         }
     }
     
 
-    return true;
+    return weighted_positions;
 }
 
-fn sort_by_group(path: String, weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> bool{
+fn sort_by_group<'b>(path: &'b String, mut weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> Vec<PositionWithWeight>{
     match value{
         CriterionValue::IntegerArray(array) => {
-            for (w_pos) in weighted_positions{
+            for (w_pos) in weighted_positions.iter_mut(){
                 for (idx) in &array{
-                    if (tribunal::is_linked_to_group(path, *idx, w_pos.position.position.tribunal_id)){
+                    if (tribunal::is_linked_to_group(&path, *idx, w_pos.position.position.tribunal_id)){
                         if (isPositive){
-                            w_pos.weight += weight;
+                            (*w_pos).weight += weight;
                         }
                         else{
-                            w_pos.weight -= weight;
+                            (*w_pos).weight -= weight;
                         }
                     }
                 }
             }
         }
-        CriterionValue::Boolean(num) => {
-            println!("number: {}", num);
-        }
-        CriterionValue::Number(boolean) => {
+        CriterionValue::Boolean(boolean) => {
             println!("boolean: {}", boolean);
         }
+        CriterionValue::Name(name) => {
+            println!("name: {}", name);
+        }
     }
-    return true;
+    return weighted_positions;
 }
 
-fn sort_by_tribunal(path: String, weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> bool{
+fn sort_by_tribunal(mut weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> Vec<PositionWithWeight>{
     match value{
         CriterionValue::IntegerArray(array) => {
-            for (w_pos) in weighted_positions{
-                for (idx) in array{
-                    if (w_pos.position.position.tribunal_id == idx){
+            for (w_pos) in weighted_positions.iter_mut(){
+                for (idx) in &array{
+                    if (w_pos.position.position.tribunal_id == *idx){
                         if (isPositive){
-                            w_pos.weight += weight;
+                            (*w_pos).weight += weight;
                         }
                         else{
-                            w_pos.weight -= weight;
+                            (*w_pos).weight -= weight;
                         }
                     }
                 }
             }
         }
-        CriterionValue::Boolean(num) => {
-            println!("number: {}", num);
-        }
-        CriterionValue::Number(boolean) => {
+        CriterionValue::Boolean(boolean) => {
             println!("boolean: {}", boolean);
         }
+        CriterionValue::Name(name) => {
+            println!("name: {}", name);
+        }
     }
-    return true;
+    return weighted_positions;
 }
 
-fn sort_by_role(path: String, weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> bool{
+fn sort_by_role(mut weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> Vec<PositionWithWeight>{
     match value{
         CriterionValue::IntegerArray(array) => {
-            for (w_pos) in weighted_positions{
-                for (idx) in array{
-                    if (w_pos.position.position.role_id == idx){
+            for (w_pos) in weighted_positions.iter_mut(){
+                for (idx) in &array{
+                    if (w_pos.position.position.role_id == *idx){
                         if (isPositive){
-                            w_pos.weight += weight;
+                            (*w_pos).weight += weight;
                         }
                         else{
-                            w_pos.weight -= weight;
+                            (*w_pos).weight -= weight;
                         }
                     }
                 }
             }
         }
-        CriterionValue::Boolean(num) => {
-            println!("number: {}", num);
-        }
-        CriterionValue::Number(boolean) => {
+        CriterionValue::Boolean(boolean) => {
             println!("boolean: {}", boolean);
         }
+        CriterionValue::Name(name) => {
+            println!("name: {}", name);
+        }
     }
-    return true;
+    return weighted_positions;
 } 
+
+
+fn sort_by_placed(mut weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> Vec<PositionWithWeight>{
+    match value{
+        CriterionValue::IntegerArray(array) => {
+            println!("array");
+        }
+        CriterionValue::Boolean(is_placed) => {
+            for (w_pos) in weighted_positions.iter_mut(){
+                if (w_pos.position.position.placed == is_placed){
+                    if (isPositive){
+                        (*w_pos).weight += weight;
+                    }
+                    else{
+                        (*w_pos).weight -= weight;
+                    }
+                }          
+            }
+        }
+        CriterionValue::Name(name) => {
+            println!("name: {}", name);
+        }
+    }
+    return weighted_positions;
+} 
+
+fn sort_by_prevalent_domain(mut weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> Vec<PositionWithWeight>{
+    match value{
+        CriterionValue::IntegerArray(array) => {
+            println!("array");
+        }
+        CriterionValue::Boolean(boolean) => {
+            println!("boolean: {}", boolean);
+        }
+        CriterionValue::Name(name) => {
+            let prevalent_domain_id : Option<String> = Some(String::from("name"));
+            for (w_pos) in weighted_positions.iter_mut(){
+                if (w_pos.position.position.prevalent_domain == prevalent_domain_id){
+                    if (isPositive){
+                        (*w_pos).weight += weight;
+                    }
+                    else{
+                        (*w_pos).weight -= weight;
+                    }
+                }          
+            }
+        }
+    }
+    return weighted_positions;
+} 
+
+fn order_weighted_positions_to_positions_with_tag(path :String, mut weighted_positions : Vec<PositionWithWeight>) -> bool{
+    weighted_positions.sort_by_key(|weighted_position| weighted_position.weight);
+
+    let mut indexor : i32 = 0;
+    let mut db_path : String = path;
+    
+    for (weighted_position) in weighted_positions.iter_mut(){
+        weighted_position.position.position.ranking = indexor;
+        indexor += 1;
+    }
+
+    for (weighted_position) in weighted_positions{
+        position_update_ranking(db_path.to_string(), weighted_position.position.position);
+    }
+
+    return true;
+}
 
 struct PositionWithWeight{
     position : PositionWithTags,
@@ -284,9 +363,10 @@ pub struct SortDataInput{
 #[derive(Serialize, Deserialize)]
 pub enum CriterionValue {
     IntegerArray(Vec<i32>),
-    Number(i32),
+    Name(String),
     Boolean(bool),
 }
+
 
 #[derive(Serialize, Deserialize)]
 pub struct Criterion{

@@ -35,7 +35,7 @@ pub fn tribunal_update(db_path: String, tribunal: Tribunal) -> Tribunal {
         .unwrap()
 }
 
-pub fn is_linked_to_appeal_court(db_path: String, id_appeal_court : i32, id_tribunal : i32) -> bool{
+pub fn is_linked_to_appeal_court(db_path: &String, id_appeal_court : i32, id_tribunal : i32) -> bool{
     let query = tribunals::dsl::tribunals.find(id_tribunal);
     let mut connection = establish_connection(&db_path);
 
@@ -51,7 +51,7 @@ pub fn is_linked_to_appeal_court(db_path: String, id_appeal_court : i32, id_trib
     } 
 }
 
-pub fn is_linked_to_group(db_path: String, id_group : i32, id_tribunal : i32) -> bool{
+pub fn is_linked_to_group(db_path: &String, id_group : i32, id_tribunal : i32) -> bool{
     let query = tribunals::dsl::tribunals.find(id_tribunal);
     let mut connection = establish_connection(&db_path);
 
