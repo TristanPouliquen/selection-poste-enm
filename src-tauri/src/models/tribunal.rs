@@ -44,11 +44,11 @@ pub fn is_linked_to_appeal_court(db_path: &String, id_appeal_court : i32, id_tri
             if (record.appeal_court_id == id_appeal_court){
                 return true;
             }
-            return false;
         },
-        Err(diesel::NotFound) => return false,
-        Err(err) => return false,
+        Err(diesel::NotFound) => println!("Not Found"),
+        Err(err) => println!("error"),
     } 
+    return false;
 }
 
 pub fn is_linked_to_group(db_path: &String, id_group : i32, id_tribunal : i32) -> bool{
@@ -62,7 +62,8 @@ pub fn is_linked_to_group(db_path: &String, id_group : i32, id_tribunal : i32) -
             }
             return false;
         },
-        Err(diesel::NotFound) => return false,
-        Err(err) => return false,
+        Err(diesel::NotFound) => println!("Not Found"),
+        Err(err) => println!("error"),
     } 
+    return false;
 }

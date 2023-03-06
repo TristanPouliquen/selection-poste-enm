@@ -175,7 +175,7 @@ fn create_document(app_handle: tauri::AppHandle, document: NewDocument) -> Docum
 }
 
 #[tauri::command]
-fn get_sortedPositions(app_handle: tauri::AppHandle, sortDataInput : SortDataInput) -> bool {
+fn sort_positions(app_handle: tauri::AppHandle, sortDataInput : SortDataInput) -> bool {
     let db_path = get_db_path(app_handle);
     return position_sort(db_path ,sortDataInput)
 }
@@ -183,7 +183,7 @@ fn get_sortedPositions(app_handle: tauri::AppHandle, sortDataInput : SortDataInp
 #[tauri::command]
 fn delete_document(app_handle: tauri::AppHandle, document: Document) -> bool {
     let db_path = get_db_path(app_handle);
-    return document_delete(db_path, document); 
+    return document_delete(db_path, document) 
 }
 
 fn main() {
@@ -218,7 +218,7 @@ fn main() {
             delete_tag,
             get_tribunals,
             update_tribunal,
-            get_sortedPositions,
+            sort_positions,
             get_time_windows,
             update_time_window,
             create_time_window,
