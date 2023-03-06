@@ -79,7 +79,8 @@ pub fn is_linked_to_group(db_path: &String, id_group : i32, id_tribunal : i32) -
             }
             return false;
         },
-        Err(diesel::NotFound) => return false,
-        Err(err) => return false,
+        Err(diesel::NotFound) => println!("Not Found"),
+        Err(err) => println!("error"),
     } 
+    return false;
 }
