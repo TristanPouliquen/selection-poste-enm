@@ -67,20 +67,3 @@ pub fn is_linked_to_group(db_path: &String, id_group : i32, id_tribunal : i32) -
     } 
     return false;
 }
-
-pub fn is_linked_to_group(db_path: &String, id_group : i32, id_tribunal : i32) -> bool{
-    let query = tribunals::dsl::tribunals.find(id_tribunal);
-    let mut connection = establish_connection(&db_path);
-
-    match query.first::<Tribunal>(&mut connection){
-        Ok(record) => {
-            if (record.group_id == id_group){
-                return true;
-            }
-            return false;
-        },
-        Err(diesel::NotFound) => println!("Not Found"),
-        Err(err) => println!("error"),
-    } 
-    return false;
-}

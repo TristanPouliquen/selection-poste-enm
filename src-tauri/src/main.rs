@@ -17,6 +17,7 @@ use crate::models::tag::*;
 use crate::models::time_window::*;
 use crate::models::tribunal::*;
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
+use models::tribunal;
 
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 pub const DATABASE_NAME: &str = "selection-poste-enm.sqlite3";

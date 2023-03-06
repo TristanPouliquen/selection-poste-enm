@@ -1,8 +1,3 @@
-use std::borrow::{BorrowMut, Borrow};
-use std::ptr::null;
-use std::borrow::{BorrowMut, Borrow};
-use std::ptr::null;
-use std::{string, ffi::c_void};
 use crate::models::establish_connection;
 use crate::models::tag::{PositionTag, Tag};
 use crate::schema::positions;
@@ -174,9 +169,6 @@ pub fn position_sort(path: String, sortDataInput : SortDataInput) -> bool {
 
     order_weighted_positions_to_positions_with_tag(path, weighted_positions);
 
-    order_weighted_positions_to_positions_with_tag(path, weighted_positions);
-
-    return true
     return true
 }
 
@@ -206,7 +198,6 @@ fn sort_by_appeal_court<'a>(path: &'a String, mut weighted_positions : Vec::<Pos
     
 
     return weighted_positions
-    return weighted_positions
 }
 
 fn sort_by_group<'b>(path: &'b String, mut weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> Vec<PositionWithWeight>{
@@ -232,7 +223,6 @@ fn sort_by_group<'b>(path: &'b String, mut weighted_positions : Vec::<PositionWi
             println!("name: {}", name);
         }
     }
-    return weighted_positions
     return weighted_positions
 }
 
@@ -260,7 +250,6 @@ fn sort_by_tribunal(mut weighted_positions : Vec::<PositionWithWeight>, isPositi
         }
     }
     return weighted_positions
-    return weighted_positions
 }
 
 fn sort_by_role(mut weighted_positions : Vec::<PositionWithWeight>, isPositive : bool, weight : i32, value : CriterionValue) -> Vec<PositionWithWeight>{
@@ -287,7 +276,6 @@ fn sort_by_role(mut weighted_positions : Vec::<PositionWithWeight>, isPositive :
         }
     }
     return weighted_positions
-    return weighted_positions
 } 
 
 
@@ -312,7 +300,6 @@ fn sort_by_placed(mut weighted_positions : Vec::<PositionWithWeight>, isPositive
             println!("name: {}", name);
         }
     }
-    return weighted_positions
     return weighted_positions
 } 
 
@@ -339,7 +326,6 @@ fn sort_by_prevalent_domain(mut weighted_positions : Vec::<PositionWithWeight>, 
         }
     }
     return weighted_positions
-    return weighted_positions
 } 
 
 fn order_weighted_positions_to_positions_with_tag(path :String, mut weighted_positions : Vec<PositionWithWeight>) -> bool{
@@ -350,15 +336,11 @@ fn order_weighted_positions_to_positions_with_tag(path :String, mut weighted_pos
     
     for i in 0..weighted_positions.len(){
         weighted_positions[i].position.position.ranking = i as i32;
-    for i in 0..weighted_positions.len(){
-        weighted_positions[i].position.position.ranking = i as i32;
     }
-
     for (weighted_position) in weighted_positions{
         position_update_ranking(db_path.to_string(), weighted_position.position.position);
     }
 
-    return true
     return true
 }
 
@@ -368,20 +350,19 @@ struct PositionWithWeight{
 }
 
 #[derive(Deserialize)]
-#[derive(Deserialize)]
 pub struct SortDataInput{
     positive : Vec<Criterion>,
     negative : Vec<Criterion>
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Deserialize)]
 pub enum CriterionValue {
     IntegerArray(Vec<i32>),
     Name(String),
     Boolean(bool),
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive( Deserialize)]
 pub struct Criterion{
     name : String,
     value: CriterionValue
