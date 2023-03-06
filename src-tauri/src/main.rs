@@ -176,15 +176,15 @@ fn create_document(app_handle: tauri::AppHandle, document: NewDocument) -> Docum
 }
 
 #[tauri::command]
-fn sort_positions(app_handle: tauri::AppHandle, sortDataInput : SortDataInput) -> bool {
+fn sort_positions(app_handle: tauri::AppHandle, sortDataInput: SortDataInput) -> bool {
     let db_path = get_db_path(app_handle);
-    return position_sort(db_path ,sortDataInput)
+    position_sort(db_path, sortDataInput)
 }
 
 #[tauri::command]
 fn delete_document(app_handle: tauri::AppHandle, document: Document) -> bool {
     let db_path = get_db_path(app_handle);
-    return document_delete(db_path, document) 
+    document_delete(db_path, document)
 }
 
 fn main() {

@@ -35,35 +35,35 @@ pub fn tribunal_update(db_path: String, tribunal: Tribunal) -> Tribunal {
         .unwrap()
 }
 
-pub fn is_linked_to_appeal_court(db_path: &String, id_appeal_court : i32, id_tribunal : i32) -> bool{
+pub fn is_linked_to_appeal_court(db_path: &String, id_appeal_court: i32, id_tribunal: i32) -> bool {
     let query = tribunals::dsl::tribunals.find(id_tribunal);
     let mut connection = establish_connection(&db_path);
 
-    match query.first::<Tribunal>(&mut connection){
+    match query.first::<Tribunal>(&mut connection) {
         Ok(record) => {
-            if (record.appeal_court_id == id_appeal_court){
+            if (record.appeal_court_id == id_appeal_court) {
                 return true;
             }
-        },
+        }
         Err(diesel::NotFound) => println!("Not Found"),
         Err(err) => println!("error"),
-    } 
+    }
     return false;
 }
 
-pub fn is_linked_to_group(db_path: &String, id_group : i32, id_tribunal : i32) -> bool{
+pub fn is_linked_to_group(db_path: &String, id_group: i32, id_tribunal: i32) -> bool {
     let query = tribunals::dsl::tribunals.find(id_tribunal);
     let mut connection = establish_connection(&db_path);
 
-    match query.first::<Tribunal>(&mut connection){
+    match query.first::<Tribunal>(&mut connection) {
         Ok(record) => {
-            if (record.group_id == id_group){
+            if (record.group_id == id_group) {
                 return true;
             }
             return false;
-        },
+        }
         Err(diesel::NotFound) => println!("Not Found"),
         Err(err) => println!("error"),
-    } 
+    }
     return false;
 }
