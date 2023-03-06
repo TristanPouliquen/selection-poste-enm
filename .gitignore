@@ -9,6 +9,3 @@ out/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-package-lock.json
-yarn.lock
-yarn.lock
