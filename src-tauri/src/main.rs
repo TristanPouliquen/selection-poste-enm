@@ -17,7 +17,6 @@ use crate::models::tag::*;
 use crate::models::time_window::*;
 use crate::models::tribunal::*;
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
-use models::tribunal;
 
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("./migrations");
 pub const DATABASE_NAME: &str = "selection-poste-enm.sqlite3";
@@ -176,9 +175,9 @@ fn create_document(app_handle: tauri::AppHandle, document: NewDocument) -> Docum
 }
 
 #[tauri::command]
-fn sort_positions(app_handle: tauri::AppHandle, sortDataInput: SortDataInput) -> bool {
+fn sort_positions(app_handle: tauri::AppHandle, sort_data_input: SortDataInput) -> bool {
     let db_path = get_db_path(app_handle);
-    position_sort(db_path, sortDataInput)
+    position_sort(db_path, sort_data_input)
 }
 
 #[tauri::command]
@@ -223,6 +222,7 @@ fn main() {
             get_time_windows,
             update_time_window,
             create_time_window,
+            delete_time_window,
             get_position_documents,
             create_document,
             delete_document
