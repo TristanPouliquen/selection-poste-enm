@@ -56,6 +56,12 @@ const formatCriteriaForApi = (criteria: ICriteria) => {
         ? criterion.value.map((item: any) => item.id)
         : criterion.value.value,
     })),
+    negative: criteria.negative.map((criterion) => ({
+      name: criterion.name,
+      value: Array.isArray(criterion.value)
+        ? criterion.value.map((item: any) => item.id)
+        : criterion.value.value,
+    })),
   };
 };
 
