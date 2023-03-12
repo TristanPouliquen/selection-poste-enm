@@ -34,3 +34,36 @@ pub fn tribunal_update(db_path: String, tribunal: Tribunal) -> Tribunal {
         .get_result(&mut establish_connection(&db_path))
         .unwrap()
 }
+
+pub fn is_linked_to_appeal_court(db_path: &str, id_appeal_court: i32, id_tribunal: i32) -> bool {
+    let query = tribunals::dsl::tribunals.find(id_tribunal);
+    let mut connection = establish_connection(db_path);
+
+    match query.first::<Tribunal>(&mut connection) {
+        Ok(record) => {
+            if record.appeal_court_id == id_appeal_court {
+                return true;
+            }
+        }
+        Err(diesel::NotFound) => println!("Not Found"),
+        Err(_err) => println!("error"),
+    }
+    false
+}
+
+pub fn is_linked_to_group(db_path: &str, id_group: i32, id_tribunal: i32) -> bool {
+    let query = tribunals::dsl::tribunals.find(id_tribunal);
+    let mut connection = establish_connection(db_path);
+
+    match query.first::<Tribunal>(&mut connection) {
+        Ok(record) => {
+            if record.group_id == id_group {
+                return true;
+            }
+            return false;
+        }
+        Err(diesel::NotFound) => println!("Not Found"),
+        Err(_err) => println!("error"),
+    }
+    false
+}
