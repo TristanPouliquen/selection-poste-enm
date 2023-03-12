@@ -43,6 +43,7 @@ pub struct SortDataInput {
 }
 
 #[derive(Deserialize)]
+#[serde(untagged)]
 pub enum CriterionValue {
     IntegerArray(Vec<i32>),
     Name(String),
@@ -480,10 +481,9 @@ fn order_weighted_positions_to_positions_with_tag(
 
     for (i, item) in weighted_positions.iter_mut().enumerate() {
         diesel::update(positions::dsl::positions.find(item.position.position.id))
-            .set(positions::ranking.eq(i as i32))
+            .set(positions::ranking.eq(i+1 as i32))
             .execute(&mut establish_connection(&path))
             .unwrap();
     }
-
     true
 }
