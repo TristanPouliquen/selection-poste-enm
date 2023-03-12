@@ -175,9 +175,9 @@ fn create_document(app_handle: tauri::AppHandle, document: NewDocument) -> Docum
 }
 
 #[tauri::command]
-fn sort_positions(app_handle: tauri::AppHandle, sort_data_input: SortDataInput) -> bool {
+fn rank_positions(app_handle: tauri::AppHandle, sort_data_input: SortDataInput) -> bool {
     let db_path = get_db_path(app_handle);
-    position_sort(db_path, sort_data_input)
+    position_rank(db_path, sort_data_input)
 }
 
 #[tauri::command]
@@ -209,6 +209,7 @@ fn main() {
             get_position,
             update_position,
             update_position_ranking,
+            rank_positions,
             add_position_tag,
             remove_position_tag,
             get_roles,
@@ -218,7 +219,6 @@ fn main() {
             delete_tag,
             get_tribunals,
             update_tribunal,
-            sort_positions,
             get_time_windows,
             update_time_window,
             create_time_window,

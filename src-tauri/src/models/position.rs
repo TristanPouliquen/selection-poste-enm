@@ -154,7 +154,7 @@ pub fn position_update_ranking(db_path: String, mut position: Position) -> Vec<P
     position_list(db_path)
 }
 
-pub fn position_sort(path: String, sort_data_input: SortDataInput) -> bool {
+pub fn position_rank(path: String, sort_data_input: SortDataInput) -> bool {
     let positions = position_list(path.to_string());
 
     let mut weighted_positions = Vec::<PositionWithWeight>::new();
