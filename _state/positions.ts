@@ -4,6 +4,7 @@ import { atom, selector, selectorFamily, useRecoilState } from "recoil";
 import { tagsAtom } from "@/_state/tags";
 import { tribunalSelector } from "@/_state/tribunals";
 import { roleSelector } from "@/_state/roles";
+import { ICriteria } from "@/components/Onboarding";
 
 const positionsAtom = atom<Position[]>({
   key: "positionsAtom",
@@ -46,6 +47,23 @@ const positionSelector = selectorFamily({
       return { ...position, tribunal, role };
     },
 });
+
+const formatCriteriaForApi = (criteria: ICriteria) => {
+  return {
+    positive: criteria.positive.map((criterion) => ({
+      name: criterion.name,
+      value: Array.isArray(criterion.value)
+        ? criterion.value.map((item: any) => item.id)
+        : criterion.value.value,
+    })),
+    negative: criteria.negative.map((criterion) => ({
+      name: criterion.name,
+      value: Array.isArray(criterion.value)
+        ? criterion.value.map((item: any) => item.id)
+        : criterion.value.value,
+    })),
+  };
+};
 
 const usePositionsActions = () => {
   const [positions, setPositions] = useRecoilState(positionsAtom);
@@ -98,7 +116,23 @@ const usePositionsActions = () => {
     }
   };
 
-  return { getAll, update, updateRanking, getTags, addTag, removeTag };
+  const rankPositions = async (criteria: ICriteria) => {
+    const sortDataInput = formatCriteriaForApi(criteria);
+
+    await invoke("rank_positions", { sortDataInput });
+
+    await getAll();
+  };
+
+  return {
+    getAll,
+    update,
+    updateRanking,
+    getTags,
+    addTag,
+    removeTag,
+    rankPositions,
+  };
 };
 
 export {
