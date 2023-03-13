@@ -70,7 +70,7 @@ const selectConfiguration: IConfiguration = {
     recoilOptions: "",
     options: [
       { label: "Civil", value: "Civil" },
-      { label: "Pénal", value: "Penal" },
+      { label: "Pénal", value: "Pénal" },
     ],
     isMulti: false,
     getOptionLabel: (option: any) => option.label,
@@ -114,7 +114,6 @@ const CriterionSelect = ({
       return;
     }
     let copy: ICriterion | undefined = undefined;
-    console.log(actionMeta);
     switch (actionMeta.action) {
       case "remove-value":
       case "pop-value":
@@ -158,7 +157,6 @@ const CriterionSelect = ({
         }
         break;
     }
-    console.log(copy);
     if (copy) {
       setCriteria({
         ...criteria,

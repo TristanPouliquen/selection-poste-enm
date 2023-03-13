@@ -117,8 +117,8 @@ const usePositionsActions = () => {
   };
 
   const rankPositions = async (criteria: ICriteria) => {
-    // TODO Vladimir : remplacer le nom de la commande et du paramètre
     const sortDataInput = formatCriteriaForApi(criteria);
+
     await invoke("rank_positions", { sortDataInput });
 
     await getAll();

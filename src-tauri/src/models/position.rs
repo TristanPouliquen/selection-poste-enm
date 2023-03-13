@@ -458,7 +458,7 @@ fn sort_by_prevalent_domain(
             println!("boolean: {boolean}");
         }
         CriterionValue::Name(_name) => {
-            let prevalent_domain_id: Option<String> = Some(String::from("name"));
+            let prevalent_domain_id: Option<String> = Some(String::from(_name));
             for w_pos in weighted_positions.iter_mut() {
                 if w_pos.position.position.prevalent_domain == prevalent_domain_id {
                     if is_positive {
@@ -477,11 +477,10 @@ fn order_weighted_positions_to_positions_with_tag(
     path: String,
     mut weighted_positions: Vec<PositionWithWeight>,
 ) -> bool {
-    weighted_positions.sort_by_key(|weighted_position| weighted_position.weight);
-
+    weighted_positions.sort_by_key(|weighted_position| -weighted_position.weight);
     for (i, item) in weighted_positions.iter_mut().enumerate() {
         diesel::update(positions::dsl::positions.find(item.position.position.id))
-            .set(positions::ranking.eq(i+1 as i32))
+            .set(positions::ranking.eq(i as i32 + 1))
             .execute(&mut establish_connection(&path))
             .unwrap();
     }
