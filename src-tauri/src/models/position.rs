@@ -167,149 +167,123 @@ pub fn position_rank(path: String, sort_data_input: SortDataInput) -> bool {
         })
     }
 
-    let mut positive_weight: i32 = sort_data_input.positive.len().try_into().unwrap();
-    for positive_criterion in sort_data_input.positive {
-        match positive_criterion.name.as_str() {
-            "appealCourt" => {
-                weighted_positions = sort_by_appeal_court(
-                    &path,
-                    weighted_positions,
-                    true,
-                    positive_weight,
-                    positive_criterion.value,
-                )
-            }
-            "group" => {
-                weighted_positions = sort_by_group(
-                    &path,
-                    weighted_positions,
-                    true,
-                    positive_weight,
-                    positive_criterion.value,
-                )
-            }
-            "role" => {
-                weighted_positions = sort_by_role(
-                    weighted_positions,
-                    true,
-                    positive_weight,
-                    positive_criterion.value,
-                )
-            }
-            "tribunal" => {
-                weighted_positions = sort_by_tribunal(
-                    weighted_positions,
-                    true,
-                    positive_weight,
-                    positive_criterion.value,
-                )
-            }
-            "placed" => {
-                weighted_positions = sort_by_placed(
-                    weighted_positions,
-                    true,
-                    positive_weight,
-                    positive_criterion.value,
-                )
-            }
-            "prevalent_domain" => {
-                weighted_positions = sort_by_prevalent_domain(
-                    weighted_positions,
-                    true,
-                    positive_weight,
-                    positive_criterion.value,
-                )
-            }
-            _ => todo!(),
-        };
-        positive_weight -= 1;
-    }
-
-    let mut negative_weight: i32 = sort_data_input.negative.len().try_into().unwrap();
-    for negative_criterion in sort_data_input.negative {
-        match negative_criterion.name.as_str() {
-            "appealCourt" => {
-                weighted_positions = sort_by_appeal_court(
-                    &path,
-                    weighted_positions,
-                    false,
-                    negative_weight,
-                    negative_criterion.value,
-                )
-            }
-            "group" => {
-                weighted_positions = sort_by_group(
-                    &path,
-                    weighted_positions,
-                    false,
-                    negative_weight,
-                    negative_criterion.value,
-                )
-            }
-            "role" => {
-                weighted_positions = sort_by_role(
-                    weighted_positions,
-                    false,
-                    negative_weight,
-                    negative_criterion.value,
-                )
-            }
-            "tribunal" => {
-                weighted_positions = sort_by_tribunal(
-                    weighted_positions,
-                    false,
-                    negative_weight,
-                    negative_criterion.value,
-                )
-            }
-            "placed" => {
-                weighted_positions = sort_by_placed(
-                    weighted_positions,
-                    false,
-                    negative_weight,
-                    negative_criterion.value,
-                )
-            }
-            "prevalent_domain" => {
-                weighted_positions = sort_by_prevalent_domain(
-                    weighted_positions,
-                    false,
-                    negative_weight,
-                    negative_criterion.value,
-                )
-            }
-            _ => todo!(),
-        };
-        negative_weight -= 1;
-    }
-
+    weighted_positions =
+        process_criteria(sort_data_input.positive, weighted_positions, true, &path);
+    weighted_positions =
+        process_criteria(sort_data_input.negative, weighted_positions, false, &path);
     order_weighted_positions_to_positions_with_tag(path, weighted_positions);
 
     true
+}
+
+fn process_criteria(
+    criteria: Vec<Criterion>,
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    path: &str,
+) -> Vec<PositionWithWeight> {
+    let base_multiplicator: i32 = 100;
+    let mut base_weight: i32 = criteria.len() as i32 * base_multiplicator;
+    for positive_criterion in criteria {
+        weighted_positions = process_criterion(
+            positive_criterion,
+            weighted_positions,
+            is_positive,
+            base_weight,
+            path,
+        );
+        base_weight -= base_multiplicator;
+    }
+    weighted_positions
+}
+
+fn process_criterion(
+    criterion: Criterion,
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    base_weight: i32,
+    db_path: &str,
+) -> Vec<PositionWithWeight> {
+    match criterion.name.as_str() {
+        "appealCourt" => {
+            weighted_positions = sort_by_appeal_court(
+                db_path,
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "group" => {
+            weighted_positions = sort_by_group(
+                db_path,
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "role" => {
+            weighted_positions = sort_by_role(
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "tribunal" => {
+            weighted_positions = sort_by_tribunal(
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "placed" => {
+            weighted_positions = sort_by_placed(
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "prevalent_domain" => {
+            weighted_positions = sort_by_prevalent_domain(
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        _ => todo!(),
+    };
+    weighted_positions
 }
 
 fn sort_by_appeal_court(
     path: &str,
     mut weighted_positions: Vec<PositionWithWeight>,
     is_positive: bool,
-    weight: i32,
+    base_weight: i32,
     value: CriterionValue,
 ) -> Vec<PositionWithWeight> {
     match value {
-        CriterionValue::IntegerArray(appeal_court_index_appeal_court_index_array) => {
+        CriterionValue::IntegerArray(appeal_court_index_array) => {
             for mut w_pos in weighted_positions.iter_mut() {
-                for idx in &appeal_court_index_appeal_court_index_array {
+                let mut criterion_weight: i32 = appeal_court_index_array.len().try_into().unwrap();
+                for idx in &appeal_court_index_array {
                     if tribunal::is_linked_to_appeal_court(
                         path,
                         *idx,
                         w_pos.position.position.tribunal_id,
                     ) {
                         if is_positive {
-                            w_pos.weight += weight;
+                            w_pos.weight += base_weight + criterion_weight;
                         } else {
-                            w_pos.weight -= weight;
+                            w_pos.weight -= base_weight + criterion_weight;
                         }
                     }
+                    criterion_weight -= 1;
                 }
             }
         }
@@ -320,7 +294,6 @@ fn sort_by_appeal_court(
             println!("name: {name}");
         }
     }
-
     weighted_positions
 }
 
@@ -328,21 +301,23 @@ fn sort_by_group(
     path: &str,
     mut weighted_positions: Vec<PositionWithWeight>,
     is_positive: bool,
-    weight: i32,
+    base_weight: i32,
     value: CriterionValue,
 ) -> Vec<PositionWithWeight> {
     match value {
-        CriterionValue::IntegerArray(group_index_group_index_array) => {
+        CriterionValue::IntegerArray(group_index_array) => {
             for w_pos in weighted_positions.iter_mut() {
-                for idx in &group_index_group_index_array {
+                let mut criterion_weight: i32 = group_index_array.len().try_into().unwrap();
+                for idx in &group_index_array {
                     if tribunal::is_linked_to_group(path, *idx, w_pos.position.position.tribunal_id)
                     {
                         if is_positive {
-                            w_pos.weight += weight;
+                            w_pos.weight += base_weight + criterion_weight;
                         } else {
-                            w_pos.weight -= weight;
+                            w_pos.weight -= base_weight + criterion_weight;
                         }
                     }
+                    criterion_weight -= 1;
                 }
             }
         }
@@ -359,20 +334,22 @@ fn sort_by_group(
 fn sort_by_tribunal(
     mut weighted_positions: Vec<PositionWithWeight>,
     is_positive: bool,
-    weight: i32,
+    base_weight: i32,
     value: CriterionValue,
 ) -> Vec<PositionWithWeight> {
     match value {
-        CriterionValue::IntegerArray(tribunal_index_tribunal_index_array) => {
+        CriterionValue::IntegerArray(tribunal_index_array) => {
             for w_pos in weighted_positions.iter_mut() {
-                for idx in &tribunal_index_tribunal_index_array {
+                let mut criterion_weight: i32 = tribunal_index_array.len().try_into().unwrap();
+                for idx in &tribunal_index_array {
                     if w_pos.position.position.tribunal_id == *idx {
                         if is_positive {
-                            w_pos.weight += weight;
+                            w_pos.weight += base_weight + criterion_weight;
                         } else {
-                            w_pos.weight -= weight;
+                            w_pos.weight -= base_weight + criterion_weight;
                         }
                     }
+                    criterion_weight -= 1;
                 }
             }
         }
@@ -389,20 +366,22 @@ fn sort_by_tribunal(
 fn sort_by_role(
     mut weighted_positions: Vec<PositionWithWeight>,
     is_positive: bool,
-    weight: i32,
+    base_weight: i32,
     value: CriterionValue,
 ) -> Vec<PositionWithWeight> {
     match value {
-        CriterionValue::IntegerArray(role_index_role_index_array) => {
+        CriterionValue::IntegerArray(role_index_array) => {
             for w_pos in weighted_positions.iter_mut() {
-                for idx in &role_index_role_index_array {
+                let mut criterion_weight: i32 = role_index_array.len().try_into().unwrap();
+                for idx in &role_index_array {
                     if w_pos.position.position.role_id == *idx {
                         if is_positive {
-                            w_pos.weight += weight;
+                            w_pos.weight += base_weight + criterion_weight;
                         } else {
-                            w_pos.weight -= weight;
+                            w_pos.weight -= base_weight + criterion_weight;
                         }
                     }
+                    criterion_weight -= 1;
                 }
             }
         }
@@ -458,7 +437,7 @@ fn sort_by_prevalent_domain(
             println!("boolean: {boolean}");
         }
         CriterionValue::Name(_name) => {
-            let prevalent_domain_id: Option<String> = Some(String::from(_name));
+            let prevalent_domain_id: Option<String> = Some(_name);
             for w_pos in weighted_positions.iter_mut() {
                 if w_pos.position.position.prevalent_domain == prevalent_domain_id {
                     if is_positive {
