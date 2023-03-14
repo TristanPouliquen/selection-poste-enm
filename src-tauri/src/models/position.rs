@@ -5,6 +5,9 @@ use crate::schema::tags;
 use diesel::dsl::count;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
+use std::option::Option;
+
+use super::tribunal;
 
 #[derive(Identifiable, Queryable, Selectable, Serialize, Deserialize, AsChangeset)]
 #[diesel(belongs_to(Tribunal))]
@@ -26,6 +29,31 @@ pub struct PositionWithTags {
     #[serde(flatten)]
     position: Position,
     tags: Vec<Tag>,
+}
+
+struct PositionWithWeight {
+    position: PositionWithTags,
+    weight: i32,
+}
+
+#[derive(Deserialize)]
+pub struct SortDataInput {
+    positive: Vec<Criterion>,
+    negative: Vec<Criterion>,
+}
+
+#[derive(Deserialize)]
+#[serde(untagged)]
+pub enum CriterionValue {
+    IntegerArray(Vec<i32>),
+    Name(String),
+    Boolean(bool),
+}
+
+#[derive(Deserialize)]
+pub struct Criterion {
+    name: String,
+    value: CriterionValue,
 }
 
 pub fn position_list(db_path: String) -> Vec<PositionWithTags> {
@@ -125,4 +153,315 @@ pub fn position_update_ranking(db_path: String, mut position: Position) -> Vec<P
         .execute(&mut establish_connection(&db_path))
         .expect("Failed updating ranking");
     position_list(db_path)
+}
+
+pub fn position_rank(path: String, sort_data_input: SortDataInput) -> bool {
+    let positions = position_list(path.to_string());
+
+    let mut weighted_positions = Vec::<PositionWithWeight>::new();
+
+    for position in positions {
+        weighted_positions.push(PositionWithWeight {
+            position,
+            weight: 0,
+        })
+    }
+
+    weighted_positions =
+        process_criteria(sort_data_input.positive, weighted_positions, true, &path);
+    weighted_positions =
+        process_criteria(sort_data_input.negative, weighted_positions, false, &path);
+    order_weighted_positions_to_positions_with_tag(path, weighted_positions);
+
+    true
+}
+
+fn process_criteria(
+    criteria: Vec<Criterion>,
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    path: &str,
+) -> Vec<PositionWithWeight> {
+    let base_multiplicator: i32 = 100;
+    let mut base_weight: i32 = criteria.len() as i32 * base_multiplicator;
+    for positive_criterion in criteria {
+        weighted_positions = process_criterion(
+            positive_criterion,
+            weighted_positions,
+            is_positive,
+            base_weight,
+            path,
+        );
+        base_weight -= base_multiplicator;
+    }
+    weighted_positions
+}
+
+fn process_criterion(
+    criterion: Criterion,
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    base_weight: i32,
+    db_path: &str,
+) -> Vec<PositionWithWeight> {
+    match criterion.name.as_str() {
+        "appealCourt" => {
+            weighted_positions = sort_by_appeal_court(
+                db_path,
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "group" => {
+            weighted_positions = sort_by_group(
+                db_path,
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "role" => {
+            weighted_positions = sort_by_role(
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "tribunal" => {
+            weighted_positions = sort_by_tribunal(
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "placed" => {
+            weighted_positions = sort_by_placed(
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        "prevalent_domain" => {
+            weighted_positions = sort_by_prevalent_domain(
+                weighted_positions,
+                is_positive,
+                base_weight,
+                criterion.value,
+            )
+        }
+        _ => todo!(),
+    };
+    weighted_positions
+}
+
+fn sort_by_appeal_court(
+    path: &str,
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    base_weight: i32,
+    value: CriterionValue,
+) -> Vec<PositionWithWeight> {
+    match value {
+        CriterionValue::IntegerArray(appeal_court_index_array) => {
+            for mut w_pos in weighted_positions.iter_mut() {
+                let mut criterion_weight: i32 = appeal_court_index_array.len().try_into().unwrap();
+                for idx in &appeal_court_index_array {
+                    if tribunal::is_linked_to_appeal_court(
+                        path,
+                        *idx,
+                        w_pos.position.position.tribunal_id,
+                    ) {
+                        if is_positive {
+                            w_pos.weight += base_weight + criterion_weight;
+                        } else {
+                            w_pos.weight -= base_weight + criterion_weight;
+                        }
+                    }
+                    criterion_weight -= 1;
+                }
+            }
+        }
+        CriterionValue::Boolean(boolean) => {
+            println!("boolean: {boolean}");
+        }
+        CriterionValue::Name(name) => {
+            println!("name: {name}");
+        }
+    }
+    weighted_positions
+}
+
+fn sort_by_group(
+    path: &str,
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    base_weight: i32,
+    value: CriterionValue,
+) -> Vec<PositionWithWeight> {
+    match value {
+        CriterionValue::IntegerArray(group_index_array) => {
+            for w_pos in weighted_positions.iter_mut() {
+                let mut criterion_weight: i32 = group_index_array.len().try_into().unwrap();
+                for idx in &group_index_array {
+                    if tribunal::is_linked_to_group(path, *idx, w_pos.position.position.tribunal_id)
+                    {
+                        if is_positive {
+                            w_pos.weight += base_weight + criterion_weight;
+                        } else {
+                            w_pos.weight -= base_weight + criterion_weight;
+                        }
+                    }
+                    criterion_weight -= 1;
+                }
+            }
+        }
+        CriterionValue::Boolean(boolean) => {
+            println!("boolean: {boolean}");
+        }
+        CriterionValue::Name(name) => {
+            println!("name: {name}");
+        }
+    }
+    weighted_positions
+}
+
+fn sort_by_tribunal(
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    base_weight: i32,
+    value: CriterionValue,
+) -> Vec<PositionWithWeight> {
+    match value {
+        CriterionValue::IntegerArray(tribunal_index_array) => {
+            for w_pos in weighted_positions.iter_mut() {
+                let mut criterion_weight: i32 = tribunal_index_array.len().try_into().unwrap();
+                for idx in &tribunal_index_array {
+                    if w_pos.position.position.tribunal_id == *idx {
+                        if is_positive {
+                            w_pos.weight += base_weight + criterion_weight;
+                        } else {
+                            w_pos.weight -= base_weight + criterion_weight;
+                        }
+                    }
+                    criterion_weight -= 1;
+                }
+            }
+        }
+        CriterionValue::Boolean(boolean) => {
+            println!("boolean: {boolean}");
+        }
+        CriterionValue::Name(name) => {
+            println!("name: {name}");
+        }
+    }
+    weighted_positions
+}
+
+fn sort_by_role(
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    base_weight: i32,
+    value: CriterionValue,
+) -> Vec<PositionWithWeight> {
+    match value {
+        CriterionValue::IntegerArray(role_index_array) => {
+            for w_pos in weighted_positions.iter_mut() {
+                let mut criterion_weight: i32 = role_index_array.len().try_into().unwrap();
+                for idx in &role_index_array {
+                    if w_pos.position.position.role_id == *idx {
+                        if is_positive {
+                            w_pos.weight += base_weight + criterion_weight;
+                        } else {
+                            w_pos.weight -= base_weight + criterion_weight;
+                        }
+                    }
+                    criterion_weight -= 1;
+                }
+            }
+        }
+        CriterionValue::Boolean(boolean) => {
+            println!("boolean: {boolean}");
+        }
+        CriterionValue::Name(name) => {
+            println!("name: {name}");
+        }
+    }
+    weighted_positions
+}
+
+fn sort_by_placed(
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    weight: i32,
+    value: CriterionValue,
+) -> Vec<PositionWithWeight> {
+    match value {
+        CriterionValue::IntegerArray(_array) => {
+            println!("array");
+        }
+        CriterionValue::Boolean(is_placed) => {
+            for w_pos in weighted_positions.iter_mut() {
+                if w_pos.position.position.placed == is_placed {
+                    if is_positive {
+                        w_pos.weight += weight;
+                    } else {
+                        w_pos.weight -= weight;
+                    }
+                }
+            }
+        }
+        CriterionValue::Name(name) => {
+            println!("name: {name}");
+        }
+    }
+    weighted_positions
+}
+
+fn sort_by_prevalent_domain(
+    mut weighted_positions: Vec<PositionWithWeight>,
+    is_positive: bool,
+    weight: i32,
+    value: CriterionValue,
+) -> Vec<PositionWithWeight> {
+    match value {
+        CriterionValue::IntegerArray(_array) => {
+            println!("array");
+        }
+        CriterionValue::Boolean(boolean) => {
+            println!("boolean: {boolean}");
+        }
+        CriterionValue::Name(_name) => {
+            let prevalent_domain_id: Option<String> = Some(_name);
+            for w_pos in weighted_positions.iter_mut() {
+                if w_pos.position.position.prevalent_domain == prevalent_domain_id {
+                    if is_positive {
+                        w_pos.weight += weight;
+                    } else {
+                        w_pos.weight -= weight;
+                    }
+                }
+            }
+        }
+    }
+    weighted_positions
+}
+
+fn order_weighted_positions_to_positions_with_tag(
+    path: String,
+    mut weighted_positions: Vec<PositionWithWeight>,
+) -> bool {
+    weighted_positions.sort_by_key(|weighted_position| -weighted_position.weight);
+    for (i, item) in weighted_positions.iter_mut().enumerate() {
+        diesel::update(positions::dsl::positions.find(item.position.position.id))
+            .set(positions::ranking.eq(i as i32 + 1))
+            .execute(&mut establish_connection(&path))
+            .unwrap();
+    }
+    true
 }
