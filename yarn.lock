@@ -654,10 +654,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:13.1.5":
-  version: 13.1.5
-  resolution: "@next/font@npm:13.1.5"
-  checksum: f3e8425ca77e1c6f08153c0fe91ee6bac37b67487bb5c6c69624bd3c1901184a3db4bd9281abf4bce6dbc4d42bd744bdc160dd82660de92b1b7e743f6e120295
+"@next/font@npm:13.2.3":
+  version: 13.2.3
+  resolution: "@next/font@npm:13.2.3"
+  checksum: 241baec8c441448df2d7e7755eca4876e018a874555ddd22816585b50f03eac357f15576762ad1011b4a4c245e7dba9675ae7ec4289196943a51bc25fa203863
   languageName: node
   linkType: hard
 
@@ -1486,10 +1486,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uiw/color-convert@npm:1.1.1, @uiw/color-convert@npm:^1.1.1":
+"@uiw/color-convert@npm:1.1.1":
   version: 1.1.1
   resolution: "@uiw/color-convert@npm:1.1.1"
   checksum: 8b26180ee5a1881e06748c7c4bbb5d57906411c2fe6e593478f4f514010459be0bbf876d96ded25bc32bbd40273300af22d05354158116e27a5c6532b4bd7b09
+  languageName: node
+  linkType: hard
+
+"@uiw/color-convert@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@uiw/color-convert@npm:1.1.2"
+  checksum: 91b8fd9d611e2bae58811e26a142d27b9da6a4472a2be7d3b9187b19e3a8e897eb97f0e4f5a43b16ce2c8789cf5db4e943054ef452277e1e4a6967d2ff5effd5
   languageName: node
   linkType: hard
 
@@ -2383,9 +2390,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^2.50.0":
-  version: 2.50.1
-  resolution: "daisyui@npm:2.50.1"
+"daisyui@npm:^2.51.3":
+  version: 2.51.3
+  resolution: "daisyui@npm:2.51.3"
   dependencies:
     color: ^4.2
     css-selector-tokenizer: ^0.8.0
@@ -2394,7 +2401,7 @@ __metadata:
   peerDependencies:
     autoprefixer: ^10.0.2
     postcss: ^8.1.6
-  checksum: f010a37ec0876f5ea79e007e967f0a9f88f9d22864fe169e4c64d0fdb42e71867e322cc369368cad99801e1dc0b540090829303a5eec00b941e8aa52fa989a86
+  checksum: 489cfbd0363af5637c5ab86246cf4d127aa2f4444b1b900e20c6c850b734de78dfeaf46b52b15adbb89bcad9fb4622664278250044e7ab363956da3ae1343d3f
   languageName: node
   linkType: hard
 
@@ -5651,12 +5658,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.3":
-  version: 2.8.3
-  resolution: "prettier@npm:2.8.3"
+"prettier@npm:2.8.4":
+  version: 2.8.4
+  resolution: "prettier@npm:2.8.4"
   bin:
     prettier: bin-prettier.js
-  checksum: 92f2ceb522d454370e02082aa74ad27388672f7cee8975028b59517c069fe643bdc73e322675c8faf2ff173d7a626d1a6389f26b474000308e793aa25fff46e5
+  checksum: c173064bf3df57b6d93d19aa98753b9b9dd7657212e33b41ada8e2e9f9884066bb9ca0b4005b89b3ab137efffdf8fbe0b462785aba20364798ff4303aadda57e
   languageName: node
   linkType: hard
 
@@ -5800,12 +5807,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.43.0":
-  version: 7.43.1
-  resolution: "react-hook-form@npm:7.43.1"
+"react-hook-form@npm:^7.43.3":
+  version: 7.43.3
+  resolution: "react-hook-form@npm:7.43.3"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
-  checksum: a15b672885cf9bb43c6691bf544b3ead59860bb8c6298c7607b8b82952707ec8dd9fd9d1346310abb8696e99319b1f78f6023941d129154815811ee64d750461
+  checksum: 16e03e42d07f696e36d67c0d60671df6d0bc73b9e48876ea99b85cf3aaa4cf40acb0c0e2870169d4a22504c7111c0f658b0b17a4f3fd191ef69c7eea70785a9d
   languageName: node
   linkType: hard
 
@@ -6232,7 +6239,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.21.0
     "@babel/runtime": ^7.21.0
-    "@next/font": 13.1.5
+    "@next/font": 13.2.3
     "@radix-ui/react-icons": ^1.1.1
     "@react-pdf-viewer/core": 3.11.0
     "@react-pdf-viewer/default-layout": ^3.11.0
@@ -6247,12 +6254,12 @@ __metadata:
     "@types/react-draft-wysiwyg": ^1.13.4
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
-    "@uiw/color-convert": ^1.1.1
+    "@uiw/color-convert": ^1.1.2
     "@uiw/react-color-block": ^1.1.1
     autoprefixer: ^10.4.13
     babel-loader: ^9.1.2
     babel-plugin-transform-remove-imports: ^1.7.0
-    daisyui: ^2.50.0
+    daisyui: ^2.51.3
     date-fns: ^2.29.3
     draft-js: ^0.11.7
     eslint: ^8.35.0
@@ -6266,14 +6273,14 @@ __metadata:
     next-remove-imports: ^1.0.8
     pdfjs-dist: 3.3.122
     postcss: ^8.4.21
-    prettier: 2.8.3
+    prettier: 2.8.4
     pretty-bytes: ^6.1.0
     react: 18.2.0
     react-beautiful-dnd: ^13.1.1
     react-dom: 18.2.0
     react-draft-wysiwyg: ^1.15.0
     react-dropzone: ^14.2.3
-    react-hook-form: ^7.43.0
+    react-hook-form: ^7.43.3
     react-markdown: ^8.0.5
     react-select: ^5.7.0
     recoil: ^0.7.6

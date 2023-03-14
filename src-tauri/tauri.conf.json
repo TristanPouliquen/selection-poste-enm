@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "Selection Poste ENM",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "tauri": {
     "allowlist": {
@@ -21,7 +21,7 @@
     },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
+      "category": "Productivity",
       "copyright": "",
       "deb": {
         "depends": []
@@ -58,7 +58,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/TristanPouliquen/selection-poste-enm/latest-version.json"
+        "https://github.com/TristanPouliquen/selection-poste-enm/latest.json"
       ],
       "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDUxODE0QkI0QTZFRTQyNDcKUldSSFF1Nm10RXVCVWZFVW9EMkl4MEl4NW82eXRWRG1VV2dJWExCU0tEQ3FFL1A0V1c5L0JUaHkK"

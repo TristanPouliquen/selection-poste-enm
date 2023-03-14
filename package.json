@@ -1,10 +1,12 @@
 {
   "name": "selection-poste-enm",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "license": "GPL-3.0-or-later",
   "author": "Tristan Pouliquen <tristan.pouliquen@yahoo.fr> (https://github.com/TristanPouliquen)",
-  "contributors": ["Vladimir Chantitch (https://github.com/VladimirChantitch)"],
+  "contributors": [
+    "Vladimir Chantitch (https://github.com/VladimirChantitch)"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,17 +17,17 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@next/font": "13.1.5",
+    "@next/font": "13.2.3",
     "@radix-ui/react-icons": "^1.1.1",
     "@react-pdf-viewer/core": "3.11.0",
     "@react-pdf-viewer/default-layout": "^3.11.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tauri-apps/api": "^1.2.0",
     "@tauri-apps/cli": "^1.2.3",
-    "@uiw/color-convert": "^1.1.1",
+    "@uiw/color-convert": "^1.1.2",
     "@uiw/react-color-block": "^1.1.1",
     "autoprefixer": "^10.4.13",
-    "daisyui": "^2.50.0",
+    "daisyui": "^2.51.3",
     "date-fns": "^2.29.3",
     "draft-js": "^0.11.7",
     "immutable": "^4.2.4",
@@ -39,7 +41,7 @@
     "react-dom": "18.2.0",
     "react-draft-wysiwyg": "^1.15.0",
     "react-dropzone": "^14.2.3",
-    "react-hook-form": "^7.43.0",
+    "react-hook-form": "^7.43.3",
     "react-markdown": "^8.0.5",
     "react-select": "^5.7.0",
     "recoil": "^0.7.6",
@@ -78,7 +80,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "prettier": "2.8.3"
+    "prettier": "2.8.4"
   },
   "packageManager": "yarn@3.4.1"
 }

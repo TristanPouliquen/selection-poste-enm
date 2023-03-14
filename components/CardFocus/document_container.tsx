@@ -102,7 +102,7 @@ const DocumentModal = ({ document, onTogglePreview }: IDocumentProps) => {
         setFileContents(content);
       }
     );
-  }, [readBinaryFile, setFileContents]);
+  }, [document.path, setFileContents]);
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
   return (
     <div className="bg-base-100 flex flex-col overflow-hidden fixed top-0 left-0 h-full w-full fixed z-100">
