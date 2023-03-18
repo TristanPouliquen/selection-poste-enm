@@ -68,14 +68,10 @@ const MultiValueContainer = (props: MultiValueGenericProps<IOption>) => (
 );
 
 const TagContainer = ({ position }: IProps) => {
-  const { getTags, addTag, removeTag } = usePositionsActions();
+  const { addTag, removeTag } = usePositionsActions();
   const { create } = useTagsAction();
   const tags = useRecoilValue(tagsAtom);
-  useEffect(() => {
-    if (!position.tags) {
-      getTags(position);
-    }
-  }, [getTags, position]);
+
   const [value, setValue] = useState<readonly IOption[]>(() => {
     let defaultValue: IOption[] = [
       {

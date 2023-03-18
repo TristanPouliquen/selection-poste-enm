@@ -5,6 +5,23 @@ import { tagsAtom } from "@/_state/tags";
 import { tribunalSelector } from "@/_state/tribunals";
 import { roleSelector } from "@/_state/roles";
 import { ICriteria } from "@/components/Onboarding";
+import { activeAppStateAtom } from "@/_state/appState";
+
+const filterPosition = (position: Position, filters: string[]) => {
+  const results = filters.map((filter) => {
+    switch (filter) {
+      case "tooFar":
+        if (position.tribunal && position.tribunal.timeWindow) {
+          return !position.tribunal.timeWindow.tooFar;
+        }
+        return true;
+      case "taken":
+        return !position.taken;
+    }
+    return true;
+  });
+  return results.every((v) => v);
+};
 
 const positionsAtom = atom<Position[]>({
   key: "positionsAtom",
@@ -20,9 +37,12 @@ const positionsSelector = selector({
   key: "positionsSelector",
   get: ({ get }): Position[] => {
     const positions = get(positionsAtom);
-    return [...positions].map(
-      (position: Position) => get(positionSelector(position.id)) ?? position
-    );
+    const activeFilters = get(activeAppStateAtom).filters;
+    return [...positions]
+      .map(
+        (position: Position) => get(positionSelector(position.id)) ?? position
+      )
+      .filter((position) => filterPosition(position, activeFilters));
   },
   set: ({ set }, newValue) => set(positionsAtom, newValue),
 });
@@ -84,12 +104,6 @@ const usePositionsActions = () => {
 
   const updateRanking = async (position: Position) =>
     setPositions(await invoke("update_position_ranking", { position }));
-  const getTags = async (position: Position) => {
-    const tags = await invoke<Tag[]>("get_position_tags", { position });
-    setPositions(
-      positions.map((pos) => (position.id === pos.id ? { ...pos, tags } : pos))
-    );
-  };
   const addTag = async (position: Position, tag: Tag) => {
     await invoke("add_position_tag", { position, tag });
     const newPosition = await invoke<Position>("get_position", {
@@ -128,7 +142,6 @@ const usePositionsActions = () => {
     getAll,
     update,
     updateRanking,
-    getTags,
     addTag,
     removeTag,
     rankPositions,

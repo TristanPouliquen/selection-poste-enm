@@ -2,9 +2,22 @@ import { atom, useSetRecoilState } from "recoil";
 import { AppState } from "@/types/types";
 import { invoke } from "@tauri-apps/api/tauri";
 
+type ActiveAppState = {
+  filters: string[];
+  colorScheme: "default" | "role" | "appealCourt" | "timeTo" | "group";
+};
+
 const appStateAtom = atom<AppState | undefined>({
   key: "appState",
   default: undefined,
+});
+
+const activeAppStateAtom = atom<ActiveAppState>({
+  key: "activeAppState",
+  default: {
+    filters: [],
+    colorScheme: "default",
+  },
 });
 
 const useAppStateAction = () => {
@@ -21,4 +34,4 @@ const useAppStateAction = () => {
   return { get, update };
 };
 
-export { appStateAtom, useAppStateAction };
+export { activeAppStateAtom, appStateAtom, useAppStateAction };

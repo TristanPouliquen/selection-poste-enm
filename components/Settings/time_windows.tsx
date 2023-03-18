@@ -38,9 +38,9 @@ const TimeWindowForm = ({ timeWindow }: IProps) => {
     >
       <div className="flex items-center">
         <label className="mr-4">
-          De{" "}
+          De
           <input
-            className={`input input-bordered input-sm ${
+            className={`ml-2 input input-bordered input-sm ${
               errors.minTime ? "input-error" : null
             }`}
             {...register("minTime", { required: true, valueAsNumber: true })}

@@ -6,6 +6,7 @@ import { currentPositionIdAtom, usePositionsActions } from "@/_state";
 import PrevalentDomainBadge from "@/components/Badges/prevalent_domain";
 import PlacedBadge from "@/components/Badges/placed";
 import TagBadge from "@/components/Badges/tag";
+import TimeToBadge from "@/components/Badges/time_to";
 
 interface IProps {
   position: Position;
@@ -39,6 +40,9 @@ const CardSmall = ({ position }: IProps) => {
             {...(position.tags ?? []).map((tag) => (
               <TagBadge key={`tag_${tag.id}`} tag={tag} />
             ))}
+            {position.tribunal && position.tribunal.timeTo && (
+              <TimeToBadge tribunal={position.tribunal} />
+            )}
             <PrevalentDomainBadge position={position} />
             <PlacedBadge position={position} />
           </div>
