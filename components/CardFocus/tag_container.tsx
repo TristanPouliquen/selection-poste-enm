@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Position, Tag } from "@/types/types";
 import { tagsAtom, usePositionsActions, useTagsAction } from "@/_state";
 import { useRecoilValue } from "recoil";
