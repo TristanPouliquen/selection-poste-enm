@@ -13,21 +13,25 @@ const Step4 = ({ exitOnboarding, confirmRanking }: IStepProps) => {
           &quot;Confirmer&quot; !
         </p>
         <h2 className="text-2xl font-bold my-3">Critères mis en avant</h2>
-        {criteria.positive.map((criterion, index) => (
-          <CriterionDisplay
-            key={`criterion_display_positive_${index}`}
-            criterion={criterion}
-            index={index}
-          />
-        ))}
+        {criteria.positive.length !== 0
+          ? criteria.positive.map((criterion, index) => (
+              <CriterionDisplay
+                key={`criterion_display_positive_${index}`}
+                criterion={criterion}
+                index={index}
+              />
+            ))
+          : "Aucun critère sélectionné"}
         <h2 className="text-2xl font-bold my-3">Critères déclassés</h2>
-        {criteria.negative.map((criterion, index) => (
-          <CriterionDisplay
-            key={`criterion_display_negative_${index}`}
-            criterion={criterion}
-            index={index}
-          />
-        ))}
+        {criteria.negative.length !== 0
+          ? criteria.negative.map((criterion, index) => (
+              <CriterionDisplay
+                key={`criterion_display_negative_${index}`}
+                criterion={criterion}
+                index={index}
+              />
+            ))
+          : "Aucun critère sélectionné"}
       </div>
       <div className="modal-action justify-between items-baseline">
         <a className="link link-secondary" onClick={exitOnboarding}>

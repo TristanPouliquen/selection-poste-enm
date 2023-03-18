@@ -39,7 +39,7 @@ const TagForm = ({ tag }: IProps) => {
         <label className="mr-4">
           Nom
           <input
-            className={`input input-bordered input-sm ${
+            className={`ml-2 input input-bordered input-sm ${
               errors.name ? "input-error" : null
             }`}
             {...register("name", { required: true })}
