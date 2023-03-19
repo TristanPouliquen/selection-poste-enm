@@ -34,7 +34,7 @@ const TagForm = ({ tag }: IProps) => {
       className="form-control flex flex-row justify-between border rounded mb-3 p-2 shadow-md"
       style={
         tag && tag.color !== "#797979"
-          ? { backgroundColor: `${tag.color}33` }
+          ? { backgroundColor: `${tag.color}22` }
           : undefined
       }
       onSubmit={handleSubmit(onSubmit)}

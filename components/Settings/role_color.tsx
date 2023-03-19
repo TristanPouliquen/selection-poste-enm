@@ -22,7 +22,7 @@ const RoleColorForm = ({ role }: IProps) => {
       className="form-control flex flex-row justify-between border rounded mb-3 p-2 shadow-md"
       style={
         role.color !== "#797979"
-          ? { backgroundColor: `${role.color}33` }
+          ? { backgroundColor: `${role.color}22` }
           : undefined
       }
       onSubmit={handleSubmit(onSubmit)}
