@@ -32,7 +32,11 @@ const TagForm = ({ tag }: IProps) => {
   return (
     <form
       className="form-control flex flex-row justify-between border rounded mb-3 p-2 shadow-md"
-      style={tag ? { backgroundColor: `${tag.color}33` } : undefined}
+      style={
+        tag && tag.color !== "#797979"
+          ? { backgroundColor: `${tag.color}33` }
+          : undefined
+      }
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex items-center">

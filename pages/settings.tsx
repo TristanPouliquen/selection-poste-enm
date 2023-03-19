@@ -11,7 +11,7 @@ export default function Settings() {
   return (
     <Layout home={false}>
       <SettingsMenu />
-      <div className="grow p-6">
+      <div className="grow p-6 relative">
         <Tags />
         <div className="divider"></div>
         <TimeWindows />

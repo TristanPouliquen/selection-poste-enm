@@ -1,5 +1,11 @@
 import React from "react";
-import { BookmarkIcon, SewingPinIcon, Share1Icon } from "@radix-ui/react-icons";
+import {
+  BookmarkIcon,
+  HomeIcon,
+  PersonIcon,
+  SewingPinIcon,
+  Share1Icon,
+} from "@radix-ui/react-icons";
 import Link from "next/link";
 
 const SettingsMenu = () => (
@@ -27,7 +33,16 @@ const SettingsMenu = () => (
           </Link>
         </div>
         <div className="mb-2">
-          <Link href="#roles-color">Fonctions</Link>
+          <Link href="#roles-color">
+            <PersonIcon className="h-4 w-4 mr-1 inline" />
+            Fonctions
+          </Link>
+        </div>
+        <div className="mb-2">
+          <Link href="#appeal-courts-color">
+            <HomeIcon className="h-4 w-4 mr-1 inline" />
+            Cours d&apos;appel
+          </Link>
         </div>
       </div>
     </div>

@@ -14,14 +14,16 @@ const GroupColorForm = ({ group }: IProps) => {
   const { control, handleSubmit, register } = useForm<Group>({
     defaultValues: group,
   });
-  const onSubmit = (formValue: Group) => {
-    update(formValue);
-  };
+  const onSubmit = (formValue: Group) => update(formValue);
 
   return (
     <form
       className="form-control flex flex-row justify-between border rounded mb-3 p-2 shadow-md"
-      style={{ backgroundColor: `${group.color}33` }}
+      style={
+        group.color !== "#797979"
+          ? { backgroundColor: `${group.color}33` }
+          : undefined
+      }
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex items-center">

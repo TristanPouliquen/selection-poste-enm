@@ -109,6 +109,12 @@ fn get_roles(app_handle: tauri::AppHandle) -> Vec<Role> {
 }
 
 #[tauri::command]
+fn update_role(app_handle: tauri::AppHandle, role: Role) -> Role {
+    let db_path = get_db_path(app_handle);
+    role_update(db_path, role)
+}
+
+#[tauri::command]
 fn get_tags(app_handle: tauri::AppHandle) -> Vec<Tag> {
     let db_path = get_db_path(app_handle);
     tag_list(db_path)
@@ -220,6 +226,7 @@ fn main() {
             add_position_tag,
             remove_position_tag,
             get_roles,
+            update_role,
             get_tags,
             create_tag,
             update_tag,

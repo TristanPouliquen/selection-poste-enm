@@ -32,7 +32,9 @@ const TimeWindowForm = ({ timeWindow }: IProps) => {
     <form
       className="form-control flex flex-row justify-between border rounded mb-3 p-2 shadow-md"
       style={
-        timeWindow ? { backgroundColor: `${timeWindow.color}33` } : undefined
+        timeWindow && timeWindow.color !== "#797979"
+          ? { backgroundColor: `${timeWindow.color}33` }
+          : undefined
       }
       onSubmit={handleSubmit(onSubmit)}
     >
