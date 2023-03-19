@@ -2,7 +2,7 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Tag } from "@/types/types";
 import ColorPicker from "@/components/Settings/color_picker";
-import { CheckIcon, TrashIcon } from "@radix-ui/react-icons";
+import { CheckIcon, PlusCircledIcon, TrashIcon } from "@radix-ui/react-icons";
 import { tagsAtom, useTagsAction } from "@/_state";
 import { useRecoilValue } from "recoil";
 
@@ -32,7 +32,11 @@ const TagForm = ({ tag }: IProps) => {
   return (
     <form
       className="form-control flex flex-row justify-between border rounded mb-3 p-2 shadow-md"
-      style={tag ? { backgroundColor: `${tag.color}33` } : undefined}
+      style={
+        tag && tag.color !== "#797979"
+          ? { backgroundColor: `${tag.color}33` }
+          : undefined
+      }
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex items-center">
@@ -46,7 +50,7 @@ const TagForm = ({ tag }: IProps) => {
           />
         </label>
         <label className="flex flex-row items-center">
-          Couleur{" "}
+          Couleur
           <Controller
             name="color"
             control={control}
@@ -64,7 +68,7 @@ const TagForm = ({ tag }: IProps) => {
       <div className="flex items-center">
         {tag ? (
           <div
-            className="btn btn-square btn-sm btn-ghost inline mx-2 flex items-center"
+            className="btn btn-square btn-sm btn-ghost mx-2 flex items-center"
             onClick={() => remove(tag)}
           >
             <TrashIcon className="h-6 w-6 ring-base-200" />{" "}
@@ -72,9 +76,13 @@ const TagForm = ({ tag }: IProps) => {
         ) : null}
         <button
           type="submit"
-          className="btn btn-square btn-sm btn-ghost inline mx-2 flex items-center"
+          className="btn btn-square btn-sm btn-ghost mx-2 flex items-center"
         >
-          <CheckIcon className="h-6 w-6" />
+          {tag ? (
+            <CheckIcon className="h-6 w-6" />
+          ) : (
+            <PlusCircledIcon className="h-6 w-6" />
+          )}
         </button>
       </div>
     </form>
@@ -84,7 +92,9 @@ const Tags = () => {
   const tags = useRecoilValue(tagsAtom);
   return (
     <>
-      <h1 className="text-2xl font-bold mb-4">Configurer les tags</h1>
+      <h1 id="tags" className="text-2xl font-bold mb-4">
+        Configurer les tags
+      </h1>
       <div className="pl-2">
         {tags.map((tag) => (
           <TagForm tag={tag} key={`tag_form_${tag.id}`} />
