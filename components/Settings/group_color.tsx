@@ -21,7 +21,7 @@ const GroupColorForm = ({ group }: IProps) => {
       className="form-control flex flex-row justify-between border rounded mb-3 p-2 shadow-md"
       style={
         group.color !== "#797979"
-          ? { backgroundColor: `${group.color}33` }
+          ? { backgroundColor: `${group.color}22` }
           : undefined
       }
       onSubmit={handleSubmit(onSubmit)}
