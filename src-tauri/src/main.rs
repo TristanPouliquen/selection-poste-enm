@@ -58,6 +58,12 @@ fn get_groups(app_handle: tauri::AppHandle) -> Vec<Group> {
 }
 
 #[tauri::command]
+fn update_group(app_handle: tauri::AppHandle, group: Group) -> Group {
+    let db_path = get_db_path(app_handle);
+    group_update(db_path, group)
+}
+
+#[tauri::command]
 fn get_positions(app_handle: tauri::AppHandle) -> Vec<PositionWithTags> {
     let db_path = get_db_path(app_handle);
     position_list(db_path)
@@ -205,6 +211,7 @@ fn main() {
             get_appeal_courts,
             update_appeal_court,
             get_groups,
+            update_group,
             get_positions,
             get_position,
             update_position,

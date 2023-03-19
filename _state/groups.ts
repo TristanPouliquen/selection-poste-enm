@@ -1,5 +1,10 @@
-import { atom, selectorFamily, useSetRecoilState } from "recoil";
-import { Group } from "@/types/types";
+import {
+  atom,
+  selectorFamily,
+  useRecoilState,
+  useSetRecoilState,
+} from "recoil";
+import { Group, Tag } from "@/types/types";
 import { invoke } from "@tauri-apps/api/tauri";
 
 const groupsAtom = atom<Group[]>({
@@ -16,11 +21,15 @@ const groupSelector = selectorFamily({
 });
 
 const useGroupsAction = () => {
-  const setGroups = useSetRecoilState(groupsAtom);
+  const [groups, setGroups] = useRecoilState(groupsAtom);
   const getAll = async () => {
     setGroups(await invoke<Group[]>("get_groups"));
   };
-  return { getAll };
+  const update = async (group: Group) => {
+    const updated = await invoke<Group>("update_group", { group });
+    setGroups(groups.map((g) => (g.id === updated.id ? updated : g)));
+  };
+  return { getAll, update };
 };
 
 export { groupsAtom, groupSelector, useGroupsAction };

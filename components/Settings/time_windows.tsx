@@ -4,7 +4,7 @@ import { timeWindowAtom, useTimeWindowsActions } from "@/_state/timeWindow";
 import { TimeWindow } from "@/types/types";
 import { Controller, useForm } from "react-hook-form";
 import ColorPicker from "@/components/Settings/color_picker";
-import { CheckIcon, TrashIcon } from "@radix-ui/react-icons";
+import { CheckIcon, PlusCircledIcon, TrashIcon } from "@radix-ui/react-icons";
 
 interface IProps {
   timeWindow?: TimeWindow;
@@ -66,7 +66,7 @@ const TimeWindowForm = ({ timeWindow }: IProps) => {
           />
         </label>
         <label className="flex flex-row items-center">
-          Couleur{" "}
+          Couleur
           <Controller
             name="color"
             control={control}
@@ -86,7 +86,7 @@ const TimeWindowForm = ({ timeWindow }: IProps) => {
       <div className="flex items-center">
         {timeWindow ? (
           <div
-            className="btn btn-square btn-sm btn-ghost inline mx-2 flex items-center"
+            className="btn btn-square btn-sm btn-ghost mx-2 flex items-center"
             onClick={() => remove(timeWindow)}
           >
             <TrashIcon className="h-6 w-6 ring-base-200" />{" "}
@@ -94,9 +94,13 @@ const TimeWindowForm = ({ timeWindow }: IProps) => {
         ) : null}
         <button
           type="submit"
-          className="btn btn-square btn-sm btn-ghost inline mx-2 flex items-center"
+          className="btn btn-square btn-sm btn-ghost mx-2 flex items-center"
         >
-          <CheckIcon className="h-6 w-6" />
+          {timeWindow ? (
+            <CheckIcon className="h-6 w-6" />
+          ) : (
+            <PlusCircledIcon className="h-6 w-6" />
+          )}
         </button>
       </div>
     </form>
@@ -107,7 +111,7 @@ const TimeWindows = () => {
   const timeWindows = useRecoilValue(timeWindowAtom);
   return (
     <>
-      <h1 className="text-2xl font-bold mb-4">
+      <h1 id="time-windows" className="text-2xl font-bold mb-4">
         Configurer les fenêtres de temps de trajet
       </h1>
       <div className="pl-2">

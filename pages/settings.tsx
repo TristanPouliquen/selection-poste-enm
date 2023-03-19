@@ -17,6 +17,7 @@ export default function Settings() {
         <TimeWindows />
         <div className="divider"></div>
         <h1 className="text-2xl font-bold mb-4">Gérer les codes couleur</h1>
+
         <GroupColor />
         <div className="divider"></div>
         <RoleColor />
