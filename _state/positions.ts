@@ -5,9 +5,13 @@ import { tagsAtom } from "@/_state/tags";
 import { tribunalSelector } from "@/_state/tribunals";
 import { roleSelector } from "@/_state/roles";
 import { ICriteria } from "@/components/Onboarding";
-import { activeAppStateAtom } from "@/_state/appState";
+import { activeAppStateAtom, IAdvancedFilter } from "@/_state/appState";
 
-const filterPosition = (position: Position, filters: string[]) => {
+const filterPosition = (
+  position: Position,
+  filters: string[],
+  advanced: IAdvancedFilter[]
+) => {
   const results = filters.map((filter) => {
     switch (filter) {
       case "tooFar":
@@ -20,7 +24,25 @@ const filterPosition = (position: Position, filters: string[]) => {
     }
     return true;
   });
-  return results.every((v) => v);
+  const roleResults = advanced
+    .filter((filter) => filter.type === "role")
+    .map((filter) => position.roleId === filter.value);
+  const groupResults = advanced
+    .filter((filter) => filter.type === "group")
+    .map((filter) => position.tribunal?.groupId === filter.value);
+  const appealCourtResults = advanced
+    .filter((filter) => filter.type === "appealCourt")
+    .map((filter) => position.tribunal?.appealCourtId === filter.value);
+  const tribunalResults = advanced
+    .filter((filter) => filter.type === "tribunal")
+    .map((filter) => position.tribunalId === filter.value);
+  return (
+    results.every((v) => v) &&
+    (roleResults.length === 0 || roleResults.includes(true)) &&
+    (groupResults.length === 0 || groupResults.includes(true)) &&
+    (appealCourtResults.length === 0 || appealCourtResults.includes(true)) &&
+    (tribunalResults.length === 0 || tribunalResults.includes(true))
+  );
 };
 
 const positionsAtom = atom<Position[]>({
@@ -37,12 +59,18 @@ const positionsSelector = selector({
   key: "positionsSelector",
   get: ({ get }): Position[] => {
     const positions = get(positionsAtom);
-    const activeFilters = get(activeAppStateAtom).filters;
+    const activeAppState = get(activeAppStateAtom);
     return [...positions]
       .map(
         (position: Position) => get(positionSelector(position.id)) ?? position
       )
-      .filter((position) => filterPosition(position, activeFilters));
+      .filter((position) =>
+        filterPosition(
+          position,
+          activeAppState.filters,
+          activeAppState.advanced
+        )
+      );
   },
   set: ({ set }, newValue) => set(positionsAtom, newValue),
 });

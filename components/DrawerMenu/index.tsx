@@ -5,7 +5,7 @@ import Filters from "@/components/DrawerMenu/filters";
 import ColorCode from "@/components/DrawerMenu/color_code";
 
 const DrawerMenu = () => (
-  <div className="flex flex-col p-4 pt-10 w-80 bg-base-100">
+  <div className="flex flex-col p-4 pt-10 w-1/4 bg-base-100">
     <Link href="/settings">
       <GearIcon className="h-6 w-6 mr-2 inline" />
       Paramètres
@@ -20,9 +20,9 @@ const DrawerMenu = () => (
     <div className="text-center text-sm text-secondary-content/50">
       <p>Réalisé par Tristan Pouliquen.</p>
       <p>
-        Projet disponible sur{" "}
-        <a href="">
-          <GitHubLogoIcon className="inline mr-1" />
+        Projet disponible sur
+        <a href="https://github.com/TristanPouliquen/selection-poste-enm">
+          <GitHubLogoIcon className="inline mx-1" />
           Github
         </a>
       </p>

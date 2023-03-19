@@ -2,8 +2,14 @@ import { atom, useSetRecoilState } from "recoil";
 import { AppState } from "@/types/types";
 import { invoke } from "@tauri-apps/api/tauri";
 
+export interface IAdvancedFilter {
+  label: string;
+  type: "tribunal" | "appealCourt" | "role" | "group";
+  value: number;
+}
 type ActiveAppState = {
   filters: string[];
+  advanced: IAdvancedFilter[];
   colorScheme: "default" | "role" | "appealCourt" | "timeTo" | "group";
 };
 
@@ -16,6 +22,7 @@ const activeAppStateAtom = atom<ActiveAppState>({
   key: "activeAppState",
   default: {
     filters: [],
+    advanced: [],
     colorScheme: "default",
   },
 });
