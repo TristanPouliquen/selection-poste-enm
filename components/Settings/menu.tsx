@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import {
   BookmarkIcon,
   HomeIcon,
@@ -6,6 +7,9 @@ import {
   SewingPinIcon,
   Share1Icon,
 } from "@radix-ui/react-icons";
+=======
+import { BookmarkIcon, SewingPinIcon, Share1Icon } from "@radix-ui/react-icons";
+>>>>>>> 9d8ec57 (Modify group color)
 import Link from "next/link";
 
 const SettingsMenu = () => (
