@@ -24,21 +24,24 @@ const filterPosition = (
     }
     return true;
   });
-  const advancedResults = advanced.map((filter) => {
-    switch (filter.type) {
-      case "appealCourt":
-        return position.tribunal?.appealCourtId === filter.value;
-      case "group":
-        return position.tribunal?.groupId === filter.value;
-      case "role":
-        return position.roleId === filter.value;
-      case "tribunal":
-        return position.tribunalId === filter.value;
-    }
-  });
+  const roleResults = advanced
+    .filter((filter) => filter.type === "role")
+    .map((filter) => position.roleId === filter.value);
+  const groupResults = advanced
+    .filter((filter) => filter.type === "group")
+    .map((filter) => position.tribunal?.groupId === filter.value);
+  const appealCourtResults = advanced
+    .filter((filter) => filter.type === "appealCourt")
+    .map((filter) => position.tribunal?.appealCourtId === filter.value);
+  const tribunalResults = advanced
+    .filter((filter) => filter.type === "tribunal")
+    .map((filter) => position.tribunalId === filter.value);
   return (
     results.every((v) => v) &&
-    (advancedResults.length === 0 || advancedResults.includes(true))
+    (roleResults.length === 0 || roleResults.includes(true)) &&
+    (groupResults.length === 0 || groupResults.includes(true)) &&
+    (appealCourtResults.length === 0 || appealCourtResults.includes(true)) &&
+    (tribunalResults.length === 0 || tribunalResults.includes(true))
   );
 };
 
