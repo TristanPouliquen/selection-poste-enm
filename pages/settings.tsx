@@ -11,12 +11,13 @@ export default function Settings() {
   return (
     <Layout home={false}>
       <SettingsMenu />
-      <div className="grow p-6">
+      <div className="grow p-6 relative">
         <Tags />
         <div className="divider"></div>
         <TimeWindows />
         <div className="divider"></div>
         <h1 className="text-2xl font-bold mb-4">Gérer les codes couleur</h1>
+
         <GroupColor />
         <div className="divider"></div>
         <RoleColor />

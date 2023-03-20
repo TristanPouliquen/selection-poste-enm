@@ -5,6 +5,45 @@ import { tagsAtom } from "@/_state/tags";
 import { tribunalSelector } from "@/_state/tribunals";
 import { roleSelector } from "@/_state/roles";
 import { ICriteria } from "@/components/Onboarding";
+import { activeAppStateAtom, IAdvancedFilter } from "@/_state/appState";
+
+const filterPosition = (
+  position: Position,
+  filters: string[],
+  advanced: IAdvancedFilter[]
+) => {
+  const results = filters.map((filter) => {
+    switch (filter) {
+      case "tooFar":
+        if (position.tribunal && position.tribunal.timeWindow) {
+          return !position.tribunal.timeWindow.tooFar;
+        }
+        return true;
+      case "taken":
+        return !position.taken;
+    }
+    return true;
+  });
+  const roleResults = advanced
+    .filter((filter) => filter.type === "role")
+    .map((filter) => position.roleId === filter.value);
+  const groupResults = advanced
+    .filter((filter) => filter.type === "group")
+    .map((filter) => position.tribunal?.groupId === filter.value);
+  const appealCourtResults = advanced
+    .filter((filter) => filter.type === "appealCourt")
+    .map((filter) => position.tribunal?.appealCourtId === filter.value);
+  const tribunalResults = advanced
+    .filter((filter) => filter.type === "tribunal")
+    .map((filter) => position.tribunalId === filter.value);
+  return (
+    results.every((v) => v) &&
+    (roleResults.length === 0 || roleResults.includes(true)) &&
+    (groupResults.length === 0 || groupResults.includes(true)) &&
+    (appealCourtResults.length === 0 || appealCourtResults.includes(true)) &&
+    (tribunalResults.length === 0 || tribunalResults.includes(true))
+  );
+};
 
 const positionsAtom = atom<Position[]>({
   key: "positionsAtom",
@@ -20,9 +59,18 @@ const positionsSelector = selector({
   key: "positionsSelector",
   get: ({ get }): Position[] => {
     const positions = get(positionsAtom);
-    return [...positions].map(
-      (position: Position) => get(positionSelector(position.id)) ?? position
-    );
+    const activeAppState = get(activeAppStateAtom);
+    return [...positions]
+      .map(
+        (position: Position) => get(positionSelector(position.id)) ?? position
+      )
+      .filter((position) =>
+        filterPosition(
+          position,
+          activeAppState.filters,
+          activeAppState.advanced
+        )
+      );
   },
   set: ({ set }, newValue) => set(positionsAtom, newValue),
 });
@@ -84,12 +132,6 @@ const usePositionsActions = () => {
 
   const updateRanking = async (position: Position) =>
     setPositions(await invoke("update_position_ranking", { position }));
-  const getTags = async (position: Position) => {
-    const tags = await invoke<Tag[]>("get_position_tags", { position });
-    setPositions(
-      positions.map((pos) => (position.id === pos.id ? { ...pos, tags } : pos))
-    );
-  };
   const addTag = async (position: Position, tag: Tag) => {
     await invoke("add_position_tag", { position, tag });
     const newPosition = await invoke<Position>("get_position", {
@@ -128,7 +170,6 @@ const usePositionsActions = () => {
     getAll,
     update,
     updateRanking,
-    getTags,
     addTag,
     removeTag,
     rankPositions,

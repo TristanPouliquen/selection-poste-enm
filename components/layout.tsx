@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useEffect } from "react";
 import Head from "next/head";
 import Index from "@/components/Header";
-import DrawerMenu from "@/components/drawer_menu";
+import DrawerMenu from "@/components/DrawerMenu";
 
 type Props = {
   home: boolean;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Position, Tag } from "@/types/types";
 import { tagsAtom, usePositionsActions, useTagsAction } from "@/_state";
 import { useRecoilValue } from "recoil";
@@ -68,14 +68,10 @@ const MultiValueContainer = (props: MultiValueGenericProps<IOption>) => (
 );
 
 const TagContainer = ({ position }: IProps) => {
-  const { getTags, addTag, removeTag } = usePositionsActions();
+  const { addTag, removeTag } = usePositionsActions();
   const { create } = useTagsAction();
   const tags = useRecoilValue(tagsAtom);
-  useEffect(() => {
-    if (!position.tags) {
-      getTags(position);
-    }
-  }, [getTags, position]);
+
   const [value, setValue] = useState<readonly IOption[]>(() => {
     let defaultValue: IOption[] = [
       {

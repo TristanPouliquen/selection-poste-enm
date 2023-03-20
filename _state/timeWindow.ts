@@ -13,7 +13,7 @@ const timeWindowSelector = selectorFamily({
     (timeTo: number) =>
     ({ get }) => {
       return get(timeWindowAtom).find((timeWindow) => {
-        if (timeWindow.maxTime !== undefined) {
+        if (!!timeWindow.maxTime) {
           return timeWindow.minTime <= timeTo && timeWindow.maxTime > timeTo;
         }
         return timeWindow.minTime <= timeTo;

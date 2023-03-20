@@ -20,7 +20,7 @@ const Index = ({ home }: IProps) => {
           )}
         </div>
         {home ? <SearchBar /> : null}
-        <label htmlFor="drawer" className="drawer-button cursor-pointer">
+        <label htmlFor="drawer" className="drawer-button cursor-pointer p-2">
           <MixerHorizontalIcon className="h-6 w-6" />
         </label>
       </div>

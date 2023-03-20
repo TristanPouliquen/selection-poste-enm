@@ -1,11 +1,10 @@
 import React, { MouseEvent, useState } from "react";
-import { formatDuration } from "date-fns";
-import { fr } from "date-fns/locale";
 import { Tribunal } from "@/types/types";
 import ReactEditorForm from "@/components/CardFocus/react_editor_form";
 import { useTribunalsAction } from "@/_state";
 import { useForm } from "react-hook-form";
 import { CheckIcon, Pencil1Icon } from "@radix-ui/react-icons";
+import TimeToBadge from "@/components/Badges/time_to";
 
 interface IProps {
   tribunal: Tribunal;
@@ -50,16 +49,7 @@ const TribunalDetails = ({ tribunal }: IProps) => {
           {!editingTribunal ? (
             <span className="flex flex-row">
               {tribunal.timeTo ? (
-                <span
-                  className="badge badge-outline"
-                  style={
-                    tribunal.timeWindow
-                      ? { color: tribunal.timeWindow.color }
-                      : undefined
-                  }
-                >
-                  {formatDuration({ minutes: tribunal.timeTo }, { locale: fr })}
-                </span>
+                <TimeToBadge tribunal={tribunal} />
               ) : (
                 "Non renseigné"
               )}
