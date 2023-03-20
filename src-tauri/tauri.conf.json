@@ -51,7 +51,7 @@
         "digestAlgorithm": "sha256",
         "timestampUrl": "",
         "wix": {
-          "language": "fr_FR"
+          "language": "fr-FR"
         }
       }
     },
