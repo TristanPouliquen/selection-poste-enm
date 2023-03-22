@@ -1,0 +1,19 @@
+{
+  "version": "1.0.2",
+  "notes": "See the assets to download this version and install.",
+  "pub_date": "2023-03-22T13:41:58.128Z",
+  "platforms": {
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVWUxZzZDenBIcmx4YVVCT1pxYkp5cUV3Qjkxa0VDa2lJTm5QcUUwb0tHc2NPNjY3YzdTVS9ndE4zMG56ckJ4UnkzMVdxMXNGK3p2RVFGOWJqSTQ4NHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NDkyMTY4CWZpbGU6U2VsZWN0aW9uIFBvc3RlIEVOTS5hcHAudGFyLmd6CnM5OE1jUzg1MldzRGxrU084WnVidWUyeHFERHVSZHh1WGNHZ3pPeDlqWkNkMHpNaEIwQTd1K3VXUFg2ZVNHV2lKTW55SzRzbC8yZnlFNlMxTjNJckRBPT0K",
+      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.0.2/Selection.Poste.ENM_x64.app.tar.gz"
+    },
+    "linux-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVVZWQmJoU1ZoL3Rhcm1HRURZa0tKUHZ5bGxZWXE2WkVIdjBDS0ZJV2tEQU9VbW1SSkFCdkxYNlJjdXF1ZXErQUVUbWVkckJkTWpTWXd6M0o1UWt4MXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NDkyMjA3CWZpbGU6c2VsZWN0aW9uLXBvc3RlLWVubV8xLjAuMl9hbWQ2NC5BcHBJbWFnZS50YXIuZ3oKOE9jdkZ0em90VVJ4c3RrVUZ2MzBnallpVEFvRC95VVg0c2k1d01HdmxFMENuMGtoQktLcWN2WWJUL2FPYnZ6TkRWQ1dmT1E0ZzBlWFlCQTRsd3ZrQXc9PQo=",
+      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.0.2/selection-poste-enm_1.0.2_amd64.AppImage.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVWVoaXFPYzlrMFIyKzkzTEl4ZVNSTnpJeDdzZnd5TGFRQUxXcURCMlVNOGNVdWtUSXZVZzdnTHN2VWZnUGFMRG1aNSsvNThhZWtPazhnSzBRRndPSEFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NDkyNTE1CWZpbGU6U2VsZWN0aW9uIFBvc3RlIEVOTV8xLjAuMl94NjRfZnItRlIubXNpLnppcApqUExRS29VandWcEh6SHA1b2dHUEpxSCtjd1JaWVlEMlUxeXUyU3M2OTRTV1o1bkJUcWlQbWdmcHB5WHVHQVgvRlVXL2J2TFRnTXNkQ1dCQXJLNDFDQT09Cg==",
+      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.0.2/Selection.Poste.ENM_1.0.2_x64_fr-FR.msi.zip"
+    }
+  }
+}
