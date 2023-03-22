@@ -2278,8 +2278,7 @@ dependencies = [
 
 [[package]]
 name = "selection-poste-enm"
-
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "diesel",
  "diesel_migrations",

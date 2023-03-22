@@ -1,6 +1,6 @@
 [package]
 name = "selection-poste-enm"
-version = "1.0.1"
+version = "1.0.2"
 description = "Selection Poste ENM"
 authors = ["Tristan Pouliquen <tristan.pouliquen@yahoo.fr>"]
 license = "GPL-3.0-or-later"
