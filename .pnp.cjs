@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tauri-apps/api", "npm:1.2.0"],\
             ["@tauri-apps/cli", "npm:1.2.3"],\
             ["@types/draft-js", "npm:0.11.10"],\
-            ["@types/node", "npm:18.11.18"],\
+            ["@types/node", "npm:18.15.11"],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-beautiful-dnd", "npm:13.1.3"],\
             ["@types/react-dom", "npm:18.0.10"],\
@@ -1850,10 +1850,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/node", [\
-        ["npm:18.11.18", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-18.11.18-d61e8a4a20-03f17f9480.zip/node_modules/@types/node/",\
+        ["npm:18.15.11", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-18.15.11-fd8ceaaffd-977b4ad047.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:18.11.18"]\
+            ["@types/node", "npm:18.15.11"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7987,7 +7987,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tauri-apps/api", "npm:1.2.0"],\
             ["@tauri-apps/cli", "npm:1.2.3"],\
             ["@types/draft-js", "npm:0.11.10"],\
-            ["@types/node", "npm:18.11.18"],\
+            ["@types/node", "npm:18.15.11"],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-beautiful-dnd", "npm:13.1.3"],\
             ["@types/react-dom", "npm:18.0.10"],\
