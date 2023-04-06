@@ -18,7 +18,7 @@ const DrawerMenu = () => (
       <ColorCode />
     </div>
     <div className="text-center text-sm text-secondary-content/50">
-      <p>Réalisé par Tristan Pouliquen.</p>
+      <p>Réalisé par Tristan Pouliquen & Vladimir Chantitch.</p>
       <p>
         Projet disponible sur
         <a href="https://github.com/TristanPouliquen/selection-poste-enm">
