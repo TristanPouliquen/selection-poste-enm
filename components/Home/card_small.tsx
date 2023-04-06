@@ -77,9 +77,18 @@ const CardSmall = ({ position }: IProps) => {
             <PrevalentDomainBadge position={position} />
             <PlacedBadge position={position} />
           </div>
-          <div className="p-1 pl-3" onClick={toggleTaken}>
+          <div
+            className="p-1 pl-3 tooltip tooltip-left"
+            onClick={toggleTaken}
+            data-tip={`Indiquer le poste comme ${
+              position.taken ? "libre" : "pris"
+            }`}
+          >
             {position.taken ? (
-              <EyeNoneIcon className="h-4 w-4  text-base-300" />
+              <EyeNoneIcon
+                className="h-4 w-4 text-base-300"
+                data-tooltip="Indiquer le poste comme libre"
+              />
             ) : (
               <EyeOpenIcon className="h-4 w-4" />
             )}

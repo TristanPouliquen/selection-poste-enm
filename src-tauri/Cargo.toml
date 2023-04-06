@@ -1,6 +1,6 @@
 [package]
 name = "selection-poste-enm"
-version = "1.0.2"
+version = "1.1.0"
 description = "Selection Poste ENM"
 authors = ["Tristan Pouliquen <tristan.pouliquen@yahoo.fr>"]
 license = "GPL-3.0-or-later"
@@ -21,7 +21,7 @@ tauri = { version = "1.2.4", features = ["fs-all", "path-all", "updater"] }
 diesel = { version = "2.0.0", features = ["sqlite", "returning_clauses_for_sqlite_3_35"] }
 libsqlite3-sys = { version = "0.25.2", features = ["bundled"] }
 diesel_migrations = {version = "2.0.0", features = ["sqlite"] }
-remove_dir_all = "0.8.0"
+remove_dir_all = "0.8.2"
 
 [features]
 # by default Tauri runs in production mode

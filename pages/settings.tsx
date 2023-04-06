@@ -6,6 +6,7 @@ import RoleColor from "@/components/Settings/role_color";
 import GroupColor from "@/components/Settings/group_color";
 import TimeWindows from "@/components/Settings/time_windows";
 import Tags from "@/components/Settings/tags";
+import DangerZone from "@/components/Settings/danger_zone";
 
 export default function Settings() {
   return (
@@ -23,6 +24,8 @@ export default function Settings() {
         <RoleColor />
         <div className="divider"></div>
         <AppealCourtColor />
+        <div className="divider"></div>
+        <DangerZone />
       </div>
     </Layout>
   );
