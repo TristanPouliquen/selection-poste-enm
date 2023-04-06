@@ -34,7 +34,7 @@ const SearchBar = () => {
           onChange={onSelect}
           options={positions}
           getOptionLabel={(option) =>
-            option.role?.name + " - " + option.tribunal?.name
+            `${option.ranking}. ${option.role?.name} - ${option.tribunal?.name}`
           }
           getOptionValue={(option) => `${option.id}`}
           styles={{
