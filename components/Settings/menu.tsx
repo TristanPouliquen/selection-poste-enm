@@ -1,6 +1,7 @@
 import React from "react";
 import {
   BookmarkIcon,
+  ExclamationTriangleIcon,
   HomeIcon,
   PersonIcon,
   SewingPinIcon,
@@ -44,6 +45,12 @@ const SettingsMenu = () => (
             Cours d&apos;appel
           </Link>
         </div>
+      </div>
+      <div className="font-semibold mt-6">
+        <Link href="#reset">
+          <ExclamationTriangleIcon className="h-4 w-4 mr-1 inline" />
+          Réinitialisation
+        </Link>
       </div>
     </div>
   </div>
