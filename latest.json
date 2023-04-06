@@ -1,19 +1,19 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "notes": "See the assets to download this version and install.",
-  "pub_date": "2023-04-06T17:35:17.530Z",
+  "pub_date": "2023-04-06T20:45:39.527Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVVRIYi9HZTBQRXlteW8xK0ozaURkeXJ6dlpyV2FLYjVmTlZNSHFLY09vS05QMzdUT0F0TXFWR1RGTVpsaFFRZFAxV01laDVaZU9NMU9WMUdiWHNtWncwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjgwODAyMTgxCWZpbGU6U2VsZWN0aW9uIFBvc3RlIEVOTS5hcHAudGFyLmd6CnFuWlQ1cy9lb29TYUFicFN1SWhEWllIY1pzRXd6QW9sWFFYVmxPcXhtRzQxL201YTdKRHBxTzFGYWNzS3ZVL1hnYkZnRUZUSGFoSU53dWhjUWY3WUR3PT0K",
-      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.1.1/Selection.Poste.ENM_x64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVVJ0WksvM0ZSYjZxQnF4Y2oyQ3RDNG5RS0MvNUNKS2doTkRKOXVHNXRiTmxlNVVFZnpwZGRhNnZlYW1DejBSZFhvcGpHQ2RudUlJVVo5Y2swQkV4bmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjgwODEzNTE3CWZpbGU6U2VsZWN0aW9uIFBvc3RlIEVOTS5hcHAudGFyLmd6ClhRZWpURGZtL25YenUzcmkveVE0c011ZG9OS0ZlQzZndU9SRTcwcEMwNXdWdE1qYzBjZ0dNcnY1cDBXWXM4SDg2a0hxSWhRd0hTTXJFc084Y25DdUN3PT0K",
+      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.2.0/Selection.Poste.ENM_x64.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVVFGeFV5SFUra0N3QU4yVzczNXpwTnhYTlVDRjRlSHRPRzlxNDBSaFF4YXFxbnRsdjREazdBKzdXZVpzUjljVW5FdnlteElLem9hUHV2dElTVUJDRFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjgwODAyNDE1CWZpbGU6U2VsZWN0aW9uIFBvc3RlIEVOTV8xLjEuMV94NjRfZnItRlIubXNpLnppcAo4UUZPbTF3TzhzUUU3ZkNXQ0pSZkFzS1UxRUdxNWRqR3V0cmJqR0ZqeGZ1TTlsb3R4ZzlmLzZ6SDh1d3BpTUs5M1Bzc0NxMkZVbjcvdXRjTWVsWkFEQT09Cg==",
-      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.1.1/Selection.Poste.ENM_1.1.1_x64_fr-FR.msi.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVVoyQTBrVCtOVmV3Z0lnbExsamc2LzVrYXJZYVdFOUNRVkFWa3lYbG45bVRoYXhVT295K3EwV3dZWXFkN1BuZTVpN0JudDBhSVFnWHZpU09odHNMMUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjgwODEzNjYxCWZpbGU6U2VsZWN0aW9uIFBvc3RlIEVOTV8xLjIuMF94NjRfZnItRlIubXNpLnppcApOZ1pqajhyNDBKMWQ1KzJLTmFEd1RSaXVVZzVMMS9aSkZ2YjZrWUNaMmhPMWtRSTZmSGxsTXM2KzR3TDhYKzcxM1ZSM2hrSDBTYkhWcGR4VlNvaUZCUT09Cg==",
+      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.2.0/Selection.Poste.ENM_1.2.0_x64_fr-FR.msi.zip"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVVVDcE5ZbjUrdnVCb0FMR0Y4RFlWdmF4dExheFN4STFXTUY2M0tnZ3VYcnlXUVZ1L2FmWmo4NFRKYVAvSGRiNFZBSVNmM002UzZ6b2VWeE9aeHN5TEFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjgwODAyNTA4CWZpbGU6c2VsZWN0aW9uLXBvc3RlLWVubV8xLjEuMV9hbWQ2NC5BcHBJbWFnZS50YXIuZ3oKVWx4QTRRTkFuQWcvWXR3SU5KRndIblRoUlVSR0dFVU1vSFJRRDk0VThPOUVqL3pBcXBKN1hhdEF6Z2ZSNy9rOWwvVDNEeEN5SGRESFpzMVRmMkw4QUE9PQo=",
-      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.1.1/selection-poste-enm_1.1.1_amd64.AppImage.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSFF1Nm10RXVCVVlHQ0tUakdqa1FFMmRrNFVzOG1yaU5mZHVCekVka0xyNDlXVTBOQWw3bml6UFptTnBvcHRlWm8vMDVMdzNvNGJkKytSVVhNaVJ5YVduZW1hRDJLdEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjgwODEzOTMwCWZpbGU6c2VsZWN0aW9uLXBvc3RlLWVubV8xLjIuMF9hbWQ2NC5BcHBJbWFnZS50YXIuZ3oKRkFDWlU3c3B2Z1ZEUEZZd01IbThHNk5kVXI4Nm8yai9ma2VjNzAvaEFyc0IvVG9SemZ0azFnSUUveHFQT25pdzVXbGNCbmFoYWhQNGlLWnNFampOQ1E9PQo=",
+      "url": "https://github.com/TristanPouliquen/selection-poste-enm/releases/download/v1.2.0/selection-poste-enm_1.2.0_amd64.AppImage.tar.gz"
     }
   }
 }
