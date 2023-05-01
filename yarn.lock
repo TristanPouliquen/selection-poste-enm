@@ -840,27 +840,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/attachment@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/attachment@npm:3.11.0"
+"@react-pdf-viewer/attachment@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/attachment@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: f18f36930415050d52d1fad71694c61cc1c7d6f26cc3c17e804ced748d1148dbc2b841319005de5690d12f1eda0929957b48837a23c84ab3ade2977051dc0c93
+  checksum: e6f7c493bd15c76e0ff6352d219d13e9795265f895b9841eaaec0ac02e9c9f2dfcc1298a9648f510a186060e533a69e98345511d278e35bb2481b8cd8ddbecb0
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/bookmark@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/bookmark@npm:3.11.0"
+"@react-pdf-viewer/bookmark@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/bookmark@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 0919cbb3afecae77beb54b16686e2cf93d1b8c7014ed45942e154c2fdccb4ca25f9dc8927169be246508562a5800d2005f1d1c369b81ed8ca5e99d31da56760b
+  checksum: 049cb726042d99b3598411c45928e44d94208c69b23a776d3e308fd769af0afa74225d0ee5f437bad5e758687ffa21f8d22964aea664c1c379b3ba8dc3a35f94
   languageName: node
   linkType: hard
 
@@ -875,199 +875,210 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/default-layout@npm:^3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/default-layout@npm:3.11.0"
-  dependencies:
-    "@react-pdf-viewer/attachment": 3.11.0
-    "@react-pdf-viewer/bookmark": 3.11.0
-    "@react-pdf-viewer/core": 3.11.0
-    "@react-pdf-viewer/thumbnail": 3.11.0
-    "@react-pdf-viewer/toolbar": 3.11.0
+"@react-pdf-viewer/core@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/core@npm:3.12.0"
   peerDependencies:
+    pdfjs-dist: ^2.16.105 || ^3.0.279
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 31c7308bf99f77afdc8af216b7eb5097bf45a16178288c395783c54f19020e04be334ac32fbf3b2f8f300c2bc2a929fd27726a67561023df4bf74397bfeaf7e9
+  checksum: 91dd8023b4cb6e1ed65e801e1cd8245d12fcb9df7641607c339e7bf92ff911b2353bfb771fb4bb90d52bf0db739dc00b7159de07e5bf304df0a962fa3027f51d
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/full-screen@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/full-screen@npm:3.11.0"
+"@react-pdf-viewer/default-layout@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/default-layout@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/attachment": 3.12.0
+    "@react-pdf-viewer/bookmark": 3.12.0
+    "@react-pdf-viewer/core": 3.12.0
+    "@react-pdf-viewer/thumbnail": 3.12.0
+    "@react-pdf-viewer/toolbar": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: ebdcb6db6c46b78d63ce0a636a95be8e6cc4184e36c3e54de1dc7166548c35cc2508402aeb6b1567be62224da8204871e5d90b2112d0b5d628ab7ba1dbcfbcf4
+  checksum: b05fe4b98421d847229c74359f96aa2c22d5fcc57fee035ae495b54d6425c35a551f2fa7d8b9e226a91d135670945e0209fdc9c120af9e87e1215de1edd61817
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/get-file@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/get-file@npm:3.11.0"
+"@react-pdf-viewer/full-screen@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/full-screen@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: c9737023acdf36973f040ea38c61c08d1d1ca09ec120d4f13b52b65f60c5efb3f0f2d0f0322c47bedcb844ac84de807bac745d953ac9dddf3d670f3226325f2e
+  checksum: a787949d81b07e12163518729a38ed92777e7bd543227168f0333df32141255c5bf1fffa80d1573f74cb4211405207ad47a1e6f3a79c1004e65799d1d74cc1e7
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/open@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/open@npm:3.11.0"
+"@react-pdf-viewer/get-file@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/get-file@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 2b5335c16670c819c032219c77e6e21f2f06001dea9d755e9a25ea7bf192a02a39261777afc984dc18c4adac21ef336ed0367078b59f2b3dfc8a8bd2d23e6f08
+  checksum: 3f5cb49c0d9e68f62518f976368985ba6a504cceefdef3cc0b669f429167621746e0df9f3451c3a32aecad7807923621726b3db374023dce635d6b55eb998ec3
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/page-navigation@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/page-navigation@npm:3.11.0"
+"@react-pdf-viewer/open@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/open@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 748a7abf9913cb96e775c8eb37f60d5493fce0c9cbe6692f12437657ade22a4fd7522cb6a9e0ce4e27b644cb9ab05c8d45ea14b00bdccdb7e003ded8bb235e2d
+  checksum: 3b381d54f37439b7a8d250abe70a32de4b0384a6eb693e89169a57b3f5286ad82d7d95396119d983e01817fcd27cf63949be89e0fd8d4ef11d0c06c6c4c88081
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/print@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/print@npm:3.11.0"
+"@react-pdf-viewer/page-navigation@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/page-navigation@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 1867a4e1f8334337fd17e08a404f804755acd83dad8f0d8e0c77c4301212346ca3eed4a3df99d78847bc5d2f1eb2df1f658d45c2a257519be71fb9586f2b3407
+  checksum: 6115e16e606fffdc18973d3593fdf04ea8b1cbede8ecea3c737aa40cb46e9054ea2394293d9927b6837ea0604cbf8d31bdd372733a118763701a610254e34a7d
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/properties@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/properties@npm:3.11.0"
+"@react-pdf-viewer/print@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/print@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: db4a65ac46019d94bae06fb804b33f35c9daa0529fe4d8efead21d8f6a02a4d60502d9770872f630f6eb8a4c5847ae5cceb9bb1f8af733c93c3da414c44b167c
+  checksum: 998b68c4438b8a7813faa95184b5d705ff3733361e3f545f5e583611befcfebdef809646c20f6e3a9873b67440ef0ee03bbd2da2f690ba047dd281b96929b63d
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/rotate@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/rotate@npm:3.11.0"
+"@react-pdf-viewer/properties@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/properties@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: acd7a7236324530668f28d8c8ab341b2819f79398f15c51ac43f008c469c133e565dc145db1979452b7e6d9844ed6fb003c8de9836ecc01057feaf38fbd3382d
+  checksum: 4001c4c82c4c6b37902c1441ee902b06637886825e892c747b199c10dfd81f81a4d6bc9144e6d1603f205e81b97455de74e848c21b4c4c898b4afb9a1f9320f4
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/scroll-mode@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/scroll-mode@npm:3.11.0"
+"@react-pdf-viewer/rotate@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/rotate@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 9caab258928352fdffb122e54fc7bdc06639aea9552c3aeca6300926998435b27f5517761713722430d0daab78a90f901715bcfa24602c871aaa3c7c810e64bb
+  checksum: 60dc7dcad7974f7993236514f6e43b8aced3c1630637dd3b41b265e5f3091018405fd9b611a52611a2352e2ef3131ca578a60727cdc9dfcda45a169e0371b74c
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/search@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/search@npm:3.11.0"
+"@react-pdf-viewer/scroll-mode@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/scroll-mode@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 180302f9419774b4bd5d177d887915bcf0e76ba3e2ef672dfd64a55794acc8eacbbeb3a29444e2910ac8bbee18c13c9302ebdb3d4ee5648c1947ffe93ee5453e
+  checksum: 80bc20662b0c5e6f8a768ecda50cf0aabdfa11c6fbe1a43d465584b96a18b555ed4e3b368146537a68b3be474b24e5cccf492075f192c1cd98a599676c4b35c1
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/selection-mode@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/selection-mode@npm:3.11.0"
+"@react-pdf-viewer/search@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/search@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: c62bcc20701513ae04a4ca0bd5f8fd476dab604fb95d988abef26376abc4beffa7f699ad4e27b57e662f1aa70c0802f15d24f3b294b07e49c5f61aa9754e2923
+  checksum: ff8a3b5fea1c26b033ceb3f1926a2465a90a6e2099887473fc3ef51692ca7c8ccb2108abefc5d77791b2084bb4fe54c352c3d506d4cb25f4cd297f4a6bafb272
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/theme@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/theme@npm:3.11.0"
+"@react-pdf-viewer/selection-mode@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/selection-mode@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: fbdc825bdeff6cb52a751d16ba7e5217f12b1040759af9e2ad08e51cee77baaa2d56efd29317d44a4480178bffd5bd597c931e88faa563a4699448f9e82b1f4b
+  checksum: b84a959ddd4d3a5ba0c402f5b316ce8acb84c8410f41f3f8c07864051f4f85bdf5c2e1dac54ea3684cbc074aa1ea139dc2bceb57c09f333d3a336f7a78996846
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/thumbnail@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/thumbnail@npm:3.11.0"
+"@react-pdf-viewer/theme@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/theme@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: d9e1ff59db11369dba2f6f338cc5c1ad30fea885604349010f8c7a361a46846bf753067d41efa327fe860c8ccc28b0907f3ad84af0997ac4ec85ac5c0361db02
+  checksum: c54d864638ada39f6e93a21f236163c992ef689811c45036f8f5a964c8b053c6ca56e00de878d887ccbd16ae485432d7c6613d8a9c73cbaff2b621fe301e11a5
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/toolbar@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/toolbar@npm:3.11.0"
+"@react-pdf-viewer/thumbnail@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/thumbnail@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
-    "@react-pdf-viewer/full-screen": 3.11.0
-    "@react-pdf-viewer/get-file": 3.11.0
-    "@react-pdf-viewer/open": 3.11.0
-    "@react-pdf-viewer/page-navigation": 3.11.0
-    "@react-pdf-viewer/print": 3.11.0
-    "@react-pdf-viewer/properties": 3.11.0
-    "@react-pdf-viewer/rotate": 3.11.0
-    "@react-pdf-viewer/scroll-mode": 3.11.0
-    "@react-pdf-viewer/search": 3.11.0
-    "@react-pdf-viewer/selection-mode": 3.11.0
-    "@react-pdf-viewer/theme": 3.11.0
-    "@react-pdf-viewer/zoom": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 73fbf65f032badf3bca88043e2410d9335e0dac9f5e06f90e58d26d771233004b5fae4c14d0e6928470ac6bc2a42e0db94a3d1585bfc09fa9ffdb766b8cd121f
+  checksum: 62440b94b6c6a9753967368698519f22af549cf4c938a3b9dc4c8a42bb4b032aef3a33dfe5bcf1b5504d48e90e795230889b931a1029a9cc2fbe3db989460943
   languageName: node
   linkType: hard
 
-"@react-pdf-viewer/zoom@npm:3.11.0":
-  version: 3.11.0
-  resolution: "@react-pdf-viewer/zoom@npm:3.11.0"
+"@react-pdf-viewer/toolbar@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/toolbar@npm:3.12.0"
   dependencies:
-    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/core": 3.12.0
+    "@react-pdf-viewer/full-screen": 3.12.0
+    "@react-pdf-viewer/get-file": 3.12.0
+    "@react-pdf-viewer/open": 3.12.0
+    "@react-pdf-viewer/page-navigation": 3.12.0
+    "@react-pdf-viewer/print": 3.12.0
+    "@react-pdf-viewer/properties": 3.12.0
+    "@react-pdf-viewer/rotate": 3.12.0
+    "@react-pdf-viewer/scroll-mode": 3.12.0
+    "@react-pdf-viewer/search": 3.12.0
+    "@react-pdf-viewer/selection-mode": 3.12.0
+    "@react-pdf-viewer/theme": 3.12.0
+    "@react-pdf-viewer/zoom": 3.12.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 5c2f8737ba294250f62cc744d343175c86bfe81f5ebac4695e658682e62fc08c5fe15b53606e4a47b7aaaf952f943782b92004fc6b41199b41726f095ca3c9ee
+  checksum: ddb937e92b0c0a1fe2765cab50b7f73874f40c6ad09b51cf783686ac7007591307f2bf8858da03063f9eefdc136e0b9008ec10d1816659fb41792c0d056dc935
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/zoom@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/zoom@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.12.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 7a1cede8937a759a260104c73f5bfcb076b4e8a053365e4389dbd775334e1a13e89b49e7a62c90904714b86fdd6171d53e45903ec1819b07c7f59288faab7a0c
   languageName: node
   linkType: hard
 
@@ -6322,7 +6333,7 @@ __metadata:
     "@next/font": 13.2.3
     "@radix-ui/react-icons": ^1.1.1
     "@react-pdf-viewer/core": 3.11.0
-    "@react-pdf-viewer/default-layout": ^3.11.0
+    "@react-pdf-viewer/default-layout": ^3.12.0
     "@tailwindcss/forms": ^0.5.3
     "@tauri-apps/api": ^1.2.0
     "@tauri-apps/cli": ^1.2.3
