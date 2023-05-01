@@ -62,7 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.1.6"],\
             ["next-remove-imports", "npm:1.0.8"],\
-            ["pdfjs-dist", "npm:3.3.122"],\
+            ["pdfjs-dist", "npm:3.5.141"],\
             ["postcss", "npm:8.4.21"],\
             ["prettier", "npm:2.8.4"],\
             ["pretty-bytes", "npm:6.1.0"],\
@@ -1175,7 +1175,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/pdfjs-dist", null],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.0.10"],\
-            ["pdfjs-dist", "npm:3.3.122"],\
+            ["pdfjs-dist", "npm:3.5.141"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:18.2.0"]\
           ],\
@@ -7062,10 +7062,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["pdfjs-dist", [\
-        ["npm:3.3.122", {\
-          "packageLocation": "./.yarn/cache/pdfjs-dist-npm-3.3.122-50d3767238-9df747b17a.zip/node_modules/pdfjs-dist/",\
+        ["npm:3.5.141", {\
+          "packageLocation": "./.yarn/cache/pdfjs-dist-npm-3.5.141-c9b3289c5f-b58e801b92.zip/node_modules/pdfjs-dist/",\
           "packageDependencies": [\
-            ["pdfjs-dist", "npm:3.3.122"],\
+            ["pdfjs-dist", "npm:3.5.141"],\
             ["canvas", "npm:2.11.0"],\
             ["path2d-polyfill", "npm:2.0.1"],\
             ["web-streams-polyfill", "npm:3.2.1"]\
@@ -8070,7 +8070,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.1.6"],\
             ["next-remove-imports", "npm:1.0.8"],\
-            ["pdfjs-dist", "npm:3.3.122"],\
+            ["pdfjs-dist", "npm:3.5.141"],\
             ["postcss", "npm:8.4.21"],\
             ["prettier", "npm:2.8.4"],\
             ["pretty-bytes", "npm:6.1.0"],\
