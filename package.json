@@ -34,7 +34,7 @@
     "next": "13.3.4",
     "next-remove-imports": "^1.0.8",
     "pdfjs-dist": "3.5.141",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.24",
     "pretty-bytes": "^6.1.0",
     "react": "18.2.0",
     "react-beautiful-dnd": "^13.1.1",
