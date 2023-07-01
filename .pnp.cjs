@@ -62,7 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.3.4"],\
             ["next-remove-imports", "npm:1.0.11"],\
-            ["pdfjs-dist", "npm:3.5.141"],\
+            ["pdfjs-dist", "npm:3.7.107"],\
             ["postcss", "npm:8.4.24"],\
             ["prettier", "npm:2.8.8"],\
             ["pretty-bytes", "npm:6.1.0"],\
@@ -1225,7 +1225,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/pdfjs-dist", null],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.2.4"],\
-            ["pdfjs-dist", "npm:3.5.141"],\
+            ["pdfjs-dist", "npm:3.7.107"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:18.2.0"]\
           ],\
@@ -3074,10 +3074,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["canvas", [\
-        ["npm:2.11.0", {\
-          "packageLocation": "./.yarn/unplugged/canvas-npm-2.11.0-1643476467/node_modules/canvas/",\
+        ["npm:2.11.2", {\
+          "packageLocation": "./.yarn/unplugged/canvas-npm-2.11.2-824d893a31/node_modules/canvas/",\
           "packageDependencies": [\
-            ["canvas", "npm:2.11.0"],\
+            ["canvas", "npm:2.11.2"],\
             ["@mapbox/node-pre-gyp", "npm:1.0.10"],\
             ["nan", "npm:2.17.0"],\
             ["node-gyp", "npm:9.3.1"],\
@@ -7093,13 +7093,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["pdfjs-dist", [\
-        ["npm:3.5.141", {\
-          "packageLocation": "./.yarn/cache/pdfjs-dist-npm-3.5.141-c9b3289c5f-b58e801b92.zip/node_modules/pdfjs-dist/",\
+        ["npm:3.7.107", {\
+          "packageLocation": "./.yarn/cache/pdfjs-dist-npm-3.7.107-f775ee0513-04959f844a.zip/node_modules/pdfjs-dist/",\
           "packageDependencies": [\
-            ["pdfjs-dist", "npm:3.5.141"],\
-            ["canvas", "npm:2.11.0"],\
-            ["path2d-polyfill", "npm:2.0.1"],\
-            ["web-streams-polyfill", "npm:3.2.1"]\
+            ["pdfjs-dist", "npm:3.7.107"],\
+            ["canvas", "npm:2.11.2"],\
+            ["path2d-polyfill", "npm:2.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8082,7 +8081,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.3.4"],\
             ["next-remove-imports", "npm:1.0.11"],\
-            ["pdfjs-dist", "npm:3.5.141"],\
+            ["pdfjs-dist", "npm:3.7.107"],\
             ["postcss", "npm:8.4.24"],\
             ["prettier", "npm:2.8.8"],\
             ["pretty-bytes", "npm:6.1.0"],\
@@ -9158,15 +9157,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vfile-message", "npm:3.1.4"],\
             ["@types/unist", "npm:2.0.6"],\
             ["unist-util-stringify-position", "npm:3.0.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["web-streams-polyfill", [\
-        ["npm:3.2.1", {\
-          "packageLocation": "./.yarn/cache/web-streams-polyfill-npm-3.2.1-835bd3857e-b119c78574.zip/node_modules/web-streams-polyfill/",\
-          "packageDependencies": [\
-            ["web-streams-polyfill", "npm:3.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
