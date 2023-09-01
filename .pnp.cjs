@@ -65,7 +65,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pdfjs-dist", "npm:3.7.107"],\
             ["postcss", "npm:8.4.24"],\
             ["prettier", "npm:2.8.8"],\
-            ["pretty-bytes", "npm:6.1.0"],\
+            ["pretty-bytes", "npm:6.1.1"],\
             ["react", "npm:18.2.0"],\
             ["react-beautiful-dnd", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.1.1"],\
             ["react-dom", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:18.2.0"],\
@@ -7473,10 +7473,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["pretty-bytes", [\
-        ["npm:6.1.0", {\
-          "packageLocation": "./.yarn/cache/pretty-bytes-npm-6.1.0-fec0b4ea5a-cca3be45a2.zip/node_modules/pretty-bytes/",\
+        ["npm:6.1.1", {\
+          "packageLocation": "./.yarn/cache/pretty-bytes-npm-6.1.1-d10304de8f-43d29d909d.zip/node_modules/pretty-bytes/",\
           "packageDependencies": [\
-            ["pretty-bytes", "npm:6.1.0"]\
+            ["pretty-bytes", "npm:6.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8239,7 +8239,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pdfjs-dist", "npm:3.7.107"],\
             ["postcss", "npm:8.4.24"],\
             ["prettier", "npm:2.8.8"],\
-            ["pretty-bytes", "npm:6.1.0"],\
+            ["pretty-bytes", "npm:6.1.1"],\
             ["react", "npm:18.2.0"],\
             ["react-beautiful-dnd", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.1.1"],\
             ["react-dom", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:18.2.0"],\
