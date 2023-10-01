@@ -847,10 +847,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:13.4.7":
-  version: 13.4.7
-  resolution: "@next/font@npm:13.4.7"
-  checksum: 87680e1c3f69cdad634e5b85904c2cf99bedea42b1127cb82152698fe71f97d5ca2b4625b17a6d7f7433bc19d96a5c2bb0b20ef95c816d232818eda9e65f7377
+"@next/font@npm:13.5.3":
+  version: 13.5.3
+  resolution: "@next/font@npm:13.5.3"
+  checksum: cadd3f3d0d6016388090daa677e2eac5b5522a0c197fa3d11cb674cf2ca221e1d0c47786bcdc9486ce32dfd9c29fede2ca36789fffee78f130fbda9c91fdb1b5
   languageName: node
   linkType: hard
 
@@ -6515,7 +6515,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.22.9
     "@babel/runtime": ^7.22.11
-    "@next/font": 13.4.7
+    "@next/font": 13.5.3
     "@radix-ui/react-icons": ^1.3.0
     "@react-pdf-viewer/core": 3.11.0
     "@react-pdf-viewer/default-layout": ^3.12.0
