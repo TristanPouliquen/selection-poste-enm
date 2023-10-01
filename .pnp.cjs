@@ -30,7 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@babel/core", "npm:7.22.9"],\
             ["@babel/runtime", "npm:7.22.11"],\
-            ["@next/font", "npm:13.4.7"],\
+            ["@next/font", "npm:13.5.3"],\
             ["@radix-ui/react-icons", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.0"],\
             ["@react-pdf-viewer/core", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.11.0"],\
             ["@react-pdf-viewer/default-layout", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.12.0"],\
@@ -1036,10 +1036,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@next/font", [\
-        ["npm:13.4.7", {\
-          "packageLocation": "./.yarn/cache/@next-font-npm-13.4.7-b649192147-87680e1c3f.zip/node_modules/@next/font/",\
+        ["npm:13.5.3", {\
+          "packageLocation": "./.yarn/cache/@next-font-npm-13.5.3-3ae7564d72-cadd3f3d0d.zip/node_modules/@next/font/",\
           "packageDependencies": [\
-            ["@next/font", "npm:13.4.7"]\
+            ["@next/font", "npm:13.5.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8211,7 +8211,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["selection-poste-enm", "workspace:."],\
             ["@babel/core", "npm:7.22.9"],\
             ["@babel/runtime", "npm:7.22.11"],\
-            ["@next/font", "npm:13.4.7"],\
+            ["@next/font", "npm:13.5.3"],\
             ["@radix-ui/react-icons", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.0"],\
             ["@react-pdf-viewer/core", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.11.0"],\
             ["@react-pdf-viewer/default-layout", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.12.0"],\
