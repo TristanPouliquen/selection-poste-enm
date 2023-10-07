@@ -6193,9 +6193,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-select@npm:^5.7.0":
-  version: 5.7.0
-  resolution: "react-select@npm:5.7.0"
+"react-select@npm:^5.7.7":
+  version: 5.7.7
+  resolution: "react-select@npm:5.7.7"
   dependencies:
     "@babel/runtime": ^7.12.0
     "@emotion/cache": ^11.4.0
@@ -6209,7 +6209,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 3d29f7bb6dd66ad55396d820f05da6112f1d21b67526422a8ff5aa6cd47c783804c1b73042ac2949ba0871056a3dc68c06a73a8281abb61571e475d72bbd80dc
+  checksum: 6fd0c211d377addba6e6762a614ae674936df39a3f46ec19fd06e7acae8d6cadeb93d4723b10e25eff1ff8235077bae9459f293936334d82b28fe5071081c057
   languageName: node
   linkType: hard
 
@@ -6580,7 +6580,7 @@ __metadata:
     react-dropzone: ^14.2.3
     react-hook-form: ^7.43.3
     react-markdown: ^8.0.7
-    react-select: ^5.7.0
+    react-select: ^5.7.7
     recoil: ^0.7.7
     rehype-sanitize: ^5.0.1
     tailwindcss: ^3.3.1
