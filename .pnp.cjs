@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tauri-apps/api", "npm:1.2.0"],\
             ["@tauri-apps/cli", "npm:1.2.3"],\
             ["@types/draft-js", "npm:0.11.10"],\
-            ["@types/node", "npm:18.16.3"],\
+            ["@types/node", "npm:20.8.10"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-beautiful-dnd", "npm:13.1.3"],\
             ["@types/react-dom", "npm:18.2.4"],\
@@ -2023,10 +2023,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/node", [\
-        ["npm:18.16.3", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-18.16.3-4036a5f5f3-816b39d45b.zip/node_modules/@types/node/",\
+        ["npm:20.8.10", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-20.8.10-29d985f3e4-7c61190e43.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:18.16.3"]\
+            ["@types/node", "npm:20.8.10"],\
+            ["undici-types", "npm:5.26.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8262,7 +8263,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tauri-apps/api", "npm:1.2.0"],\
             ["@tauri-apps/cli", "npm:1.2.3"],\
             ["@types/draft-js", "npm:0.11.10"],\
-            ["@types/node", "npm:18.16.3"],\
+            ["@types/node", "npm:20.8.10"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-beautiful-dnd", "npm:13.1.3"],\
             ["@types/react-dom", "npm:18.2.4"],\
@@ -9141,6 +9142,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["has-bigints", "npm:1.0.2"],\
             ["has-symbols", "npm:1.0.3"],\
             ["which-boxed-primitive", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["undici-types", [\
+        ["npm:5.26.5", {\
+          "packageLocation": "./.yarn/cache/undici-types-npm-5.26.5-de4f7c7bb9-3192ef6f3f.zip/node_modules/undici-types/",\
+          "packageDependencies": [\
+            ["undici-types", "npm:5.26.5"]\
           ],\
           "linkType": "HARD"\
         }]\
