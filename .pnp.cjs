@@ -45,7 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-draft-wysiwyg", "npm:1.13.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:5.59.8"],\
             ["@typescript-eslint/parser", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:5.52.0"],\
-            ["@uiw/color-convert", "npm:1.1.2"],\
+            ["@uiw/color-convert", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.4.3"],\
             ["@uiw/react-color-block", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.3"],\
             ["autoprefixer", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:10.4.13"],\
             ["babel-loader", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:9.1.2"],\
@@ -2415,19 +2415,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@uiw/color-convert", [\
-        ["npm:1.1.2", {\
-          "packageLocation": "./.yarn/cache/@uiw-color-convert-npm-1.1.2-4d209c6460-91b8fd9d61.zip/node_modules/@uiw/color-convert/",\
-          "packageDependencies": [\
-            ["@uiw/color-convert", "npm:1.1.2"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:1.3.3", {\
           "packageLocation": "./.yarn/cache/@uiw-color-convert-npm-1.3.3-75934f0fea-7f548f91aa.zip/node_modules/@uiw/color-convert/",\
           "packageDependencies": [\
             ["@uiw/color-convert", "npm:1.3.3"]\
           ],\
           "linkType": "SOFT"\
+        }],\
+        ["npm:1.4.3", {\
+          "packageLocation": "./.yarn/cache/@uiw-color-convert-npm-1.4.3-de03d3973a-e58133fff2.zip/node_modules/@uiw/color-convert/",\
+          "packageDependencies": [\
+            ["@uiw/color-convert", "npm:1.4.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.4.3", {\
+          "packageLocation": "./.yarn/__virtual__/@uiw-color-convert-virtual-e7d1099fd5/0/cache/@uiw-color-convert-npm-1.4.3-de03d3973a-e58133fff2.zip/node_modules/@uiw/color-convert/",\
+          "packageDependencies": [\
+            ["@uiw/color-convert", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.4.3"],\
+            ["@babel/runtime", "npm:7.22.11"],\
+            ["@types/babel__runtime", null]\
+          ],\
+          "packagePeers": [\
+            "@babel/runtime",\
+            "@types/babel__runtime"\
+          ],\
+          "linkType": "HARD"\
         }],\
         ["virtual:c3f687c5ea5d9566b0308b533fd28036002c1d07062779c4dceeea2e31d6b3f57900398c65ee02e52bbb275fc86108d2aae8016da6971fa9fc8da12e5cb1ed2d#npm:1.3.3", {\
           "packageLocation": "./.yarn/__virtual__/@uiw-color-convert-virtual-1af7350e22/0/cache/@uiw-color-convert-npm-1.3.3-75934f0fea-7f548f91aa.zip/node_modules/@uiw/color-convert/",\
@@ -8269,7 +8282,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-draft-wysiwyg", "npm:1.13.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:5.59.8"],\
             ["@typescript-eslint/parser", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:5.52.0"],\
-            ["@uiw/color-convert", "npm:1.1.2"],\
+            ["@uiw/color-convert", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.4.3"],\
             ["@uiw/react-color-block", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.3"],\
             ["autoprefixer", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:10.4.13"],\
             ["babel-loader", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:9.1.2"],\
