@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@radix-ui/react-icons", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.0"],\
             ["@react-pdf-viewer/core", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.11.0"],\
             ["@react-pdf-viewer/default-layout", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.12.0"],\
-            ["@tailwindcss/forms", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.3"],\
+            ["@tailwindcss/forms", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.6"],\
             ["@tauri-apps/api", "npm:1.2.0"],\
             ["@tauri-apps/cli", "npm:1.2.3"],\
             ["@types/draft-js", "npm:0.11.10"],\
@@ -1804,17 +1804,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tailwindcss/forms", [\
-        ["npm:0.5.3", {\
-          "packageLocation": "./.yarn/cache/@tailwindcss-forms-npm-0.5.3-4d75c0dfda-9eddb4dbd0.zip/node_modules/@tailwindcss/forms/",\
+        ["npm:0.5.6", {\
+          "packageLocation": "./.yarn/cache/@tailwindcss-forms-npm-0.5.6-eee61a17f7-2bbbe3ffd1.zip/node_modules/@tailwindcss/forms/",\
           "packageDependencies": [\
-            ["@tailwindcss/forms", "npm:0.5.3"]\
+            ["@tailwindcss/forms", "npm:0.5.6"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.3", {\
-          "packageLocation": "./.yarn/__virtual__/@tailwindcss-forms-virtual-0172214d24/0/cache/@tailwindcss-forms-npm-0.5.3-4d75c0dfda-9eddb4dbd0.zip/node_modules/@tailwindcss/forms/",\
+        ["virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.6", {\
+          "packageLocation": "./.yarn/__virtual__/@tailwindcss-forms-virtual-8bc474c0f6/0/cache/@tailwindcss-forms-npm-0.5.6-eee61a17f7-2bbbe3ffd1.zip/node_modules/@tailwindcss/forms/",\
           "packageDependencies": [\
-            ["@tailwindcss/forms", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.3"],\
+            ["@tailwindcss/forms", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.6"],\
             ["@types/tailwindcss", null],\
             ["mini-svg-data-uri", "npm:1.4.4"],\
             ["tailwindcss", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.3.1"]\
@@ -8258,7 +8258,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@radix-ui/react-icons", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.0"],\
             ["@react-pdf-viewer/core", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.11.0"],\
             ["@react-pdf-viewer/default-layout", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.12.0"],\
-            ["@tailwindcss/forms", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.3"],\
+            ["@tailwindcss/forms", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.6"],\
             ["@tauri-apps/api", "npm:1.2.0"],\
             ["@tauri-apps/cli", "npm:1.2.3"],\
             ["@types/draft-js", "npm:0.11.10"],\
