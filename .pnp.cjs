@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@react-pdf-viewer/default-layout", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.12.0"],\
             ["@tailwindcss/forms", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.6"],\
             ["@tauri-apps/api", "npm:1.2.0"],\
-            ["@tauri-apps/cli", "npm:1.2.3"],\
+            ["@tauri-apps/cli", "npm:1.5.9"],\
             ["@types/draft-js", "npm:0.11.10"],\
             ["@types/node", "npm:18.16.3"],\
             ["@types/react", "npm:18.2.24"],\
@@ -1836,100 +1836,110 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tauri-apps/cli", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/cache/@tauri-apps-cli-npm-1.2.3-22b0275a01-1df8404183.zip/node_modules/@tauri-apps/cli/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/cache/@tauri-apps-cli-npm-1.5.9-e6cbf15e53-044288c79d.zip/node_modules/@tauri-apps/cli/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli", "npm:1.2.3"],\
-            ["@tauri-apps/cli-darwin-arm64", "npm:1.2.3"],\
-            ["@tauri-apps/cli-darwin-x64", "npm:1.2.3"],\
-            ["@tauri-apps/cli-linux-arm-gnueabihf", "npm:1.2.3"],\
-            ["@tauri-apps/cli-linux-arm64-gnu", "npm:1.2.3"],\
-            ["@tauri-apps/cli-linux-arm64-musl", "npm:1.2.3"],\
-            ["@tauri-apps/cli-linux-x64-gnu", "npm:1.2.3"],\
-            ["@tauri-apps/cli-linux-x64-musl", "npm:1.2.3"],\
-            ["@tauri-apps/cli-win32-ia32-msvc", "npm:1.2.3"],\
-            ["@tauri-apps/cli-win32-x64-msvc", "npm:1.2.3"]\
+            ["@tauri-apps/cli", "npm:1.5.9"],\
+            ["@tauri-apps/cli-darwin-arm64", "npm:1.5.9"],\
+            ["@tauri-apps/cli-darwin-x64", "npm:1.5.9"],\
+            ["@tauri-apps/cli-linux-arm-gnueabihf", "npm:1.5.9"],\
+            ["@tauri-apps/cli-linux-arm64-gnu", "npm:1.5.9"],\
+            ["@tauri-apps/cli-linux-arm64-musl", "npm:1.5.9"],\
+            ["@tauri-apps/cli-linux-x64-gnu", "npm:1.5.9"],\
+            ["@tauri-apps/cli-linux-x64-musl", "npm:1.5.9"],\
+            ["@tauri-apps/cli-win32-arm64-msvc", "npm:1.5.9"],\
+            ["@tauri-apps/cli-win32-ia32-msvc", "npm:1.5.9"],\
+            ["@tauri-apps/cli-win32-x64-msvc", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-darwin-arm64", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-darwin-arm64-npm-1.2.3-afdc7a829e/node_modules/@tauri-apps/cli-darwin-arm64/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-darwin-arm64-npm-1.5.9-b176f7347c/node_modules/@tauri-apps/cli-darwin-arm64/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-darwin-arm64", "npm:1.2.3"]\
+            ["@tauri-apps/cli-darwin-arm64", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-darwin-x64", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-darwin-x64-npm-1.2.3-a2bb313ee8/node_modules/@tauri-apps/cli-darwin-x64/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-darwin-x64-npm-1.5.9-4d5427b0d4/node_modules/@tauri-apps/cli-darwin-x64/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-darwin-x64", "npm:1.2.3"]\
+            ["@tauri-apps/cli-darwin-x64", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-linux-arm-gnueabihf", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-arm-gnueabihf-npm-1.2.3-413e72dd08/node_modules/@tauri-apps/cli-linux-arm-gnueabihf/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-arm-gnueabihf-npm-1.5.9-e620254703/node_modules/@tauri-apps/cli-linux-arm-gnueabihf/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-linux-arm-gnueabihf", "npm:1.2.3"]\
+            ["@tauri-apps/cli-linux-arm-gnueabihf", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-linux-arm64-gnu", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-arm64-gnu-npm-1.2.3-d139d39bf8/node_modules/@tauri-apps/cli-linux-arm64-gnu/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-arm64-gnu-npm-1.5.9-9770237266/node_modules/@tauri-apps/cli-linux-arm64-gnu/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-linux-arm64-gnu", "npm:1.2.3"]\
+            ["@tauri-apps/cli-linux-arm64-gnu", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-linux-arm64-musl", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-arm64-musl-npm-1.2.3-99e6af5c8c/node_modules/@tauri-apps/cli-linux-arm64-musl/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-arm64-musl-npm-1.5.9-9fb718dee4/node_modules/@tauri-apps/cli-linux-arm64-musl/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-linux-arm64-musl", "npm:1.2.3"]\
+            ["@tauri-apps/cli-linux-arm64-musl", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-linux-x64-gnu", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-x64-gnu-npm-1.2.3-075bdb4c71/node_modules/@tauri-apps/cli-linux-x64-gnu/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-x64-gnu-npm-1.5.9-1d31763c21/node_modules/@tauri-apps/cli-linux-x64-gnu/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-linux-x64-gnu", "npm:1.2.3"]\
+            ["@tauri-apps/cli-linux-x64-gnu", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-linux-x64-musl", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-x64-musl-npm-1.2.3-13496ad542/node_modules/@tauri-apps/cli-linux-x64-musl/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-linux-x64-musl-npm-1.5.9-f851fccee4/node_modules/@tauri-apps/cli-linux-x64-musl/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-linux-x64-musl", "npm:1.2.3"]\
+            ["@tauri-apps/cli-linux-x64-musl", "npm:1.5.9"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tauri-apps/cli-win32-arm64-msvc", [\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-win32-arm64-msvc-npm-1.5.9-7437310a59/node_modules/@tauri-apps/cli-win32-arm64-msvc/",\
+          "packageDependencies": [\
+            ["@tauri-apps/cli-win32-arm64-msvc", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-win32-ia32-msvc", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-win32-ia32-msvc-npm-1.2.3-e9ad9f06be/node_modules/@tauri-apps/cli-win32-ia32-msvc/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-win32-ia32-msvc-npm-1.5.9-71f986da59/node_modules/@tauri-apps/cli-win32-ia32-msvc/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-win32-ia32-msvc", "npm:1.2.3"]\
+            ["@tauri-apps/cli-win32-ia32-msvc", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tauri-apps/cli-win32-x64-msvc", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-win32-x64-msvc-npm-1.2.3-0c158166c7/node_modules/@tauri-apps/cli-win32-x64-msvc/",\
+        ["npm:1.5.9", {\
+          "packageLocation": "./.yarn/unplugged/@tauri-apps-cli-win32-x64-msvc-npm-1.5.9-ce606f64a6/node_modules/@tauri-apps/cli-win32-x64-msvc/",\
           "packageDependencies": [\
-            ["@tauri-apps/cli-win32-x64-msvc", "npm:1.2.3"]\
+            ["@tauri-apps/cli-win32-x64-msvc", "npm:1.5.9"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8269,7 +8279,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@react-pdf-viewer/default-layout", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.12.0"],\
             ["@tailwindcss/forms", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.5.6"],\
             ["@tauri-apps/api", "npm:1.2.0"],\
-            ["@tauri-apps/cli", "npm:1.2.3"],\
+            ["@tauri-apps/cli", "npm:1.5.9"],\
             ["@types/draft-js", "npm:0.11.10"],\
             ["@types/node", "npm:18.16.3"],\
             ["@types/react", "npm:18.2.24"],\
