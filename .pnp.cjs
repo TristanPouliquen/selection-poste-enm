@@ -4667,7 +4667,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nodelib/fs.walk", "npm:1.2.8"],\
             ["glob-parent", "npm:5.1.2"],\
             ["merge2", "npm:1.4.1"],\
-            ["micromatch", "npm:4.0.5"]\
+            ["micromatch", "npm:4.0.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6038,7 +6038,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["execa", "npm:6.1.0"],\
             ["lilconfig", "npm:2.0.6"],\
             ["listr2", "virtual:6f136d35c9c1e7fffd9efad4b38e6e342335ac6ebd952d358071dce3f62ff53e6a7599b0a08c4e6e1fb98056ce524a2ce541b72d072f84e606b323611e4c6ae2#npm:5.0.7"],\
-            ["micromatch", "npm:4.0.5"],\
+            ["micromatch", "npm:4.0.8"],\
             ["normalize-path", "npm:3.0.0"],\
             ["object-inspect", "npm:1.12.3"],\
             ["pidtree", "npm:0.6.0"],\
@@ -6545,10 +6545,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["micromatch", [\
-        ["npm:4.0.5", {\
-          "packageLocation": "./.yarn/cache/micromatch-npm-4.0.5-cfab5d7669-02a17b671c.zip/node_modules/micromatch/",\
+        ["npm:4.0.8", {\
+          "packageLocation": "./.yarn/cache/micromatch-npm-4.0.8-c9570e4aca-79920eb634.zip/node_modules/micromatch/",\
           "packageDependencies": [\
-            ["micromatch", "npm:4.0.5"],\
+            ["micromatch", "npm:4.0.8"],\
             ["braces", "npm:3.0.3"],\
             ["picomatch", "npm:2.3.1"]\
           ],\
@@ -8826,7 +8826,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob-parent", "npm:6.0.2"],\
             ["is-glob", "npm:4.0.3"],\
             ["lilconfig", "npm:2.0.6"],\
-            ["micromatch", "npm:4.0.5"],\
+            ["micromatch", "npm:4.0.8"],\
             ["normalize-path", "npm:3.0.0"],\
             ["object-hash", "npm:3.0.0"],\
             ["picocolors", "npm:1.0.0"],\
@@ -8861,7 +8861,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["is-glob", "npm:4.0.3"],\
             ["jiti", "npm:1.18.2"],\
             ["lilconfig", "npm:2.0.6"],\
-            ["micromatch", "npm:4.0.5"],\
+            ["micromatch", "npm:4.0.8"],\
             ["normalize-path", "npm:3.0.0"],\
             ["object-hash", "npm:3.0.0"],\
             ["picocolors", "npm:1.0.0"],\
