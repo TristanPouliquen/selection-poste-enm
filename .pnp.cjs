@@ -62,7 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.5.1"],\
             ["next-remove-imports", "npm:1.0.11"],\
-            ["pdfjs-dist", "npm:3.7.107"],\
+            ["pdfjs-dist", "npm:4.6.82"],\
             ["postcss", "npm:8.4.31"],\
             ["prettier", "npm:2.8.8"],\
             ["pretty-bytes", "npm:6.1.1"],\
@@ -1348,7 +1348,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/pdfjs-dist", null],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.4"],\
-            ["pdfjs-dist", "npm:3.7.107"],\
+            ["pdfjs-dist", "npm:4.6.82"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:18.2.0"]\
           ],\
@@ -7300,22 +7300,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["path2d-polyfill", [\
-        ["npm:2.0.1", {\
-          "packageLocation": "./.yarn/cache/path2d-polyfill-npm-2.0.1-cca87dc638-e38a4f920b.zip/node_modules/path2d-polyfill/",\
+      ["path2d", [\
+        ["npm:0.2.1", {\
+          "packageLocation": "./.yarn/cache/path2d-npm-0.2.1-d9ff72c9c8-d9e8feca8b.zip/node_modules/path2d/",\
           "packageDependencies": [\
-            ["path2d-polyfill", "npm:2.0.1"]\
+            ["path2d", "npm:0.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["pdfjs-dist", [\
-        ["npm:3.7.107", {\
-          "packageLocation": "./.yarn/cache/pdfjs-dist-npm-3.7.107-f775ee0513-04959f844a.zip/node_modules/pdfjs-dist/",\
+        ["npm:4.6.82", {\
+          "packageLocation": "./.yarn/cache/pdfjs-dist-npm-4.6.82-4917d39f7c-556d90750c.zip/node_modules/pdfjs-dist/",\
           "packageDependencies": [\
-            ["pdfjs-dist", "npm:3.7.107"],\
+            ["pdfjs-dist", "npm:4.6.82"],\
             ["canvas", "npm:2.11.2"],\
-            ["path2d-polyfill", "npm:2.0.1"]\
+            ["path2d", "npm:0.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8305,7 +8305,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.5.1"],\
             ["next-remove-imports", "npm:1.0.11"],\
-            ["pdfjs-dist", "npm:3.7.107"],\
+            ["pdfjs-dist", "npm:4.6.82"],\
             ["postcss", "npm:8.4.31"],\
             ["prettier", "npm:2.8.8"],\
             ["pretty-bytes", "npm:6.1.1"],\
