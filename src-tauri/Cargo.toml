@@ -21,7 +21,7 @@ tauri = { version = "1.7.1", features = ["fs-all", "path-all", "updater"] }
 diesel = { version = "2.2.4", features = ["sqlite", "returning_clauses_for_sqlite_3_35"] }
 libsqlite3-sys = { version = "0.30.1", features = ["bundled"] }
 diesel_migrations = {version = "2.2.0", features = ["sqlite"] }
-remove_dir_all = "0.8.3"
+remove_dir_all = "0.8.4"
 
 [features]
 # by default Tauri runs in production mode
