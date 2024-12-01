@@ -62,7 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.5.1"],\
             ["next-remove-imports", "npm:1.0.11"],\
-            ["pdfjs-dist", "npm:3.7.107"],\
+            ["pdfjs-dist", "npm:4.9.124"],\
             ["postcss", "npm:8.4.31"],\
             ["prettier", "npm:2.8.8"],\
             ["pretty-bytes", "npm:6.1.1"],\
@@ -1034,20 +1034,111 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["@mapbox/node-pre-gyp", [\
-        ["npm:1.0.10", {\
-          "packageLocation": "./.yarn/cache/@mapbox-node-pre-gyp-npm-1.0.10-1811160047-1a98db05d9.zip/node_modules/@mapbox/node-pre-gyp/",\
+      ["@napi-rs/canvas", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/cache/@napi-rs-canvas-npm-0.1.64-b72b44dc7d-a5a265a101.zip/node_modules/@napi-rs/canvas/",\
           "packageDependencies": [\
-            ["@mapbox/node-pre-gyp", "npm:1.0.10"],\
-            ["detect-libc", "npm:2.0.1"],\
-            ["https-proxy-agent", "npm:5.0.1"],\
-            ["make-dir", "npm:3.1.0"],\
-            ["node-fetch", "virtual:1811160047d7e0f7e43f371e07920c11204416dd6ae0b8461e04538b2f68e9167aca28b60b34dbd287674a5cdd52bd05be5797bbe2f7de916231958cb58055fb#npm:2.6.9"],\
-            ["nopt", "npm:5.0.0"],\
-            ["npmlog", "npm:5.0.1"],\
-            ["rimraf", "npm:3.0.2"],\
-            ["semver", "npm:7.3.8"],\
-            ["tar", "npm:6.2.1"]\
+            ["@napi-rs/canvas", "npm:0.1.64"],\
+            ["@napi-rs/canvas-android-arm64", "npm:0.1.64"],\
+            ["@napi-rs/canvas-darwin-arm64", "npm:0.1.64"],\
+            ["@napi-rs/canvas-darwin-x64", "npm:0.1.64"],\
+            ["@napi-rs/canvas-linux-arm-gnueabihf", "npm:0.1.64"],\
+            ["@napi-rs/canvas-linux-arm64-gnu", "npm:0.1.64"],\
+            ["@napi-rs/canvas-linux-arm64-musl", "npm:0.1.64"],\
+            ["@napi-rs/canvas-linux-riscv64-gnu", "npm:0.1.64"],\
+            ["@napi-rs/canvas-linux-x64-gnu", "npm:0.1.64"],\
+            ["@napi-rs/canvas-linux-x64-musl", "npm:0.1.64"],\
+            ["@napi-rs/canvas-win32-x64-msvc", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-android-arm64", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-android-arm64-npm-0.1.64-0537046746/node_modules/@napi-rs/canvas-android-arm64/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-android-arm64", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-darwin-arm64", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-darwin-arm64-npm-0.1.64-1f6a7af78f/node_modules/@napi-rs/canvas-darwin-arm64/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-darwin-arm64", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-darwin-x64", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-darwin-x64-npm-0.1.64-3c17189c3f/node_modules/@napi-rs/canvas-darwin-x64/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-darwin-x64", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-linux-arm-gnueabihf", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm-gnueabihf-npm-0.1.64-615fba9790/node_modules/@napi-rs/canvas-linux-arm-gnueabihf/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-linux-arm-gnueabihf", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-linux-arm64-gnu", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm64-gnu-npm-0.1.64-d2c32c15bd/node_modules/@napi-rs/canvas-linux-arm64-gnu/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-linux-arm64-gnu", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-linux-arm64-musl", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm64-musl-npm-0.1.64-3e833b3cec/node_modules/@napi-rs/canvas-linux-arm64-musl/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-linux-arm64-musl", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-linux-riscv64-gnu", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-riscv64-gnu-npm-0.1.64-c8df46622a/node_modules/@napi-rs/canvas-linux-riscv64-gnu/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-linux-riscv64-gnu", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-linux-x64-gnu", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-x64-gnu-npm-0.1.64-7f30cc471d/node_modules/@napi-rs/canvas-linux-x64-gnu/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-linux-x64-gnu", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-linux-x64-musl", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-x64-musl-npm-0.1.64-ed4dfbdaea/node_modules/@napi-rs/canvas-linux-x64-musl/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-linux-x64-musl", "npm:0.1.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@napi-rs/canvas-win32-x64-msvc", [\
+        ["npm:0.1.64", {\
+          "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-win32-x64-msvc-npm-0.1.64-a28ad6ce06/node_modules/@napi-rs/canvas-win32-x64-msvc/",\
+          "packageDependencies": [\
+            ["@napi-rs/canvas-win32-x64-msvc", "npm:0.1.64"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1348,7 +1439,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/pdfjs-dist", null],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.4"],\
-            ["pdfjs-dist", "npm:3.7.107"],\
+            ["pdfjs-dist", "npm:4.9.124"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:18.2.0"]\
           ],\
@@ -2811,15 +2902,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["are-we-there-yet", [\
-        ["npm:2.0.0", {\
-          "packageLocation": "./.yarn/cache/are-we-there-yet-npm-2.0.0-7d2f5201ce-6c80b4fd04.zip/node_modules/are-we-there-yet/",\
-          "packageDependencies": [\
-            ["are-we-there-yet", "npm:2.0.0"],\
-            ["delegates", "npm:1.0.0"],\
-            ["readable-stream", "npm:3.6.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:3.0.1", {\
           "packageLocation": "./.yarn/cache/are-we-there-yet-npm-3.0.1-3395b1512f-52590c2486.zip/node_modules/are-we-there-yet/",\
           "packageDependencies": [\
@@ -3269,19 +3351,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["canvas", [\
-        ["npm:2.11.2", {\
-          "packageLocation": "./.yarn/unplugged/canvas-npm-2.11.2-824d893a31/node_modules/canvas/",\
-          "packageDependencies": [\
-            ["canvas", "npm:2.11.2"],\
-            ["@mapbox/node-pre-gyp", "npm:1.0.10"],\
-            ["nan", "npm:2.17.0"],\
-            ["node-gyp", "npm:9.3.1"],\
-            ["simple-get", "npm:3.1.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["chalk", [\
         ["npm:2.4.2", {\
           "packageLocation": "./.yarn/cache/chalk-npm-2.4.2-3ea16dd91e-ec3661d38f.zip/node_modules/chalk/",\
@@ -3716,16 +3785,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["decompress-response", [\
-        ["npm:4.2.1", {\
-          "packageLocation": "./.yarn/cache/decompress-response-npm-4.2.1-abe5b4ebe4-4e783ca4df.zip/node_modules/decompress-response/",\
-          "packageDependencies": [\
-            ["decompress-response", "npm:4.2.1"],\
-            ["mimic-response", "npm:2.1.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["deep-equal", [\
         ["npm:2.2.0", {\
           "packageLocation": "./.yarn/cache/deep-equal-npm-2.2.0-d9712e0040-46a34509d2.zip/node_modules/deep-equal/",\
@@ -3813,15 +3872,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/dequal-npm-2.0.3-53a630c60e-8679b850e1.zip/node_modules/dequal/",\
           "packageDependencies": [\
             ["dequal", "npm:2.0.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["detect-libc", [\
-        ["npm:2.0.1", {\
-          "packageLocation": "./.yarn/cache/detect-libc-npm-2.0.1-2699cb2ac4-ccb05fcabb.zip/node_modules/detect-libc/",\
-          "packageDependencies": [\
-            ["detect-libc", "npm:2.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4906,22 +4956,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["gauge", [\
-        ["npm:3.0.2", {\
-          "packageLocation": "./.yarn/cache/gauge-npm-3.0.2-9e22f7af9e-81296c00c7.zip/node_modules/gauge/",\
-          "packageDependencies": [\
-            ["gauge", "npm:3.0.2"],\
-            ["aproba", "npm:2.0.0"],\
-            ["color-support", "npm:1.1.3"],\
-            ["console-control-strings", "npm:1.1.0"],\
-            ["has-unicode", "npm:2.0.1"],\
-            ["object-assign", "npm:4.1.1"],\
-            ["signal-exit", "npm:3.0.7"],\
-            ["string-width", "npm:4.2.3"],\
-            ["strip-ansi", "npm:6.0.1"],\
-            ["wide-align", "npm:1.1.5"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:4.0.4", {\
           "packageLocation": "./.yarn/cache/gauge-npm-4.0.4-8f878385e9-788b6bfe52.zip/node_modules/gauge/",\
           "packageDependencies": [\
@@ -6571,15 +6605,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["mimic-response", [\
-        ["npm:2.1.0", {\
-          "packageLocation": "./.yarn/cache/mimic-response-npm-2.1.0-037463e454-014fad6ab9.zip/node_modules/mimic-response/",\
-          "packageDependencies": [\
-            ["mimic-response", "npm:2.1.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["mini-svg-data-uri", [\
         ["npm:1.4.4", {\
           "packageLocation": "./.yarn/cache/mini-svg-data-uri-npm-1.4.4-929f6f1119-997f1fbd8d.zip/node_modules/mini-svg-data-uri/",\
@@ -6743,16 +6768,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["nan", [\
-        ["npm:2.17.0", {\
-          "packageLocation": "./.yarn/unplugged/nan-npm-2.17.0-bf36a21d6f/node_modules/nan/",\
-          "packageDependencies": [\
-            ["nan", "npm:2.17.0"],\
-            ["node-gyp", "npm:9.3.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["nanoid", [\
         ["npm:3.3.4", {\
           "packageLocation": "./.yarn/cache/nanoid-npm-3.3.4-3d250377d6-2fddd6dee9.zip/node_modules/nanoid/",\
@@ -6867,27 +6882,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["npm:2.6.9", {\
-          "packageLocation": "./.yarn/cache/node-fetch-npm-2.6.9-9fc9a54529-acb04f9ce7.zip/node_modules/node-fetch/",\
-          "packageDependencies": [\
-            ["node-fetch", "npm:2.6.9"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:1811160047d7e0f7e43f371e07920c11204416dd6ae0b8461e04538b2f68e9167aca28b60b34dbd287674a5cdd52bd05be5797bbe2f7de916231958cb58055fb#npm:2.6.9", {\
-          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-8dc7938f5c/0/cache/node-fetch-npm-2.6.9-9fc9a54529-acb04f9ce7.zip/node_modules/node-fetch/",\
-          "packageDependencies": [\
-            ["node-fetch", "virtual:1811160047d7e0f7e43f371e07920c11204416dd6ae0b8461e04538b2f68e9167aca28b60b34dbd287674a5cdd52bd05be5797bbe2f7de916231958cb58055fb#npm:2.6.9"],\
-            ["@types/encoding", null],\
-            ["encoding", null],\
-            ["whatwg-url", "npm:5.0.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/encoding",\
-            "encoding"\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["virtual:e414995db9c779306e687c7a7c66965e66d0cd7270f6b9fc4f00cc9772c5d50b305ab83e142e0e21dbf10968f7437cbdfcb170d05f4bde68707ac7d0082c9cca#npm:2.6.7", {\
           "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-10f4bc17d9/0/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",\
           "packageDependencies": [\
@@ -6939,14 +6933,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["nopt", [\
-        ["npm:5.0.0", {\
-          "packageLocation": "./.yarn/cache/nopt-npm-5.0.0-304b40fbfe-d35fdec187.zip/node_modules/nopt/",\
-          "packageDependencies": [\
-            ["nopt", "npm:5.0.0"],\
-            ["abbrev", "npm:1.1.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:6.0.0", {\
           "packageLocation": "./.yarn/cache/nopt-npm-6.0.0-5ea8050815-82149371f8.zip/node_modules/nopt/",\
           "packageDependencies": [\
@@ -6985,17 +6971,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["npmlog", [\
-        ["npm:5.0.1", {\
-          "packageLocation": "./.yarn/cache/npmlog-npm-5.0.1-366cab64a2-516b266302.zip/node_modules/npmlog/",\
-          "packageDependencies": [\
-            ["npmlog", "npm:5.0.1"],\
-            ["are-we-there-yet", "npm:2.0.0"],\
-            ["console-control-strings", "npm:1.1.0"],\
-            ["gauge", "npm:3.0.2"],\
-            ["set-blocking", "npm:2.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:6.0.2", {\
           "packageLocation": "./.yarn/cache/npmlog-npm-6.0.2-e0e69455c7-ae238cd264.zip/node_modules/npmlog/",\
           "packageDependencies": [\
@@ -7300,22 +7275,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["path2d-polyfill", [\
-        ["npm:2.0.1", {\
-          "packageLocation": "./.yarn/cache/path2d-polyfill-npm-2.0.1-cca87dc638-e38a4f920b.zip/node_modules/path2d-polyfill/",\
-          "packageDependencies": [\
-            ["path2d-polyfill", "npm:2.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["pdfjs-dist", [\
-        ["npm:3.7.107", {\
-          "packageLocation": "./.yarn/cache/pdfjs-dist-npm-3.7.107-f775ee0513-04959f844a.zip/node_modules/pdfjs-dist/",\
+        ["npm:4.9.124", {\
+          "packageLocation": "./.yarn/cache/pdfjs-dist-npm-4.9.124-621834a3f6-02cc36d0ab.zip/node_modules/pdfjs-dist/",\
           "packageDependencies": [\
-            ["pdfjs-dist", "npm:3.7.107"],\
-            ["canvas", "npm:2.11.2"],\
-            ["path2d-polyfill", "npm:2.0.1"]\
+            ["pdfjs-dist", "npm:4.9.124"],\
+            ["@napi-rs/canvas", "npm:0.1.64"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8305,7 +8270,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.5.1"],\
             ["next-remove-imports", "npm:1.0.11"],\
-            ["pdfjs-dist", "npm:3.7.107"],\
+            ["pdfjs-dist", "npm:4.9.124"],\
             ["postcss", "npm:8.4.31"],\
             ["prettier", "npm:2.8.8"],\
             ["pretty-bytes", "npm:6.1.1"],\
@@ -8396,27 +8361,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/signal-exit-npm-3.0.7-bd270458a3-a2f098f247.zip/node_modules/signal-exit/",\
           "packageDependencies": [\
             ["signal-exit", "npm:3.0.7"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["simple-concat", [\
-        ["npm:1.0.1", {\
-          "packageLocation": "./.yarn/cache/simple-concat-npm-1.0.1-48df70de29-4d211042cc.zip/node_modules/simple-concat/",\
-          "packageDependencies": [\
-            ["simple-concat", "npm:1.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["simple-get", [\
-        ["npm:3.1.1", {\
-          "packageLocation": "./.yarn/cache/simple-get-npm-3.1.1-dce5923dba-80195e70bf.zip/node_modules/simple-get/",\
-          "packageDependencies": [\
-            ["simple-get", "npm:3.1.1"],\
-            ["decompress-response", "npm:4.2.1"],\
-            ["once", "npm:1.4.0"],\
-            ["simple-concat", "npm:1.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
