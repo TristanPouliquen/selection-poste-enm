@@ -64,7 +64,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next-remove-imports", "npm:1.0.11"],\
             ["pdfjs-dist", "npm:3.7.107"],\
             ["postcss", "npm:8.4.31"],\
-            ["prettier", "npm:2.8.8"],\
+            ["prettier", "npm:3.4.1"],\
             ["pretty-bytes", "npm:6.1.1"],\
             ["react", "npm:18.2.0"],\
             ["react-beautiful-dnd", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.1.1"],\
@@ -7526,10 +7526,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prettier", [\
-        ["npm:2.8.8", {\
-          "packageLocation": "./.yarn/cache/prettier-npm-2.8.8-430828a36c-b49e409431.zip/node_modules/prettier/",\
+        ["npm:3.4.1", {\
+          "packageLocation": "./.yarn/unplugged/prettier-npm-3.4.1-ebb52d2db5/node_modules/prettier/",\
           "packageDependencies": [\
-            ["prettier", "npm:2.8.8"]\
+            ["prettier", "npm:3.4.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8307,7 +8307,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next-remove-imports", "npm:1.0.11"],\
             ["pdfjs-dist", "npm:3.7.107"],\
             ["postcss", "npm:8.4.31"],\
-            ["prettier", "npm:2.8.8"],\
+            ["prettier", "npm:3.4.1"],\
             ["pretty-bytes", "npm:6.1.1"],\
             ["react", "npm:18.2.0"],\
             ["react-beautiful-dnd", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.1.1"],\
