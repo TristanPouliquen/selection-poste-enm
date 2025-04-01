@@ -5855,25 +5855,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path2d-polyfill@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "path2d-polyfill@npm:2.0.1"
-  checksum: e38a4f920be3550e8334b899cc56f4fca0a976ca69404ee10d656a45d422996b7e27e294e2cf0aac2e410ce59d6977cde9f95586e62a24e6c904716695e059f8
+"path2d@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "path2d@npm:0.2.0"
+  checksum: caa6cf19437748e26a801bfcaa9ddd43a33c04695906806cb33d42bdd36cb8210a7241f081d3b6da16da9bd708896b2d419a31b32f4a46df754313bdfc25d869
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:3.7.107":
-  version: 3.7.107
-  resolution: "pdfjs-dist@npm:3.7.107"
+"pdfjs-dist@npm:4.2.67":
+  version: 4.2.67
+  resolution: "pdfjs-dist@npm:4.2.67"
   dependencies:
     canvas: ^2.11.2
-    path2d-polyfill: ^2.0.1
+    path2d: ^0.2.0
   dependenciesMeta:
     canvas:
       optional: true
-    path2d-polyfill:
+    path2d:
       optional: true
-  checksum: 04959f844ab72a126f01f30755ea4fd7df25a2bb246f0d25b57d8dabcf047ebc5ca123d8c13639492bf7487d13c6121b45af4346db0de8dbe0c898fb0ea5a621
+  checksum: 7aadfc2c36de22abed2722f116e4a160d195162d16b8c1b8f78aa63a4b4fc1e05bee51f7806ab1709e0758a137f689dd377a442463e25bc07dfbd34bbfb7c94d
   languageName: node
   linkType: hard
 
@@ -6635,7 +6635,7 @@ __metadata:
     lint-staged: ^13.1.0
     next: 13.5.1
     next-remove-imports: ^1.0.11
-    pdfjs-dist: 3.7.107
+    pdfjs-dist: 4.2.67
     postcss: ^8.4.31
     prettier: 2.8.8
     pretty-bytes: ^6.1.1
