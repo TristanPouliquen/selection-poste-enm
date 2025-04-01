@@ -135,6 +135,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/highlight", "npm:7.22.5"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:7.26.2", {\
+          "packageLocation": "./.yarn/cache/@babel-code-frame-npm-7.26.2-4902b56813-db13f5c42d.zip/node_modules/@babel/code-frame/",\
+          "packageDependencies": [\
+            ["@babel/code-frame", "npm:7.26.2"],\
+            ["@babel/helper-validator-identifier", "npm:7.25.9"],\
+            ["js-tokens", "npm:4.0.0"],\
+            ["picocolors", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@babel/compat-data", [\
@@ -163,7 +173,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/generator", "npm:7.22.3"],\
             ["@babel/helper-compilation-targets", "virtual:4ec1915241a55102cd89412178079226c6c3c25c9551bd72b4a663e73c28021f47c6621b59555f399bb0e3072da0356d22712e2ecb03b659a6d554e2ddf6a468#npm:7.22.1"],\
             ["@babel/helper-module-transforms", "npm:7.22.1"],\
-            ["@babel/helpers", "npm:7.22.3"],\
+            ["@babel/helpers", "npm:7.27.0"],\
             ["@babel/parser", "npm:7.22.4"],\
             ["@babel/template", "npm:7.21.9"],\
             ["@babel/traverse", "npm:7.23.2"],\
@@ -185,7 +195,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/generator", "npm:7.22.9"],\
             ["@babel/helper-compilation-targets", "virtual:509b29c82e8a1a01d4a12c9b7b502644021e94d233fa6e64533c75d14d6b00effd5817505571c7d810fb20d5a5a3d43daecdfa19af8bd6ea86ef59fc4107ecfd#npm:7.22.9"],\
             ["@babel/helper-module-transforms", "virtual:509b29c82e8a1a01d4a12c9b7b502644021e94d233fa6e64533c75d14d6b00effd5817505571c7d810fb20d5a5a3d43daecdfa19af8bd6ea86ef59fc4107ecfd#npm:7.22.9"],\
-            ["@babel/helpers", "npm:7.22.6"],\
+            ["@babel/helpers", "npm:7.27.0"],\
             ["@babel/parser", "npm:7.22.7"],\
             ["@babel/template", "npm:7.22.5"],\
             ["@babel/traverse", "npm:7.23.2"],\
@@ -455,6 +465,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/helper-string-parser", "npm:7.22.5"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:7.25.9", {\
+          "packageLocation": "./.yarn/cache/@babel-helper-string-parser-npm-7.25.9-eade578078-6435ee0849.zip/node_modules/@babel/helper-string-parser/",\
+          "packageDependencies": [\
+            ["@babel/helper-string-parser", "npm:7.25.9"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@babel/helper-validator-identifier", [\
@@ -478,6 +495,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/helper-validator-identifier", "npm:7.22.5"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:7.25.9", {\
+          "packageLocation": "./.yarn/cache/@babel-helper-validator-identifier-npm-7.25.9-2634b947a4-5b85918cb1.zip/node_modules/@babel/helper-validator-identifier/",\
+          "packageDependencies": [\
+            ["@babel/helper-validator-identifier", "npm:7.25.9"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@babel/helper-validator-option", [\
@@ -497,23 +521,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@babel/helpers", [\
-        ["npm:7.22.3", {\
-          "packageLocation": "./.yarn/cache/@babel-helpers-npm-7.22.3-0e890dfceb-385289ee8b.zip/node_modules/@babel/helpers/",\
+        ["npm:7.27.0", {\
+          "packageLocation": "./.yarn/cache/@babel-helpers-npm-7.27.0-661e2983d3-d11bb8ada0.zip/node_modules/@babel/helpers/",\
           "packageDependencies": [\
-            ["@babel/helpers", "npm:7.22.3"],\
-            ["@babel/template", "npm:7.21.9"],\
-            ["@babel/traverse", "npm:7.23.2"],\
-            ["@babel/types", "npm:7.22.4"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:7.22.6", {\
-          "packageLocation": "./.yarn/cache/@babel-helpers-npm-7.22.6-8e54464b9e-5c1f33241f.zip/node_modules/@babel/helpers/",\
-          "packageDependencies": [\
-            ["@babel/helpers", "npm:7.22.6"],\
-            ["@babel/template", "npm:7.22.5"],\
-            ["@babel/traverse", "npm:7.23.2"],\
-            ["@babel/types", "npm:7.22.5"]\
+            ["@babel/helpers", "npm:7.27.0"],\
+            ["@babel/template", "npm:7.27.0"],\
+            ["@babel/types", "npm:7.27.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -574,6 +587,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/types", "npm:7.21.2"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:7.27.0", {\
+          "packageLocation": "./.yarn/cache/@babel-parser-npm-7.27.0-ab7dea7b75-062a4e6d51.zip/node_modules/@babel/parser/",\
+          "packageDependencies": [\
+            ["@babel/parser", "npm:7.27.0"],\
+            ["@babel/types", "npm:7.27.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@babel/runtime", [\
@@ -622,6 +643,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/code-frame", "npm:7.22.5"],\
             ["@babel/parser", "npm:7.22.7"],\
             ["@babel/types", "npm:7.22.5"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.27.0", {\
+          "packageLocation": "./.yarn/cache/@babel-template-npm-7.27.0-941c698259-46d6db4c20.zip/node_modules/@babel/template/",\
+          "packageDependencies": [\
+            ["@babel/template", "npm:7.27.0"],\
+            ["@babel/code-frame", "npm:7.26.2"],\
+            ["@babel/parser", "npm:7.27.0"],\
+            ["@babel/types", "npm:7.27.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -693,6 +724,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/helper-string-parser", "npm:7.22.5"],\
             ["@babel/helper-validator-identifier", "npm:7.22.20"],\
             ["to-fast-properties", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.27.0", {\
+          "packageLocation": "./.yarn/cache/@babel-types-npm-7.27.0-4fc27759e5-59582019eb.zip/node_modules/@babel/types/",\
+          "packageDependencies": [\
+            ["@babel/types", "npm:7.27.0"],\
+            ["@babel/helper-string-parser", "npm:7.25.9"],\
+            ["@babel/helper-validator-identifier", "npm:7.25.9"]\
           ],\
           "linkType": "HARD"\
         }]\
