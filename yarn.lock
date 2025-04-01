@@ -466,12 +466,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.22.11":
-  version: 7.22.11
-  resolution: "@babel/runtime@npm:7.22.11"
+"@babel/runtime@npm:^7.26.10":
+  version: 7.27.0
+  resolution: "@babel/runtime@npm:7.27.0"
   dependencies:
     regenerator-runtime: ^0.14.0
-  checksum: a5cd6683a8fcdb8065cb1677f221e22f6c67ec8f15ad1d273b180b93ab3bd86c66da2c48f500d4e72d8d2cfa85ff4872a3f350e5aa3855630036af5da765c001
+  checksum: 3e73d9e65f76fad8f99802b5364c941f4a60c693b3eca66147bb0bfa54cf0fbe017232155e16e3fd83c0a049b51b8d7239efbd73626534abe8b54a6dd57dcb1b
   languageName: node
   linkType: hard
 
@@ -6557,7 +6557,7 @@ __metadata:
   resolution: "selection-poste-enm@workspace:."
   dependencies:
     "@babel/core": ^7.22.9
-    "@babel/runtime": ^7.22.11
+    "@babel/runtime": ^7.26.10
     "@next/font": 13.5.3
     "@radix-ui/react-icons": ^1.3.0
     "@react-pdf-viewer/core": 3.11.0

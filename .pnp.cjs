@@ -29,7 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@babel/core", "npm:7.22.9"],\
-            ["@babel/runtime", "npm:7.22.11"],\
+            ["@babel/runtime", "npm:7.27.0"],\
             ["@next/font", "npm:13.5.3"],\
             ["@radix-ui/react-icons", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.0"],\
             ["@react-pdf-viewer/core", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.11.0"],\
@@ -585,10 +585,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:7.22.11", {\
-          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.22.11-88b2589067-a5cd6683a8.zip/node_modules/@babel/runtime/",\
+        ["npm:7.27.0", {\
+          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.27.0-67ce9cb54f-3e73d9e65f.zip/node_modules/@babel/runtime/",\
           "packageDependencies": [\
-            ["@babel/runtime", "npm:7.22.11"],\
+            ["@babel/runtime", "npm:7.27.0"],\
             ["regenerator-runtime", "npm:0.14.0"]\
           ],\
           "linkType": "HARD"\
@@ -2443,7 +2443,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@uiw-color-convert-virtual-e7d1099fd5/0/cache/@uiw-color-convert-npm-1.4.3-de03d3973a-e58133fff2.zip/node_modules/@uiw/color-convert/",\
           "packageDependencies": [\
             ["@uiw/color-convert", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.4.3"],\
-            ["@babel/runtime", "npm:7.22.11"],\
+            ["@babel/runtime", "npm:7.27.0"],\
             ["@types/babel__runtime", null]\
           ],\
           "packagePeers": [\
@@ -2456,7 +2456,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@uiw-color-convert-virtual-1af7350e22/0/cache/@uiw-color-convert-npm-1.3.3-75934f0fea-7f548f91aa.zip/node_modules/@uiw/color-convert/",\
           "packageDependencies": [\
             ["@uiw/color-convert", "virtual:c3f687c5ea5d9566b0308b533fd28036002c1d07062779c4dceeea2e31d6b3f57900398c65ee02e52bbb275fc86108d2aae8016da6971fa9fc8da12e5cb1ed2d#npm:1.3.3"],\
-            ["@babel/runtime", "npm:7.22.11"],\
+            ["@babel/runtime", "npm:7.27.0"],\
             ["@types/babel__runtime", null]\
           ],\
           "packagePeers": [\
@@ -2478,7 +2478,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@uiw-react-color-block-virtual-c3f687c5ea/0/cache/@uiw-react-color-block-npm-1.3.3-a9d830c1e8-8329b1e113.zip/node_modules/@uiw/react-color-block/",\
           "packageDependencies": [\
             ["@uiw/react-color-block", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.3"],\
-            ["@babel/runtime", "npm:7.22.11"],\
+            ["@babel/runtime", "npm:7.27.0"],\
             ["@types/babel__runtime", null],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.4"],\
@@ -2511,7 +2511,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@uiw-react-color-editable-input-virtual-5ef5c85a29/0/cache/@uiw-react-color-editable-input-npm-1.3.3-0ef2ea87c2-e4fdd94585.zip/node_modules/@uiw/react-color-editable-input/",\
           "packageDependencies": [\
             ["@uiw/react-color-editable-input", "virtual:c3f687c5ea5d9566b0308b533fd28036002c1d07062779c4dceeea2e31d6b3f57900398c65ee02e52bbb275fc86108d2aae8016da6971fa9fc8da12e5cb1ed2d#npm:1.3.3"],\
-            ["@babel/runtime", "npm:7.22.11"],\
+            ["@babel/runtime", "npm:7.27.0"],\
             ["@types/babel__runtime", null],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.4"],\
@@ -2541,7 +2541,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@uiw-react-color-swatch-virtual-b53efc2170/0/cache/@uiw-react-color-swatch-npm-1.3.3-264a202358-a941a3f8b8.zip/node_modules/@uiw/react-color-swatch/",\
           "packageDependencies": [\
             ["@uiw/react-color-swatch", "virtual:c3f687c5ea5d9566b0308b533fd28036002c1d07062779c4dceeea2e31d6b3f57900398c65ee02e52bbb275fc86108d2aae8016da6971fa9fc8da12e5cb1ed2d#npm:1.3.3"],\
-            ["@babel/runtime", "npm:7.22.11"],\
+            ["@babel/runtime", "npm:7.27.0"],\
             ["@types/babel__runtime", null],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.4"],\
@@ -8265,7 +8265,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["selection-poste-enm", "workspace:."],\
             ["@babel/core", "npm:7.22.9"],\
-            ["@babel/runtime", "npm:7.22.11"],\
+            ["@babel/runtime", "npm:7.27.0"],\
             ["@next/font", "npm:13.5.3"],\
             ["@radix-ui/react-icons", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:1.3.0"],\
             ["@react-pdf-viewer/core", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:3.11.0"],\
