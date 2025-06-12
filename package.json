@@ -33,7 +33,7 @@
     "immutable": "^4.2.4",
     "next": "13.5.1",
     "next-remove-imports": "^1.0.11",
-    "pdfjs-dist": "3.7.107",
+    "pdfjs-dist": "4.2.67",
     "postcss": "^8.4.31",
     "pretty-bytes": "^6.1.1",
     "react": "18.2.0",
