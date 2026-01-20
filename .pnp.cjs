@@ -3888,10 +3888,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["diff", [\
-        ["npm:5.1.0", {\
-          "packageLocation": "./.yarn/cache/diff-npm-5.1.0-d24d222280-c7bf0df7c9.zip/node_modules/diff/",\
+        ["npm:5.2.2", {\
+          "packageLocation": "./.yarn/cache/diff-npm-5.2.2-8338a97b62-a1af5d6322.zip/node_modules/diff/",\
           "packageDependencies": [\
-            ["diff", "npm:5.1.0"]\
+            ["diff", "npm:5.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9409,7 +9409,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["uvu", "npm:0.5.6"],\
             ["dequal", "npm:2.0.3"],\
-            ["diff", "npm:5.1.0"],\
+            ["diff", "npm:5.2.2"],\
             ["kleur", "npm:4.1.5"],\
             ["sade", "npm:1.8.1"]\
           ],\
