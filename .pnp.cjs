@@ -935,7 +935,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@eslint-eslintrc-npm-2.1.2-feb0771c9f-bc742a1e3b.zip/node_modules/@eslint/eslintrc/",\
           "packageDependencies": [\
             ["@eslint/eslintrc", "npm:2.1.2"],\
-            ["ajv", "npm:6.12.6"],\
+            ["ajv", "npm:6.14.0"],\
             ["debug", "virtual:4758feee42453c0e31b0d2032a7b1362d6b06281699830d2da9a056f2cca72bd2c5cfdb74005fdf03a64876be8eaca2dd7b0fc2dc59d14318badf19cb22ba18e#npm:4.3.4"],\
             ["espree", "npm:9.6.1"],\
             ["globals", "npm:13.20.0"],\
@@ -2702,10 +2702,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["ajv", [\
-        ["npm:6.12.6", {\
-          "packageLocation": "./.yarn/cache/ajv-npm-6.12.6-4b5105e2b2-874972efe5.zip/node_modules/ajv/",\
+        ["npm:6.14.0", {\
+          "packageLocation": "./.yarn/cache/ajv-npm-6.14.0-41f32f2ba8-7bb3ea97bb.zip/node_modules/ajv/",\
           "packageDependencies": [\
-            ["ajv", "npm:6.12.6"],\
+            ["ajv", "npm:6.14.0"],\
             ["fast-deep-equal", "npm:3.1.3"],\
             ["fast-json-stable-stringify", "npm:2.1.0"],\
             ["json-schema-traverse", "npm:0.4.1"],\
@@ -4220,7 +4220,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@humanwhocodes/config-array", "npm:0.11.11"],\
             ["@humanwhocodes/module-importer", "npm:1.0.1"],\
             ["@nodelib/fs.walk", "npm:1.2.8"],\
-            ["ajv", "npm:6.12.6"],\
+            ["ajv", "npm:6.14.0"],\
             ["chalk", "npm:4.1.2"],\
             ["cross-spawn", "npm:7.0.6"],\
             ["debug", "virtual:4758feee42453c0e31b0d2032a7b1362d6b06281699830d2da9a056f2cca72bd2c5cfdb74005fdf03a64876be8eaca2dd7b0fc2dc59d14318badf19cb22ba18e#npm:4.3.4"],\
