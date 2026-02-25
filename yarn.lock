@@ -1529,10 +1529,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.16.3":
-  version: 18.16.3
-  resolution: "@types/node@npm:18.16.3"
-  checksum: 816b39d45b05ebdc6f362b630970df3f6d82f71d418a2555353522f4eeeb078fa201de5299f02c09a09faa975e43b2745fe19c263d44069f87ddf37d6c37b717
+"@types/node@npm:24.6.1":
+  version: 24.6.1
+  resolution: "@types/node@npm:24.6.1"
+  dependencies:
+    undici-types: ~7.13.0
+  checksum: a2d2646e9c22c8084e943f5622f373114d0487a5116245c9a7b927ad54e5c3267c31233c9c410f729c2391db5da53861e6a6ab355e2ca8f2526c4b4d3bb2b51b
   languageName: node
   linkType: hard
 
@@ -6611,7 +6613,7 @@ __metadata:
     "@tauri-apps/api": ^1.2.0
     "@tauri-apps/cli": ^1.5.6
     "@types/draft-js": ^0.11.10
-    "@types/node": 18.16.3
+    "@types/node": 24.6.1
     "@types/react": ^18.2.24
     "@types/react-beautiful-dnd": ^13.1.3
     "@types/react-dom": 18.2.4
@@ -7369,6 +7371,13 @@ __metadata:
     has-symbols: ^1.0.3
     which-boxed-primitive: ^1.0.2
   checksum: b7a1cf5862b5e4b5deb091672ffa579aa274f648410009c81cca63fed3b62b610c4f3b773f912ce545bb4e31edc3138975b5bc777fc6e4817dca51affb6380e9
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.13.0":
+  version: 7.13.0
+  resolution: "undici-types@npm:7.13.0"
+  checksum: fcb3e1195a36615fce3935eb97c21ebe4dbafe968f831ed00e6f22e8e73c0655b8e3242acc6ba4ff0f3c34e3f3f860f19fbb59c00b261bd4e20b515abbc2de7c
   languageName: node
   linkType: hard
 
