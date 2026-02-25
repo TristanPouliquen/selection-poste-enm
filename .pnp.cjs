@@ -942,7 +942,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ignore", "npm:5.2.4"],\
             ["import-fresh", "npm:3.3.0"],\
             ["js-yaml", "npm:4.1.1"],\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["strip-json-comments", "npm:3.1.1"]\
           ],\
           "linkType": "HARD"\
@@ -992,7 +992,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@humanwhocodes/config-array", "npm:0.11.11"],\
             ["@humanwhocodes/object-schema", "npm:1.2.1"],\
             ["debug", "virtual:4758feee42453c0e31b0d2032a7b1362d6b06281699830d2da9a056f2cca72bd2c5cfdb74005fdf03a64876be8eaca2dd7b0fc2dc59d14318badf19cb22ba18e#npm:4.3.4"],\
-            ["minimatch", "npm:3.1.2"]\
+            ["minimatch", "npm:3.1.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4245,7 +4245,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["json-stable-stringify-without-jsonify", "npm:1.0.1"],\
             ["levn", "npm:0.4.1"],\
             ["lodash.merge", "npm:4.6.2"],\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["natural-compare", "npm:1.4.0"],\
             ["optionator", "npm:0.9.3"],\
             ["strip-ansi", "npm:6.0.1"],\
@@ -4421,7 +4421,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["has", "npm:1.0.3"],\
             ["is-core-module", "npm:2.11.0"],\
             ["is-glob", "npm:4.0.3"],\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["object.values", "npm:1.1.6"],\
             ["resolve", "patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"],\
             ["semver", "npm:6.3.1"],\
@@ -4462,7 +4462,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["has", "npm:1.0.3"],\
             ["jsx-ast-utils", "npm:3.3.3"],\
             ["language-tags", "npm:1.0.5"],\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["object.entries", "npm:1.1.6"],\
             ["object.fromentries", "npm:2.0.6"],\
             ["semver", "npm:6.3.1"]\
@@ -4494,7 +4494,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.50.0"],\
             ["estraverse", "npm:5.3.0"],\
             ["jsx-ast-utils", "npm:3.3.3"],\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["object.entries", "npm:1.1.6"],\
             ["object.fromentries", "npm:2.0.6"],\
             ["object.hasown", "npm:1.1.2"],\
@@ -5036,7 +5036,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs.realpath", "npm:1.0.0"],\
             ["inflight", "npm:1.0.6"],\
             ["inherits", "npm:2.0.4"],\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["once", "npm:1.4.0"],\
             ["path-is-absolute", "npm:1.0.1"]\
           ],\
@@ -5049,7 +5049,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs.realpath", "npm:1.0.0"],\
             ["inflight", "npm:1.0.6"],\
             ["inherits", "npm:2.0.4"],\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["once", "npm:1.4.0"],\
             ["path-is-absolute", "npm:1.0.1"]\
           ],\
@@ -5062,7 +5062,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs.realpath", "npm:1.0.0"],\
             ["inflight", "npm:1.0.6"],\
             ["inherits", "npm:2.0.4"],\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["once", "npm:1.4.0"],\
             ["path-is-absolute", "npm:1.0.1"]\
           ],\
@@ -6630,10 +6630,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["minimatch", [\
-        ["npm:3.1.2", {\
-          "packageLocation": "./.yarn/cache/minimatch-npm-3.1.2-9405269906-c154e56640.zip/node_modules/minimatch/",\
+        ["npm:3.1.4", {\
+          "packageLocation": "./.yarn/cache/minimatch-npm-3.1.4-5c2bfccba3-8bc9993c9b.zip/node_modules/minimatch/",\
           "packageDependencies": [\
-            ["minimatch", "npm:3.1.2"],\
+            ["minimatch", "npm:3.1.4"],\
             ["brace-expansion", "npm:1.1.12"]\
           ],\
           "linkType": "HARD"\
