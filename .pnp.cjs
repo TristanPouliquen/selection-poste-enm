@@ -58,7 +58,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-prettier", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:8.6.0"],\
             ["eslint-plugin-unused-imports", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:2.0.0"],\
             ["husky", "npm:8.0.3"],\
-            ["immutable", "npm:4.2.4"],\
+            ["immutable", "npm:4.3.8"],\
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.5.1"],\
             ["next-remove-imports", "npm:1.0.11"],\
@@ -3988,7 +3988,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/draft-js", "npm:0.11.10"],\
             ["@types/immutable", null],\
             ["draft-js", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.11.7"],\
-            ["immutable", "npm:4.2.4"]\
+            ["immutable", "npm:4.3.8"]\
           ],\
           "packagePeers": [\
             "@types/draft-js",\
@@ -5359,7 +5359,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/draft-js", "npm:0.11.10"],\
             ["@types/immutable", null],\
             ["draft-js", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.11.7"],\
-            ["immutable", "npm:4.2.4"]\
+            ["immutable", "npm:4.3.8"]\
           ],\
           "packagePeers": [\
             "@types/draft-js",\
@@ -5457,10 +5457,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:4.2.4", {\
-          "packageLocation": "./.yarn/cache/immutable-npm-4.2.4-f20272bc9b-3be84eded3.zip/node_modules/immutable/",\
+        ["npm:4.3.8", {\
+          "packageLocation": "./.yarn/cache/immutable-npm-4.3.8-9db2d34fb7-cd527802c8.zip/node_modules/immutable/",\
           "packageDependencies": [\
-            ["immutable", "npm:4.2.4"]\
+            ["immutable", "npm:4.3.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7763,7 +7763,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["draft-js", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:0.11.7"],\
             ["draftjs-utils", "virtual:079e23b446db30a7fd756608fdea0ce86763557108e911bb1300cecac8ce64b25a487b422b383f97404e6a90408502e9cf91ae4f1c853cc8de726c1f7aaae139#npm:0.10.2"],\
             ["html-to-draftjs", "virtual:079e23b446db30a7fd756608fdea0ce86763557108e911bb1300cecac8ce64b25a487b422b383f97404e6a90408502e9cf91ae4f1c853cc8de726c1f7aaae139#npm:1.5.0"],\
-            ["immutable", "npm:4.2.4"],\
+            ["immutable", "npm:4.3.8"],\
             ["linkify-it", "npm:2.2.0"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
@@ -8334,7 +8334,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-prettier", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:8.6.0"],\
             ["eslint-plugin-unused-imports", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:2.0.0"],\
             ["husky", "npm:8.0.3"],\
-            ["immutable", "npm:4.2.4"],\
+            ["immutable", "npm:4.3.8"],\
             ["lint-staged", "npm:13.1.2"],\
             ["next", "virtual:bdb7806221b65e8daecf27f38f075eda1925de6f50f2dde64c089dbb60702d1cf686e38b1fdbeb5a7f69e49ede12fd6b2e661ccf4b4ae9a1c62458e8cdb24828#npm:13.5.1"],\
             ["next-remove-imports", "npm:1.0.11"],\
