@@ -4851,17 +4851,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/flat-cache-npm-3.0.4-ee77e5911e-4fdd10ecbc.zip/node_modules/flat-cache/",\
           "packageDependencies": [\
             ["flat-cache", "npm:3.0.4"],\
-            ["flatted", "npm:3.2.7"],\
+            ["flatted", "npm:3.4.2"],\
             ["rimraf", "npm:3.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["flatted", [\
-        ["npm:3.2.7", {\
-          "packageLocation": "./.yarn/cache/flatted-npm-3.2.7-0da10b7c56-427633049d.zip/node_modules/flatted/",\
+        ["npm:3.4.2", {\
+          "packageLocation": "./.yarn/cache/flatted-npm-3.4.2-e32280259b-1b2536fccb.zip/node_modules/flatted/",\
           "packageDependencies": [\
-            ["flatted", "npm:3.2.7"]\
+            ["flatted", "npm:3.4.2"]\
           ],\
           "linkType": "HARD"\
         }]\
