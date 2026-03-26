@@ -3588,7 +3588,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["import-fresh", "npm:3.3.0"],\
             ["parse-json", "npm:5.2.0"],\
             ["path-type", "npm:4.0.0"],\
-            ["yaml", "npm:1.10.2"]\
+            ["yaml", "npm:1.10.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7495,7 +7495,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lilconfig", "npm:2.0.6"],\
             ["postcss", "npm:8.4.31"],\
             ["ts-node", null],\
-            ["yaml", "npm:1.10.2"]\
+            ["yaml", "npm:1.10.3"]\
           ],\
           "packagePeers": [\
             "@types/postcss",\
@@ -9590,10 +9590,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["yaml", [\
-        ["npm:1.10.2", {\
-          "packageLocation": "./.yarn/cache/yaml-npm-1.10.2-0e780aebdf-ce4ada136e.zip/node_modules/yaml/",\
+        ["npm:1.10.3", {\
+          "packageLocation": "./.yarn/cache/yaml-npm-1.10.3-df9008b926-6a2dd3582f.zip/node_modules/yaml/",\
           "packageDependencies": [\
-            ["yaml", "npm:1.10.2"]\
+            ["yaml", "npm:1.10.3"]\
           ],\
           "linkType": "HARD"\
         }],\
