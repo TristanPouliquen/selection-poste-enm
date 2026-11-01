@@ -4252,13 +4252,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"immutable@npm:^4.3.9":
-  version: 4.3.9
-  resolution: "immutable@npm:4.3.9"
-  checksum: 08cdd3cc993add6ab804e5d4570072fc3139f827fe404277efaae86d5ef890aa1a545f43261ac2b443f422b7c09958c06b244fe39abf82ec1973df75bc81043b
-  languageName: node
-  linkType: hard
-
 "immutable@npm:~3.7.4":
   version: 3.7.6
   resolution: "immutable@npm:3.7.6"
@@ -6723,7 +6716,6 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     eslint-plugin-unused-imports: ^2.0.0
     husky: ^8.0.3
-    immutable: ^4.3.9
     lint-staged: ^13.1.0
     next: 13.5.1
     next-remove-imports: ^1.0.11
