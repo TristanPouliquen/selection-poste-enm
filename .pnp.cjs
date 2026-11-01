@@ -7504,7 +7504,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.14"],\
             ["nanoid", "npm:3.3.18"],\
             ["picocolors", "npm:1.0.0"],\
-            ["source-map-js", "npm:1.0.2"]\
+            ["source-map-js", "npm:1.2.2"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -7514,7 +7514,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.5.23"],\
             ["nanoid", "npm:3.3.18"],\
             ["picocolors", "npm:1.1.1"],\
-            ["source-map-js", "npm:1.2.1"]\
+            ["source-map-js", "npm:1.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8642,17 +8642,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["source-map-js", [\
-        ["npm:1.0.2", {\
-          "packageLocation": "./.yarn/cache/source-map-js-npm-1.0.2-ee4f9f9b30-c049a7fc4d.zip/node_modules/source-map-js/",\
+        ["npm:1.2.2", {\
+          "packageLocation": "./.yarn/cache/source-map-js-npm-1.2.2-d40ce9a415-d4f3adc192.zip/node_modules/source-map-js/",\
           "packageDependencies": [\
-            ["source-map-js", "npm:1.0.2"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:1.2.1", {\
-          "packageLocation": "./.yarn/cache/source-map-js-npm-1.2.1-b9a47d7e1a-4eb0cd997c.zip/node_modules/source-map-js/",\
-          "packageDependencies": [\
-            ["source-map-js", "npm:1.2.1"]\
+            ["source-map-js", "npm:1.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
