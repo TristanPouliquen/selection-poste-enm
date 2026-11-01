@@ -7609,7 +7609,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-nested", "virtual:eb979a97283e72f95ca6641197ba45c691aca97531aabab66fbaf8a2bb0ca83f3ae357b04f49f5423ff7614feba412613f13d39116ae50ef8f4717ee4737c554#npm:6.0.0"],\
             ["@types/postcss", null],\
             ["postcss", "npm:8.5.23"],\
-            ["postcss-selector-parser", "npm:6.0.11"]\
+            ["postcss-selector-parser", "npm:6.1.5"]\
           ],\
           "packagePeers": [\
             "@types/postcss",\
@@ -7619,10 +7619,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["postcss-selector-parser", [\
-        ["npm:6.0.11", {\
-          "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.0.11-b2f8bf39d3-0b01aa9c2d.zip/node_modules/postcss-selector-parser/",\
+        ["npm:6.1.5", {\
+          "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.1.5-7a81aa8b56-48092b9e8d.zip/node_modules/postcss-selector-parser/",\
           "packageDependencies": [\
-            ["postcss-selector-parser", "npm:6.0.11"],\
+            ["postcss-selector-parser", "npm:6.1.5"],\
             ["cssesc", "npm:3.0.0"],\
             ["util-deprecate", "npm:1.0.2"]\
           ],\
@@ -8964,7 +8964,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-js", "virtual:7fd221a8ff0855aed7c4188502494f35e64a201535cb3b8c2229eac178d6707c9beb9939015ad80ecec6625a7ebd3a4069de5afec9ba2a7b279d8738f427b72b#npm:4.0.1"],\
             ["postcss-load-config", "virtual:eb979a97283e72f95ca6641197ba45c691aca97531aabab66fbaf8a2bb0ca83f3ae357b04f49f5423ff7614feba412613f13d39116ae50ef8f4717ee4737c554#npm:3.1.4"],\
             ["postcss-nested", "virtual:eb979a97283e72f95ca6641197ba45c691aca97531aabab66fbaf8a2bb0ca83f3ae357b04f49f5423ff7614feba412613f13d39116ae50ef8f4717ee4737c554#npm:6.0.0"],\
-            ["postcss-selector-parser", "npm:6.0.11"],\
+            ["postcss-selector-parser", "npm:6.1.5"],\
             ["postcss-value-parser", "npm:4.2.0"],\
             ["quick-lru", "npm:5.1.1"],\
             ["resolve", "patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"]\
@@ -8999,7 +8999,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-js", "virtual:7fd221a8ff0855aed7c4188502494f35e64a201535cb3b8c2229eac178d6707c9beb9939015ad80ecec6625a7ebd3a4069de5afec9ba2a7b279d8738f427b72b#npm:4.0.1"],\
             ["postcss-load-config", "virtual:eb979a97283e72f95ca6641197ba45c691aca97531aabab66fbaf8a2bb0ca83f3ae357b04f49f5423ff7614feba412613f13d39116ae50ef8f4717ee4737c554#npm:3.1.4"],\
             ["postcss-nested", "virtual:eb979a97283e72f95ca6641197ba45c691aca97531aabab66fbaf8a2bb0ca83f3ae357b04f49f5423ff7614feba412613f13d39116ae50ef8f4717ee4737c554#npm:6.0.0"],\
-            ["postcss-selector-parser", "npm:6.0.11"],\
+            ["postcss-selector-parser", "npm:6.1.5"],\
             ["postcss-value-parser", "npm:4.2.0"],\
             ["quick-lru", "npm:5.1.1"],\
             ["resolve", "patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"],\
